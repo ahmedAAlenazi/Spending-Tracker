@@ -12,11 +12,11 @@ import FirebaseFirestore
 class SiginInViewController: UIViewController {
     
     private var emailTextField : UITextField = {
-        var textField = UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField = UITextField(frame: CGRect(x: 20, y: 430, width: 350, height: 40))
-        textField.keyboardType = .emailAddress
-        textField.layer.cornerRadius = 6
+            var textField = UITextField()
+            textField.translatesAutoresizingMaskIntoConstraints = false
+            textField = UITextField(frame: CGRect(x: 20, y: 430, width: 350, height: 40))
+            textField.keyboardType = .emailAddress
+            textField.layer.cornerRadius = 6
         textField.placeholder = "email..."
         textField.font = UIFont.systemFont(ofSize: 15)
         textField.borderStyle = UITextField.BorderStyle.roundedRect
@@ -119,7 +119,7 @@ class SiginInViewController: UIViewController {
     @objc func buttonSignInAction(sender: UIButton!) {
         print("Button tapped")
         SignIn(email: emailTextField.text ?? "", password: passwordTextField.text ?? "" )
-        
+
     }
     
     @objc func buttonSignUpAction(sender: UIButton!) {
@@ -137,7 +137,8 @@ class SiginInViewController: UIViewController {
             }
             if authResult?.user.email != nil {
                 //perform segue
-                self.performSegue(withIdentifier: "", sender: nil)
+                self.performSegue(withIdentifier: "toSginUp", sender: nil)
+
                 
             }
             print("email:\(String(describing: authResult?.user.email))")

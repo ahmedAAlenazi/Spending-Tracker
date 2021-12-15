@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:CDCapetil+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:CDCapetil+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:Spending-Tracker.xcodeproj">
    </FileRef>
    <FileRef

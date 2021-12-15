@@ -89,9 +89,10 @@ class SginUpViewController: UIViewController {
         view.addSubview(PhonTextField)
         view.addSubview(bottonNext)
         constrainsBottons()
-        UserApi.getUser(uid: Auth.auth().currentUser?.uid ?? "") { user in
-            print(user.email ?? "email")
-        }
+        
+//        UserApi.getUser(uid: Auth.auth().currentUser?.uid ?? "") { user in
+//            print(user.email ?? "email")
+//        }
     }
         func constrainsBottons(){
             
@@ -104,8 +105,11 @@ class SginUpViewController: UIViewController {
         }
         
     @objc func buttonNextAction(sender: UIButton!) {
+        
            print("Button tapped")
+        
         SignUp(email: emailTextField.text ?? "", password: passwordTextField.text ?? "", phone: PhonTextField.text ?? "")
+        
        }
     
     func SignUp(email: String,password:String,phone:String) {
@@ -116,10 +120,18 @@ class SginUpViewController: UIViewController {
                 print("uid:\(String(describing: authResult?.user.uid))")
 
                 UserApi.addUser(uid:authResult?.user.uid ?? "" , phone: phone,email: email) { check in
+                    
                     if check {
+                        
+                        self.showAlert(withTitel: "sucsses", messege: "enjoy", isLogin: true)
+                        
+                        self.performSegue(withIdentifier: "toDataPage", sender: nil)
+                        
                         print("Done saving in Database")
                     } else {
-
+                        
+                        print("crash")
+                     
                     }
                 }
             }
@@ -127,6 +139,37 @@ class SginUpViewController: UIViewController {
 
 
 }
+    func showAlert (withTitel titel:String,messege:String,isLogin:Bool){
+        let alert = UIAlertController(title: "thanks", message: messege, preferredStyle: .alert)
+        let okAcction = UIAlertAction(title: "ok", style: .default, handler: { action in if isLogin {
+            
+            
+            
+        }else{
+            
+        }
+            
+        })
+        
+        alert.addAction(okAcction)
+        self.present(alert,animated: true)
+    }
+//
+//    func showAlertErore (withTitel titel:String,messege:String,isLogin:Bool){
+//        let alert = UIAlertController(title: "Error", message: messege, preferredStyle: .alert)
+//        let okAcction = UIAlertAction(title: "ok", style: .default, handler: { action in if isLogin {
+//
+//
+//
+//        }else{
+//
+//        }
+//
+//        })
+//
+//        alert.addAction(okAcction)
+//        self.present(alert,animated: true)
+//    }
     
 }
 

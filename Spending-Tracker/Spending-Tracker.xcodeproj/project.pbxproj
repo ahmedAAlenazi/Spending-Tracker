@@ -19,7 +19,12 @@
 		6D0C517B276161930020E539 /* ModelApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C517A276161930020E539 /* ModelApi.swift */; };
 		6D0C517D276161D90020E539 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C517C276161D90020E539 /* Model.swift */; };
 		6D0C518027621A720020E539 /* EnterDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C517F27621A720020E539 /* EnterDataViewController.swift */; };
-		6D0C51832762232A0020E539 /* IncomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C51822762232A0020E539 /* IncomeTableViewCell.swift */; };
+		6D0C518827662B490020E539 /* ModelDataUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C518727662B480020E539 /* ModelDataUser.swift */; };
+		6D0C518D276781710020E539 /* CapetilDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C518B276781700020E539 /* CapetilDataModel.xcdatamodeld */; };
+		6D0C51A02768C0AE0020E539 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C519F2768C0AD0020E539 /* HomeViewController.swift */; };
+		6D0C51A22768C1480020E539 /* DigramTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C51A12768C1470020E539 /* DigramTableViewCell.swift */; };
+		6D0C51A42768CEF80020E539 /* DigramDataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C51A32768CEF80020E539 /* DigramDataCollectionViewCell.swift */; };
+		6D0C51A62769D02A0020E539 /* Incom+SpendingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C51A52769D0290020E539 /* Incom+SpendingsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +42,12 @@
 		6D0C517A276161930020E539 /* ModelApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelApi.swift; sourceTree = "<group>"; };
 		6D0C517C276161D90020E539 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		6D0C517F27621A720020E539 /* EnterDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterDataViewController.swift; sourceTree = "<group>"; };
-		6D0C51822762232A0020E539 /* IncomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeTableViewCell.swift; sourceTree = "<group>"; };
+		6D0C518727662B480020E539 /* ModelDataUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDataUser.swift; sourceTree = "<group>"; };
+		6D0C518C276781700020E539 /* CapetilDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CapetilDataModel.xcdatamodel; sourceTree = "<group>"; };
+		6D0C519F2768C0AD0020E539 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		6D0C51A12768C1470020E539 /* DigramTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigramTableViewCell.swift; sourceTree = "<group>"; };
+		6D0C51A32768CEF80020E539 /* DigramDataCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigramDataCollectionViewCell.swift; sourceTree = "<group>"; };
+		6D0C51A52769D0290020E539 /* Incom+SpendingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Incom+SpendingsTableViewCell.swift"; sourceTree = "<group>"; };
 		C99067058E69096FD9D9EA9E /* Pods-Spending-Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spending-Tracker.release.xcconfig"; path = "Target Support Files/Pods-Spending-Tracker/Pods-Spending-Tracker.release.xcconfig"; sourceTree = "<group>"; };
 		F664A40AF60A8E7B9CD94B94 /* Pods-Spending-Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spending-Tracker.debug.xcconfig"; path = "Target Support Files/Pods-Spending-Tracker/Pods-Spending-Tracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -57,6 +67,7 @@
 		6D0C5154275FF4AA0020E539 = {
 			isa = PBXGroup;
 			children = (
+				6D0C51A72769D1CE0020E539 /* HomeViewController */,
 				6D0C515F275FF4AA0020E539 /* Spending-Tracker */,
 				6D0C515E275FF4AA0020E539 /* Products */,
 				C8FD8547A81E3EA3C2C7CD01 /* Pods */,
@@ -75,37 +86,57 @@
 		6D0C515F275FF4AA0020E539 /* Spending-Tracker */ = {
 			isa = PBXGroup;
 			children = (
-				6D0C5181276222EA0020E539 /* EnterDataCells */,
-				6D0C517E2761622A0020E539 /* ModelUser */,
+				6D0C51A82769D20D0020E539 /* SginIn+SginUp+Model */,
+				6D0C518627662B280020E539 /* EnterDataviewController+ModelDataUser */,
 				6D0C5160275FF4AA0020E539 /* AppDelegate.swift */,
 				6D0C5162275FF4AA0020E539 /* SceneDelegate.swift */,
-				6D0C5178276159860020E539 /* SginUpViewController.swift */,
-				6D0C5164275FF4AA0020E539 /* SiginInViewController.swift */,
 				6D0C5166275FF4AA0020E539 /* Main.storyboard */,
 				6D0C5169275FF4AD0020E539 /* Assets.xcassets */,
 				6D0C516B275FF4AD0020E539 /* LaunchScreen.storyboard */,
 				6D0C516E275FF4AD0020E539 /* Info.plist */,
 				6D0C51742760A3340020E539 /* GoogleService-Info.plist */,
-				6D0C517F27621A720020E539 /* EnterDataViewController.swift */,
+				6D0C518B276781700020E539 /* CapetilDataModel.xcdatamodeld */,
 			);
 			path = "Spending-Tracker";
 			sourceTree = "<group>";
 		};
-		6D0C517E2761622A0020E539 /* ModelUser */ = {
+		6D0C517E2761622A0020E539 /* ModelUserApi */ = {
 			isa = PBXGroup;
 			children = (
 				6D0C517C276161D90020E539 /* Model.swift */,
 				6D0C517A276161930020E539 /* ModelApi.swift */,
 			);
-			path = ModelUser;
+			path = ModelUserApi;
 			sourceTree = "<group>";
 		};
-		6D0C5181276222EA0020E539 /* EnterDataCells */ = {
+		6D0C518627662B280020E539 /* EnterDataviewController+ModelDataUser */ = {
 			isa = PBXGroup;
 			children = (
-				6D0C51822762232A0020E539 /* IncomeTableViewCell.swift */,
+				6D0C517F27621A720020E539 /* EnterDataViewController.swift */,
+				6D0C518727662B480020E539 /* ModelDataUser.swift */,
 			);
-			path = EnterDataCells;
+			path = "EnterDataviewController+ModelDataUser";
+			sourceTree = "<group>";
+		};
+		6D0C51A72769D1CE0020E539 /* HomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6D0C51A52769D0290020E539 /* Incom+SpendingsTableViewCell.swift */,
+				6D0C51A32768CEF80020E539 /* DigramDataCollectionViewCell.swift */,
+				6D0C51A12768C1470020E539 /* DigramTableViewCell.swift */,
+				6D0C519F2768C0AD0020E539 /* HomeViewController.swift */,
+			);
+			path = HomeViewController;
+			sourceTree = "<group>";
+		};
+		6D0C51A82769D20D0020E539 /* SginIn+SginUp+Model */ = {
+			isa = PBXGroup;
+			children = (
+				6D0C5178276159860020E539 /* SginUpViewController.swift */,
+				6D0C5164275FF4AA0020E539 /* SiginInViewController.swift */,
+				6D0C517E2761622A0020E539 /* ModelUserApi */,
+			);
+			path = "SginIn+SginUp+Model";
 			sourceTree = "<group>";
 		};
 		C8FD8547A81E3EA3C2C7CD01 /* Pods */ = {
@@ -243,11 +274,16 @@
 			files = (
 				6D0C517B276161930020E539 /* ModelApi.swift in Sources */,
 				6D0C518027621A720020E539 /* EnterDataViewController.swift in Sources */,
-				6D0C51832762232A0020E539 /* IncomeTableViewCell.swift in Sources */,
+				6D0C51A22768C1480020E539 /* DigramTableViewCell.swift in Sources */,
 				6D0C5165275FF4AA0020E539 /* SiginInViewController.swift in Sources */,
+				6D0C518827662B490020E539 /* ModelDataUser.swift in Sources */,
 				6D0C5161275FF4AA0020E539 /* AppDelegate.swift in Sources */,
+				6D0C51A02768C0AE0020E539 /* HomeViewController.swift in Sources */,
+				6D0C51A62769D02A0020E539 /* Incom+SpendingsTableViewCell.swift in Sources */,
+				6D0C518D276781710020E539 /* CapetilDataModel.xcdatamodeld in Sources */,
 				6D0C517D276161D90020E539 /* Model.swift in Sources */,
 				6D0C5179276159860020E539 /* SginUpViewController.swift in Sources */,
+				6D0C51A42768CEF80020E539 /* DigramDataCollectionViewCell.swift in Sources */,
 				6D0C5163275FF4AA0020E539 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,6 +506,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6D0C518B276781700020E539 /* CapetilDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6D0C518C276781700020E539 /* CapetilDataModel.xcdatamodel */,
+			);
+			currentVersion = 6D0C518C276781700020E539 /* CapetilDataModel.xcdatamodel */;
+			path = CapetilDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6D0C5155275FF4AA0020E539 /* Project object */;
 }
