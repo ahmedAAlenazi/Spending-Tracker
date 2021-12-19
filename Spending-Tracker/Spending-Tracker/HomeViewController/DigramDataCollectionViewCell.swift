@@ -7,16 +7,21 @@
 
 import UIKit
 import Charts
+
+
+    
+
+  
 class DigramDataCollectionViewCell: UICollectionViewCell, ChartViewDelegate {
+    
     
     static let identefire = "DigramDataCollectionViewCell"
     
+    let context = PersistentStorage.shared.context
+    var capetil: [CDCapetil]? = []
     
        let _labal = UILabel()
    
-   
-    
-    
     private let lineChart : LineChartView = {
       
         let lineChart = LineChartView ()
@@ -48,16 +53,19 @@ class DigramDataCollectionViewCell: UICollectionViewCell, ChartViewDelegate {
     override func layoutSubviews(){
         super.layoutSubviews()
         
-        // Assign data to ChartDataEntry
+        capetil = PersistentStorage.shared.fetchManagedObject(managedObject: CDCapetil.self)
         
-        var entries = [ChartDataEntry]()
-        
-        // axis and data
+//
+//        var entries = [ChartDataEntry]()
+//        var xS = DateComponents(calendar: nil, timeZone: nil, era: nil, year: 2021, month: 1, day: 1, hour: 1, minute: 1, second: 1, nanosecond: nil, weekday: nil, weekdayOrdinal: nil, quarter: nil, weekOfMonth: nil, weekOfYear: nil, yearForWeekOfYear: nil)
+//
+//        var xF = DateComponents(calendar: nil, timeZone: nil, era: nil, year: 2021, month: 1, day: 1, hour: 1, minute: 1, second: 1, nanosecond: nil, weekday: nil, weekdayOrdinal: nil, quarter: nil, weekOfMonth: nil, weekOfYear: nil, yearForWeekOfYear: nil)
+//        var sd = Date(timeIntervalSinceNow: timeInterval(capetil))
         
         for x in 0..<12 {
             entries.append(ChartDataEntry(x:Double(x),
                                           // Random number between 0 to 30
-                                          y:Double.random(in:0...30)))
+                                          y:Double.random(in:0...12)))
         }
         
         let set =  LineChartDataSet(entries : entries)
@@ -65,9 +73,14 @@ class DigramDataCollectionViewCell: UICollectionViewCell, ChartViewDelegate {
         set.colors = ChartColorTemplates.material()
         let data = LineChartData(dataSet: set)
         lineChart.data = data
+        
+        
     }
-
+ 
+    
+    
 }
+
 
     
     

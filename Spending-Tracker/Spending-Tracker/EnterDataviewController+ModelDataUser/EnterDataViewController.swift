@@ -8,11 +8,15 @@
 import UIKit
 import CoreData
 
+
+
+
+
 class EnterDataViewController: UIViewController {
     
-//
-//    let context = PersistentStorage.shared.context
-//    let cdCapetil = CDCapetil()
+    
+    let context = PersistentStorage.shared.context
+    let cdCapetil = CDCapetil()
 
     
     private var bottonNext : UIButton = {
@@ -368,8 +372,19 @@ class EnterDataViewController: UIViewController {
     
     @objc func buttonNextAction(sender: UIButton!) {
            print("Button tapped")
+       
         
-        performSegue(withIdentifier: "", sender: nil)
+        
+ let capetil = Capetil(acount: nameAcountTextField.text, incomName: incomeTextField.text, incomType: typeIncomeTextField.text, incomDate: incomeDatepiker.date, incom: incomeEnterTextField.text, spendingName: spendingTextField.text, spendingType: typeSpendingTextField.text, spendingDate: spendingDatepiker.date, spending: spendingEnterTextField.text)
+
+        
+        cdCapetil.create(capetil: capetil)
+        
+   
+        print("hello\(Capetil(acount: nameAcountTextField.text, incomName: incomeTextField.text, incomType: typeIncomeTextField.text, incomDate: incomeDatepiker.date, incom: incomeEnterTextField.text, spendingName: spendingTextField.text, spendingType: typeSpendingTextField.text, spendingDate: spendingDatepiker.date, spending: spendingEnterTextField.text))")
+
+        performSegue(withIdentifier: "ToHome", sender: nil)
+        
        
        }
 }
@@ -537,7 +552,7 @@ extension EnterDataViewController {
         bottonNext.bottomAnchor.constraint(equalTo:self.view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
         bottonNext.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
         bottonNext.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
-//        bottonNext.addTarget(self, action: #selector(buttonNextAction), for: .touchUpInside)
+        bottonNext.addTarget(self, action: #selector(buttonNextAction), for: .touchUpInside)
         
 
         

@@ -44,7 +44,7 @@ extension HomeViewController: UITableViewDataSource , UITableViewDelegate {
         1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
