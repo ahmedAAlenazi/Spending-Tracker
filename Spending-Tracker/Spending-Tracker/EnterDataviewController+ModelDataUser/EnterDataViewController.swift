@@ -12,33 +12,60 @@ import CoreData
 
 
 
-class EnterDataViewController: UIViewController {
+class EnterDataViewController:  UIViewController, UIPickerViewDataSource, UIPickerViewDelegate{
+   
     
-    
-    let context = PersistentStorage.shared.context
-    let cdCapetil = CDCapetil()
-
-    
-    private var bottonNext : UIButton = {
+    let persistentContainer : NSPersistentContainer = {
+            let container = NSPersistentContainer(name: "CoreDataModel")
         
+            container.loadPersistentStores(completionHandler: { desc , error in
+                
+                if let readError = error {
+                    print(readError)
+                }
+            })
         
-      let botton = UIButton()
-        botton.translatesAutoresizingMaskIntoConstraints = false
-        botton.setTitle("Next", for: [])
-        botton.backgroundColor = UIColor.lightGray.withAlphaComponent(0.6)
-        botton.layer.cornerRadius = 12
-        botton.sizeToFit()
-    
-        
-       
-        
-      return botton
-        
+        return container
     }()
     
-    private var accontLabal : UILabel = {
-        let labal = UILabel()
-        labal.text = "acount"
+    
+//    let context = PersistentStorage.shared.context
+   
+    let currency = ["USD", "CAD", "CNY", "EUR", "GBP", "JPY","RS"]
+    let category = ["Food", "Housing", "Transport", "Shopping", "Health", "Travel", "Bills", "Investments", "Income"]
+    var selectedCur = "USD"
+    var selectedCat = "Food"
+    var imageFilePath = ""
+    
+    var budgets:[BudgetCD] = []
+    
+    
+   
+    var pickviewCur: UIPickerView = {
+      
+        var pickerView = UIPickerView()
+        pickerView.translatesAutoresizingMaskIntoConstraints = false
+        pickerView = UIPickerView(frame: CGRect(x: 100, y: 400, width: 200, height: 80))
+        
+        
+        
+        return pickerView
+    }()
+    
+    var pickviewCat: UIPickerView = {
+
+        var pickerView = UIPickerView()
+        pickerView.translatesAutoresizingMaskIntoConstraints = false
+        pickerView = UIPickerView(frame: CGRect(x: 100, y:250, width: 200, height: 80))
+        
+          
+          return pickerView
+    }()
+    
+    private var currencyLabal : UILabel = {
+        var labal = UILabel()
+        labal = UILabel(frame: CGRect(x: 160, y: 500, width: 80, height: 40))
+        labal.text = "currency"
         labal.font = UIFont.systemFont(ofSize: 14)
         labal.textAlignment = .center
         labal.backgroundColor = UIColor.lightGray.withAlphaComponent(0.6)
@@ -50,516 +77,390 @@ class EnterDataViewController: UIViewController {
         
         return labal
     }()
-    private var nameAcountTextField : UITextField = {
-        var textField = UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.keyboardType = .default
-        textField.layer.cornerRadius = 0
-        textField.placeholder = "account name..."
-        textField.font = UIFont.systemFont(ofSize: 15)
-        textField.borderStyle = UITextField.BorderStyle.roundedRect
-        textField.autocorrectionType = UITextAutocorrectionType.no
-        textField.returnKeyType = UIReturnKeyType.done
-        textField.clearButtonMode = UITextField.ViewMode.whileEditing
-        textField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
-        
-        return textField
-    }()
     
-    
-    private var incomeNameLabal : UILabel = {
-        let labal = UILabel()
-        labal.text = "income"
+    private var categoryLabal : UILabel = {
+        var labal = UILabel()
+        labal.text = "category"
+        labal = UILabel(frame: CGRect(x: 160, y: 350, width: 80, height: 40))
         labal.font = UIFont.systemFont(ofSize: 14)
         labal.textAlignment = .center
         labal.backgroundColor = UIColor.lightGray.withAlphaComponent(0.6)
-        labal.layer.cornerRadius = 6
-        
-        
-        
-        
-        
-        return labal
-    }()
-    
-    private var incomeLabal : UILabel = {
-        let labal = UILabel()
-        labal.text = "income name"
-        labal.font = UIFont.systemFont(ofSize: 14)
-        labal.textAlignment = .center
-        labal.backgroundColor = UIColor.lightGray.withAlphaComponent(0.6)
-        labal.layer.cornerRadius = 6
-        
-        
-        
-        
-        return labal
-    }()
-    private var incomeTextField : UITextField = {
-        var textField = UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.keyboardType = .default
-        textField.layer.cornerRadius = 0
-        textField.placeholder = "income name..."
-        textField.font = UIFont.systemFont(ofSize: 15)
-        textField.borderStyle = UITextField.BorderStyle.roundedRect
-        textField.autocorrectionType = UITextAutocorrectionType.no
-        textField.returnKeyType = UIReturnKeyType.done
-        textField.clearButtonMode = UITextField.ViewMode.whileEditing
-        textField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
-        
-        return textField
-    }()
-    
-    private var incomeEnterLabal : UILabel = {
-        let labal = UILabel()
-        labal.text = "Income"
-        labal.font = UIFont.systemFont(ofSize: 14)
-        labal.textAlignment = .center
-        labal.backgroundColor = UIColor.lightGray.withAlphaComponent(0.6)
-        labal.layer.cornerRadius = 6
-        
-        
-        
-        
-        return labal
-    }()
-    private var incomeEnterTextField : UITextField = {
-        var textField = UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.keyboardType = .default
-        textField.layer.cornerRadius = 0
-        textField.placeholder = "income..."
-        textField.font = UIFont.systemFont(ofSize: 14)
-        textField.borderStyle = UITextField.BorderStyle.roundedRect
-        textField.autocorrectionType = UITextAutocorrectionType.no
-        textField.returnKeyType = UIReturnKeyType.done
-        textField.clearButtonMode = UITextField.ViewMode.whileEditing
-        textField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
-        
-        return textField
-    }()
-    
-    private var typeIncomeLabal : UILabel = {
-        let labal = UILabel()
-        labal.text = "Income Type"
-        labal.font = UIFont.systemFont(ofSize: 14)
-        labal.textAlignment = .center
-        labal.backgroundColor = UIColor.lightGray.withAlphaComponent(0.6)
-        labal.layer.cornerRadius = 6
-        
-        
-        
-        
-        return labal
-    }()
-    private var typeIncomeTextField : UITextField = {
-        var textField = UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.keyboardType = .default
-        textField.layer.cornerRadius = 0
-        textField.placeholder = "Income Type..."
-        textField.font = UIFont.systemFont(ofSize: 14)
-        textField.borderStyle = UITextField.BorderStyle.roundedRect
-        textField.autocorrectionType = UITextAutocorrectionType.no
-        textField.returnKeyType = UIReturnKeyType.done
-        textField.clearButtonMode = UITextField.ViewMode.whileEditing
-        textField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
-        
-        return textField
-    }()
-    
-    private var incomeDateLabal : UILabel = {
-        let labal = UILabel()
-        labal.text = "Date"
-        labal.font = UIFont.systemFont(ofSize: 14)
-        labal.textAlignment = .center
-        labal.backgroundColor = UIColor.lightGray.withAlphaComponent(0.6)
-        labal.layer.cornerRadius = 6
-        
-        
-        
-        
-        return labal
-    }()
-    private var incomeDatepiker : UIDatePicker = {
-        var datepiker = UIDatePicker()
-        datepiker.translatesAutoresizingMaskIntoConstraints = false
-        datepiker.layer.cornerRadius = 0
-        datepiker = UIDatePicker(frame: CGRect(x: 120, y: 380, width: 120, height: 60))
-        return datepiker
-    }()
-    /////////////
-    ///
-    ///
-    ///
-    
-    
-    
-    private var spendingtLabal : UILabel = {
-        let labal = UILabel()
-        labal.text = "spendings"
-        labal.font = UIFont.systemFont(ofSize: 14)
-        labal.textAlignment = .center
-        labal.backgroundColor = UIColor.lightGray.withAlphaComponent(0.6)
-        labal.layer.cornerRadius = 6
-        
-        
-        
-        
-        
-        return labal
-    }()
-    
-    private var spendingNameLabal : UILabel = {
-        let labal = UILabel()
-        labal.text = "spending name"
-        labal.font = UIFont.systemFont(ofSize: 14)
-        labal.textAlignment = .center
-        labal.backgroundColor = UIColor.lightGray.withAlphaComponent(0.6)
-        labal.layer.cornerRadius = 6
-        
-        
-        
-        
-        return labal
-    }()
-    private var spendingTextField : UITextField = {
-        var textField = UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.keyboardType = .default
-        textField.layer.cornerRadius = 0
-        textField.placeholder = "spending name..."
-        textField.font = UIFont.systemFont(ofSize: 15)
-        textField.borderStyle = UITextField.BorderStyle.roundedRect
-        textField.autocorrectionType = UITextAutocorrectionType.no
-        textField.returnKeyType = UIReturnKeyType.done
-        textField.clearButtonMode = UITextField.ViewMode.whileEditing
-        textField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
-        
-        return textField
-    }()
-    
-    private var spendingEnterLabal : UILabel = {
-        let labal = UILabel()
-        labal.text = "Spending"
-        labal.font = UIFont.systemFont(ofSize: 14)
-        labal.textAlignment = .center
-        labal.backgroundColor = UIColor.lightGray.withAlphaComponent(0.6)
-        labal.layer.cornerRadius = 6
-        
-        
-        
-        
-        return labal
-    }()
-    private var spendingEnterTextField : UITextField = {
-        var textField = UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.keyboardType = .default
-        textField.layer.cornerRadius = 0
-        textField.placeholder = "spending..."
-        textField.font = UIFont.systemFont(ofSize: 14)
-        textField.borderStyle = UITextField.BorderStyle.roundedRect
-        textField.autocorrectionType = UITextAutocorrectionType.no
-        textField.returnKeyType = UIReturnKeyType.done
-        textField.clearButtonMode = UITextField.ViewMode.whileEditing
-        textField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
-        
-        return textField
-    }()
-    
-    private var typeSpendingLabal : UILabel = {
-        let labal = UILabel()
-        labal.text = "spendingType"
-        labal.font = UIFont.systemFont(ofSize: 14)
-        labal.textAlignment = .center
-        labal.backgroundColor = UIColor.lightGray.withAlphaComponent(0.6)
-        labal.layer.cornerRadius = 6
-        
-        
-        
-        
-        return labal
-    }()
-    private var typeSpendingTextField : UITextField = {
-        var textField = UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.keyboardType = .default
-        textField.layer.cornerRadius = 0
-        textField.placeholder = "Spending Type..."
-        textField.font = UIFont.systemFont(ofSize: 15)
-        textField.borderStyle = UITextField.BorderStyle.roundedRect
-        textField.autocorrectionType = UITextAutocorrectionType.no
-        textField.returnKeyType = UIReturnKeyType.done
-        textField.clearButtonMode = UITextField.ViewMode.whileEditing
-        textField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
-        
-        return textField
-    }()
-    
-    private var spendingDateLabal : UILabel = {
-        let labal = UILabel()
-        labal.text = "Date"
-        labal.font = UIFont.systemFont(ofSize: 14)
-        labal.textAlignment = .center
-        labal.backgroundColor = UIColor.lightGray.withAlphaComponent(0.6)
-        labal.layer.cornerRadius = 12
-        
-        
-        
-        
-        return labal
-    }()
-    
-    private var spendingDatepiker: UIDatePicker = {
-        var datepiker = UIDatePicker()
-        datepiker.translatesAutoresizingMaskIntoConstraints = false
-        datepiker.layer.cornerRadius = 0
-        datepiker = UIDatePicker(frame: CGRect(x: 120, y: 690, width: 120, height: 80))
-        return datepiker
-    }()
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        view.backgroundColor = .link
-        
-        view.addSubview(accontLabal)
-        view.addSubview(nameAcountTextField)
-        
-        
-        view.addSubview(incomeNameLabal)
-        
-        view.addSubview(incomeLabal)
-        view.addSubview(incomeTextField)
-        
-        view.addSubview(incomeEnterLabal)
-        view.addSubview(incomeEnterTextField)
-        
-        view.addSubview(typeIncomeLabal)
-        view.addSubview(typeIncomeTextField)
-        
-        view.addSubview(incomeDateLabal)
-        view.addSubview(incomeDatepiker)
-        
-       
-        view.addSubview(spendingtLabal)
-        
-        
-        view.addSubview(spendingNameLabal)
-        view.addSubview(spendingTextField)
-        
-        view.addSubview(spendingEnterLabal)
-        view.addSubview(spendingEnterTextField)
-        
-        view.addSubview(typeSpendingLabal)
-        view.addSubview(typeSpendingTextField)
-        
-        view.addSubview(spendingDateLabal)
-        view.addSubview(spendingDatepiker)
-        
-        
-        view.addSubview(bottonNext)
-        
-        constraintsView()
-        
-    }
-    
-   
-    
-    
-    @objc func buttonNextAction(sender: UIButton!) {
-           print("Button tapped")
-       
-        
-        
- let capetil = Capetil(acount: nameAcountTextField.text, incomName: incomeTextField.text, incomType: typeIncomeTextField.text, incomDate: incomeDatepiker.date, incom: incomeEnterTextField.text, spendingName: spendingTextField.text, spendingType: typeSpendingTextField.text, spendingDate: spendingDatepiker.date, spending: spendingEnterTextField.text)
-
-        
-        cdCapetil.create(capetil: capetil)
-        
-   
-        print("hello\(Capetil(acount: nameAcountTextField.text, incomName: incomeTextField.text, incomType: typeIncomeTextField.text, incomDate: incomeDatepiker.date, incom: incomeEnterTextField.text, spendingName: spendingTextField.text, spendingType: typeSpendingTextField.text, spendingDate: spendingDatepiker.date, spending: spendingEnterTextField.text))")
-
-        performSegue(withIdentifier: "ToHome", sender: nil)
-        
-       
-       }
-}
-    
-extension EnterDataViewController {
-    
-    func constraintsView() {
-        
-        
-        accontLabal.translatesAutoresizingMaskIntoConstraints = false
-        accontLabal.topAnchor.constraint(equalTo:self.view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
-        accontLabal.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
-        accontLabal.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
-        accontLabal.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 10).isActive = true
-        
-        
-        
-        nameAcountTextField.translatesAutoresizingMaskIntoConstraints = false
-        nameAcountTextField.topAnchor.constraint(equalTo:self.view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
-        nameAcountTextField.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
-        nameAcountTextField.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor,constant: -10).isActive = true
-        nameAcountTextField.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 120).isActive = true
-        
-        
-        
-        
-        incomeNameLabal.translatesAutoresizingMaskIntoConstraints = false
-        incomeNameLabal.topAnchor.constraint(equalTo:self.view.safeAreaLayoutGuide.topAnchor, constant: 100).isActive = true
-        incomeNameLabal.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
-        incomeNameLabal.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
-        incomeNameLabal.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
-        
-        
-        
-        incomeLabal.translatesAutoresizingMaskIntoConstraints = false
-        incomeLabal.topAnchor.constraint(equalTo:self.view.safeAreaLayoutGuide.topAnchor, constant: 180).isActive = true
-        incomeLabal.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
-        incomeLabal.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
-        incomeLabal.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 10).isActive = true
-        
-        
-        
-        incomeTextField.translatesAutoresizingMaskIntoConstraints = false
-        incomeTextField.topAnchor.constraint(equalTo:self.view.safeAreaLayoutGuide.topAnchor, constant: 180).isActive = true
-        incomeTextField.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
-        incomeTextField.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor,constant: -10).isActive = true
-        incomeTextField.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 120).isActive = true
-        
-        
-        
-        incomeEnterLabal.translatesAutoresizingMaskIntoConstraints = false
-        incomeEnterLabal.topAnchor.constraint(equalTo:self.view.safeAreaLayoutGuide.topAnchor, constant: 230).isActive = true
-        incomeEnterLabal.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
-        incomeEnterLabal.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
-        incomeEnterLabal.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 10).isActive = true
-        
-        
-        
-        incomeEnterTextField.translatesAutoresizingMaskIntoConstraints = false
-        incomeEnterTextField.topAnchor.constraint(equalTo:self.view.safeAreaLayoutGuide.topAnchor, constant: 230).isActive = true
-        incomeEnterTextField.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
-        incomeEnterTextField.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor,constant: -10).isActive = true
-        incomeEnterTextField.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 120).isActive = true
-        
-        
-        
-        typeIncomeLabal.translatesAutoresizingMaskIntoConstraints = false
-        typeIncomeLabal.topAnchor.constraint(equalTo:self.view.safeAreaLayoutGuide.topAnchor, constant: 280).isActive = true
-        typeIncomeLabal.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
-        typeIncomeLabal.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
-        typeIncomeLabal.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 10).isActive = true
-        
-        
-        
-        typeIncomeTextField.translatesAutoresizingMaskIntoConstraints = false
-        typeIncomeTextField.topAnchor.constraint(equalTo:self.view.safeAreaLayoutGuide.topAnchor, constant: 280).isActive = true
-        typeIncomeTextField.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
-        typeIncomeTextField.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor,constant: -10).isActive = true
-        typeIncomeTextField.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 120).isActive = true
+        labal.layer.cornerRadius = 3
       
+        return labal
+    }()
+    
+    
+    private var bottonNext : UIButton = {
         
         
-        
-        
-        incomeDateLabal.translatesAutoresizingMaskIntoConstraints = false
-        incomeDateLabal.topAnchor.constraint(equalTo:self.view.safeAreaLayoutGuide.topAnchor, constant: 330).isActive = true
-        incomeDateLabal.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
-        incomeDateLabal.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
-        incomeDateLabal.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 10).isActive = true
-        
-        
-        
-        
-        spendingtLabal.translatesAutoresizingMaskIntoConstraints = false
-        spendingtLabal.topAnchor.constraint(equalTo:self.view.safeAreaLayoutGuide.topAnchor, constant: 410).isActive = true
-        spendingtLabal.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
-        spendingtLabal.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
-        spendingtLabal.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
-        
-        
-        
-        
-        spendingNameLabal.translatesAutoresizingMaskIntoConstraints = false
-        spendingNameLabal.topAnchor.constraint(equalTo:self.view.safeAreaLayoutGuide.topAnchor, constant: 490).isActive = true
-        spendingNameLabal.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
-        spendingNameLabal.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
-        spendingNameLabal.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 10).isActive = true
-        
-        
-        
-        spendingTextField.translatesAutoresizingMaskIntoConstraints = false
-        spendingTextField.topAnchor.constraint(equalTo:self.view.safeAreaLayoutGuide.topAnchor, constant: 490).isActive = true
-        spendingTextField.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
-        spendingTextField.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor,constant: -10).isActive = true
-        spendingTextField.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 120).isActive = true
-        
-        
-        
-        spendingEnterLabal.translatesAutoresizingMaskIntoConstraints = false
-        spendingEnterLabal.topAnchor.constraint(equalTo:self.view.safeAreaLayoutGuide.topAnchor, constant: 540).isActive = true
-        spendingEnterLabal.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
-        spendingEnterLabal.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
-        spendingEnterLabal.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 10).isActive = true
-        
-        
-        
-        spendingEnterTextField.translatesAutoresizingMaskIntoConstraints = false
-        spendingEnterTextField.topAnchor.constraint(equalTo:self.view.safeAreaLayoutGuide.topAnchor, constant:540).isActive = true
-        spendingEnterTextField.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
-        spendingEnterTextField.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor,constant: -10).isActive = true
-        spendingEnterTextField.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 120).isActive = true
-        
-        
-        
-        
-        typeSpendingLabal.translatesAutoresizingMaskIntoConstraints = false
-        typeSpendingLabal.topAnchor.constraint(equalTo:self.view.safeAreaLayoutGuide.topAnchor, constant: 590).isActive = true
-        typeSpendingLabal.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
-        typeSpendingLabal.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
-        typeSpendingLabal.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 10).isActive = true
-        
-        
-        
-        typeSpendingTextField.translatesAutoresizingMaskIntoConstraints = false
-        typeSpendingTextField.topAnchor.constraint(equalTo:self.view.safeAreaLayoutGuide.topAnchor, constant: 590).isActive = true
-        typeSpendingTextField.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
-        typeSpendingTextField.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor,constant: -10).isActive = true
-        typeSpendingTextField.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 120).isActive = true
-        
-        
-        
-        
-        
-        spendingDateLabal.translatesAutoresizingMaskIntoConstraints = false
-        spendingDateLabal.topAnchor.constraint(equalTo:self.view.safeAreaLayoutGuide.topAnchor, constant: 640).isActive = true
-        spendingDateLabal.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
-        spendingDateLabal.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
-        spendingDateLabal.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 10).isActive = true
-        
-        
-        
-        
-        
-        bottonNext.centerXAnchor.constraint(equalTo:self.view.centerXAnchor).isActive = true
-        bottonNext.bottomAnchor.constraint(equalTo:self.view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
-        bottonNext.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
-        bottonNext.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
-        bottonNext.addTarget(self, action: #selector(buttonNextAction), for: .touchUpInside)
-        
+        var botton = UIButton()
+        botton = UIButton(frame: CGRect(x: 180, y: 700, width: 200, height: 80))
+        botton.translatesAutoresizingMaskIntoConstraints = false
+        botton.setTitle("Next", for: [])
+        botton.backgroundColor = UIColor.lightGray.withAlphaComponent(0.6)
+        botton.layer.cornerRadius = 12
+        botton.sizeToFit()
+        botton.addTarget(self, action: #selector(buttonNextAction), for: .touchUpInside)
 
         
+        
+        return botton
+        
+    }()
+    
+    private var numberField : UITextField = {
+        var textField = UITextField()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField = UITextField(frame: CGRect(x: 100, y: 600, width: 200, height: 40))
+        textField.keyboardType = .default
+        textField.layer.cornerRadius = 6
+        textField.placeholder = "number..."
+        textField.font = UIFont.systemFont(ofSize: 15)
+        textField.borderStyle = UITextField.BorderStyle.roundedRect
+        textField.autocorrectionType = UITextAutocorrectionType.no
+        textField.returnKeyType = UIReturnKeyType.done
+        textField.clearButtonMode = UITextField.ViewMode.whileEditing
+        textField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
+        
+        return textField
+    }()
+    
+    private var noteField : UITextField = {
+        var textField = UITextField()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField = UITextField(frame: CGRect(x: 100, y: 150, width: 200, height: 40))
+        textField.keyboardType = .default
+        textField.layer.cornerRadius = 6
+        textField.placeholder = "note..."
+        textField.font = UIFont.systemFont(ofSize: 15)
+        textField.borderStyle = UITextField.BorderStyle.roundedRect
+        textField.autocorrectionType = UITextAutocorrectionType.no
+        textField.returnKeyType = UIReturnKeyType.done
+        textField.clearButtonMode = UITextField.ViewMode.whileEditing
+        textField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
+        
+        return textField
+    }()
+    
+    
+    
+override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    view.backgroundColor = .link
+    view.addSubview(currencyLabal)
+    view.addSubview(categoryLabal)
+    view.addSubview(pickviewCur)
+    view.addSubview(pickviewCat)
+    view.addSubview(noteField)
+    view.addSubview(numberField)
+    view.addSubview(bottonNext)
+    pickviewCat.delegate = self
+    pickviewCat.dataSource = self
+    pickviewCur.delegate = self
+    pickviewCur.dataSource = self
+    
+    
+    
+
+    
+     }
+    
+    // touch on the screen will hide the keyboard
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        numberField.resignFirstResponder()
+         noteField.resignFirstResponder()
+    
+    
     }
     
-}
+    //return the number of components based on the pickerView
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        if pickerView == pickviewCur{
+            return 1
+        }
+        else if pickerView == pickviewCat{
+            return 1
+        }
+        return 0
+    }
     
+    //return the contents of the selected row
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if pickerView == pickviewCur{
+            return currency[row]
+        }
+        else if pickerView == pickviewCat{
+            return category[row]
+        }
+        return ""
+    }
     
+    //return the length of the pickerView
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if pickerView == pickviewCur{
+            return currency.count
+        }
+        else if pickerView == pickviewCat{
+            return category.count
+        }
+        return 0
+    }
+    
+    //set the label to the value that is gotten from the pickerView
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView == pickviewCur{
+            currencyLabal.text = currency[row]
+            selectedCur = currency[row]
+        }
+        else if pickerView == pickviewCat{
+            categoryLabal.text = category[row]
+            selectedCat = category[row]
+        }
+    
+   
+    }
+          
+    
+     
+     @objc func buttonNextAction(sender: UIButton!) {
+         
+         print("Button tapped")
+         
+         performSegue(withIdentifier: "ToHome", sender: nil)
+         
+         let context = persistentContainer.viewContext
+         let entry = CDEntry(context: context) // Link Entry & Context
+         
+         if Double(numberField.text!) != nil{
+             entry.amount = numberField.text!
+         }
+         else{
+             entry.amount = "0.00"
+             print("cannot convert textfield input to type double")
+         }
 
+         entry.category = selectedCat.lowercased()
+         entry.currency = selectedCur
+         entry.note = noteField.text!
+         
+         let now = NSDate()
+         let dateFormatter = DateFormatter()
+
+         entry.date = now as Date
+         
+         dateFormatter.dateFormat = "M"
+         let current_month = Int(dateFormatter.string(from:now as Date))
+         
+         dateFormatter.dateFormat = "y"
+         let current_year = Int(dateFormatter.string(from:now as Date))
+             
+         
+//         getBudgetData()
+         var new_month = true
+         var reach_budget = false
+         var current_budget = 0.0
+
+         for b in budgets {
+             let m: Int = Int(b.month)
+             let y: Int = Int(b.year)
+             
+             if (m == current_month!) && (y == current_year!){
+                 new_month = false
+                 if let a = entry.amount {
+                     var num = Double(a)!
+                    
+                     
+                     if entry.currency == "RS" {
+                         num = 1 * num
+                     }
+                     if entry.currency == "CAD" {
+                         num = 0.78 * num
+                     }
+                     else if entry.currency == "CNY" {
+                         num = 0.16 * num
+                     }
+                     else if entry.currency == "JPY" {
+                         num = 0.0093 * num
+                     }
+                     else if entry.currency == "EUR" {
+                         num = 1.23 * num
+                     }
+                     else if entry.currency == "GBP" {
+                         num = 1.4 * num
+                     }
+                     else {}
+             
+                     // update category sum
+                     let category = entry.category!
+                     
+                     // update sum
+                     if category != "income" {
+                         b.sum += num
+                     }
+                     
+                     switch category {
+                         case "food":
+                             b.food += num
+                         case "housing":
+                             b.housing += num
+                         case "transport":
+                             b.transport += num
+                         case "travel":
+                             b.travel += num
+                         case "bills":
+                             b.bills += num
+                         case "investments":
+                             b.investments += num
+                         case "shopping":
+                             b.shopping += num
+                         case "health":
+                             b.health += num
+                         case "income":
+                             b.income += num
+                         default:
+                             print("invalid category")
+                     }
+//                      check if the budget of the current month is reached
+                     if b.sum >= b.budget {
+                         reach_budget = true
+                         current_budget = b.budget
+                     }
+                     
+                     break
+                 }
+             }
+         }
+         
+         if new_month {
+        
+             let context = persistentContainer.viewContext
+             let b = BudgetCD(context: context)
+             
+             b.budget = 1000
+             b.sum = 0.0
+             b.month = Int16(current_month!)
+             b.year = Int16(current_year!)
+             b.food = 0.0
+             b.housing = 0.0
+             b.transport = 0.0
+             b.travel = 0.0
+             b.bills = 0.0
+             b.investments = 0.0
+             b.shopping = 0.0
+             b.health = 0.0
+             b.income = 0.0
+             
+             // convert amount to USD
+             if let a = entry.amount {
+                 var num = Double(a)!
+                 
+                 if entry.currency == "RS" {
+                     num = 1 * num
+                 }
+                 if entry.currency == "CAD" {
+                     num = 0.78 * num
+                 }
+                 else if entry.currency == "CNY" {
+                     num = 0.16 * num
+                 }
+                 else if entry.currency == "JPY" {
+                     num = 0.0093 * num
+                 }
+                 else if entry.currency == "EUR" {
+                     num = 1.23 * num
+                 }
+                 else if entry.currency == "GBP" {
+                     num = 1.4 * num
+                 }
+                 else {}
+
+                 
+                 let category = entry.category!
+                 
+                 // update sum
+                 if category != "income" {
+                     b.sum += num
+                 }
+                 
+                 switch category {
+                     case "food":
+                         b.food += num
+                     case "housing":
+                         b.housing += num
+                     case "transport":
+                         b.transport += num
+                     case "travel":
+                         b.travel += num
+                     case "bills":
+                         b.bills += num
+                     case "investments":
+                         b.investments += num
+                     case "shopping":
+                         b.shopping += num
+                     case "health":
+                         b.health += num
+                     case "income":
+                         b.income += num
+                     default:
+                         print("invalid category")
+                 }
+//                  check if the budget of the current month is reached
+                 if b.sum >= b.budget {
+                     reach_budget = false
+                     current_budget = b.budget
+                 }
+             }
+         }
+         
+
+         
+//          display a pop up alert box if budget is reached
+         if reach_budget {
+             createAlert(title: "You've reached your monthly budget: \(String(format: "%.2f", current_budget)) USD", message: "Change your budget?")
+         }
+         
+     }
+     func closePopup(_ sender: Any) {
+         dismiss(animated: true, completion: nil)
+     }
+     
+     // fetch budget data
+     func getBudgetData() {
+         
+         let context = persistentContainer.viewContext
+
+         do {
+             budgets = try context.fetch(BudgetCD.fetchRequest())
+             
+             }  catch {
+             
+             print("Fetching Failed")
+         }
+     }
+    
+     func createAlert (title:String, message:String) {
+
+         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+
+
+
+
+         //CREATING ON BUTTON
+         alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: { (action) in
+             alert.dismiss(animated: true, completion: nil)
+
+         }))
+
+         //close the alert window
+         alert.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.default, handler: { (action) in
+             alert.dismiss(animated: true, completion: nil)
+             print("NO")
+         }))
+
+     }
+    
+    
+}
 

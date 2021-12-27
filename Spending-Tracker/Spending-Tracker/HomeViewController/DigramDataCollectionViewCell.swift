@@ -7,6 +7,7 @@
 
 import UIKit
 import Charts
+import CoreData
 
 
     
@@ -17,69 +18,259 @@ class DigramDataCollectionViewCell: UICollectionViewCell, ChartViewDelegate {
     
     static let identefire = "DigramDataCollectionViewCell"
     
-    let context = PersistentStorage.shared.context
-    var capetil: [CDCapetil]? = []
+    let persistentContainer : NSPersistentContainer = {
+            let container = NSPersistentContainer(name: "CoreDataModel")
+        
+            container.loadPersistentStores(completionHandler: { desc , error in
+                
+                if let readError = error {
+                    print(readError)
+                }
+            })
+        
+        return container
+    }()
     
-       let _labal = UILabel()
-   
+
+    var selected_budget:[BudgetCD] = []
+
+
+      let chartTitle = UILabel ()
+      let currentBudget = UILabel ()
+    
     private let lineChart : LineChartView = {
       
         let lineChart = LineChartView ()
+        return lineChart
         
-    
-      return lineChart
+        
+        
+    }()
+    private let pieChart: PieChartView = {
+      
+        let pieChart = PieChartView ()
+        return pieChart
         
     }()
     
+    private let barChart: HorizontalBarChartView = {
+        
+        let barChart = HorizontalBarChartView ()
+        return barChart
+        
+    }()
+    
+    
+    //init the pie chart data entries
+    
+    var foodDataEntry = PieChartDataEntry (value: 0)
+    var transportDataEntry = PieChartDataEntry (value: 0)
+    var housingDataEntry = PieChartDataEntry (value: 0)
+    var shoppingDataEntry = PieChartDataEntry (value: 0)
+    var healthDataEntry = PieChartDataEntry (value: 0)
+    var billsDataEntry = PieChartDataEntry (value: 0)
+    var investmentsDataEntry = PieChartDataEntry (value: 0)
+    var travelDataEntry = PieChartDataEntry (value: 0)
+    
+    
+    //init the bar char data entries
+    
+    var sumDataEntry = BarChartDataEntry (x: 1.0, y: 0.0)
+    var budgetDataEntry = BarChartDataEntry (x: 2.0, y: 0.0)
+    var incomeDataEntry = BarChartDataEntry (x: 3.0, y: 0.0)
+    
+    
+    var pieEntries = [PieChartDataEntry]()
+    var barEntries = [BarChartDataEntry]()
+    var lineEntries = [ChartDataEntry]()
+    
+    var selected_month: String = "Dec"
+    var selected_month_int: Int = 12
+    var selected_year: Int = 2021
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.addSubview(lineChart)
+        
+        contentView.addSubview(chartTitle)
+        contentView.addSubview(currentBudget)
+        
         lineChart.delegate = self
-        lineChart.frame = CGRect(x: 25, y: 100, width: 350,
-                                height: 250)
+        pieChart.delegate = self
+        barChart.delegate = self
+      
         
-        _labal.text = "Capetil:   "
-        _labal.textAlignment = .left
-        _labal.font = UIFont.systemFont(ofSize: 30)
-        _labal.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         
-        contentView.addSubview(_labal)
         
     }
     
     required init?(coder: NSCoder) {
         fatalError()
+        
     }
+    
+    
     override func layoutSubviews(){
         super.layoutSubviews()
+       
         
-        capetil = PersistentStorage.shared.fetchManagedObject(managedObject: CDCapetil.self)
+
+
         
-//
-//        var entries = [ChartDataEntry]()
-//        var xS = DateComponents(calendar: nil, timeZone: nil, era: nil, year: 2021, month: 1, day: 1, hour: 1, minute: 1, second: 1, nanosecond: nil, weekday: nil, weekdayOrdinal: nil, quarter: nil, weekOfMonth: nil, weekOfYear: nil, yearForWeekOfYear: nil)
-//
-//        var xF = DateComponents(calendar: nil, timeZone: nil, era: nil, year: 2021, month: 1, day: 1, hour: 1, minute: 1, second: 1, nanosecond: nil, weekday: nil, weekdayOrdinal: nil, quarter: nil, weekOfMonth: nil, weekOfYear: nil, yearForWeekOfYear: nil)
-//        var sd = Date(timeIntervalSinceNow: timeInterval(capetil))
+        let now = NSDate()
+        let dateFormatter = DateFormatter()
         
-        for x in 0..<12 {
-            entries.append(ChartDataEntry(x:Double(x),
-                                          // Random number between 0 to 30
-                                          y:Double.random(in:0...12)))
+        dateFormatter.dateFormat = "MMMM"
+        selected_month = dateFormatter.string(from:now as Date)
+        
+        dateFormatter.dateFormat = "M"
+        let selected_month_int = Int(dateFormatter.string(from:now as Date))
+        
+        dateFormatter.dateFormat = "y"
+        let selected_year = Int(dateFormatter.string(from:now as Date))
+
+        
+        // get budget data
+        getSelectedBudget(month:selected_month_int!, year:selected_year!)
+        
+        // access chart description
+        if selected_year != nil {
+            
+            pieChart.chartDescription?.text = ""
+            chartTitle.text = "Report for \(selected_month) \(selected_year!)\nMonthly budget: \(selected_budget[0].index(ofAccessibilityElement: (Any).self))"
+            
+            currentBudget.text = "Balance: \(String(format: "%.2f",selected_budget[0].income - selected_budget[0].sum)) USD"
         }
+        // center the legend
+        pieChart.legend.xOffset += 20
+        pieChart.legend.yOffset += 15
+        pieChart.centerText = "Spending: \(String(format: "%.2f",selected_budget[0].sum)) USD \n Budget: \(String(format: "%.2f",selected_budget[0].budget)) USD"
         
-        let set =  LineChartDataSet(entries : entries)
-        // costemise the chart
-        set.colors = ChartColorTemplates.material()
-        let data = LineChartData(dataSet: set)
-        lineChart.data = data
+        //set the pie chart data entry values and labels
+        foodDataEntry.value = selected_budget[0].food
+        foodDataEntry.label = "Food"
+        
+        transportDataEntry.value = selected_budget[0].transport
+        transportDataEntry.label = "Transport"
+    
+        housingDataEntry.value = selected_budget[0].housing
+        housingDataEntry.label = "Housing"
+        
+        healthDataEntry.value = selected_budget[0].health
+        healthDataEntry.label = "Health"
+        
+        shoppingDataEntry.value = selected_budget[0].shopping
+        shoppingDataEntry.label = "Shopping"
+        
+        billsDataEntry.value = selected_budget[0].bills
+        billsDataEntry.label = "Bills"
+        
+        investmentsDataEntry.value = selected_budget[0].investments
+        investmentsDataEntry.label = "Investments"
+        
+        travelDataEntry.value = selected_budget[0].travel
+        travelDataEntry.label = "Travel"
+        
+    
+        //add entries to the pie chart entry list
+        pieEntries = [foodDataEntry, transportDataEntry, housingDataEntry, healthDataEntry, shoppingDataEntry,
+                    billsDataEntry, investmentsDataEntry, travelDataEntry]
+        
+       
+        
+        budgetDataEntry.y = selected_budget[0].budget
+        sumDataEntry.y = selected_budget[0].sum
+        incomeDataEntry.y = selected_budget[0].income
+        
+        let labels = ["", "Spending", "Budget","Income"]
+        
+        // format bar chart
+        barChart.chartDescription?.text = ""
+        barChart.legend.enabled = false
+        barChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: labels)
+        barChart.xAxis.labelPosition = .bottom
+        barChart.xAxis.drawGridLinesEnabled = false
+        barChart.xAxis.granularityEnabled = true
+        barChart.xAxis.granularity = 1
+        barChart.rightAxis.drawLabelsEnabled = true
+        barChart.rightAxis.drawGridLinesEnabled = false
+        barChart.leftAxis.drawGridLinesEnabled = false
+//        barChart.drawBordersEnabled = false
+//        barChart.minOffset = 0
+        //barChart.leftAxis.spaceTop = 0.0
+        barChart.animate(xAxisDuration: 1.5, yAxisDuration: 1.5, easingOption: .easeInOutQuad)
+        
+         barEntries = [sumDataEntry, budgetDataEntry, incomeDataEntry]
+        lineEntries = [sumDataEntry, budgetDataEntry, incomeDataEntry]
+        
+        updateChartData()
+        
         
         
     }
- 
+    func updateChartData(){
+        
+        
+        let pieChartDataSet = PieChartDataSet(entries: pieEntries, label: nil)
+        let chartData = PieChartData(dataSet: pieChartDataSet)
+        
+        let barDataSet = BarChartDataSet(entries: barEntries, label: "Types")
+        let barData = BarChartData(dataSet: barDataSet)
+        barData.barWidth = barData.barWidth * 0.4 // make the bar width smaller
+        
+        let lineChartDataSet = PieChartDataSet(entries: pieEntries, label: nil)
+        let lineChartData = LineChartData(dataSet: pieChartDataSet)
+        
+        var colors: [UIColor] = []
+        colors.append(UIColor(red: 1, green: 165/255, blue: 0, alpha: 1))
+        colors.append(UIColor(red: 0.3, green: 0.6, blue: 0.3, alpha: 1))
+        colors.append(UIColor(red: 0.3, green: 0.4, blue: 0.9, alpha: 1))
+        colors.append(UIColor(red: 0.4, green: 0.3, blue: 0.5, alpha: 1))
+        colors.append(UIColor(red: 0.6, green: 0.4, blue: 0.5, alpha: 1))
+        colors.append(UIColor(red: 0.9, green: 0.6, blue: 0.7, alpha: 1))
+        colors.append(UIColor(red: 0.9, green: 0.8, blue: 0, alpha: 1))
+        colors.append(UIColor(red: 0.4, green: 0.3, blue: 0, alpha: 1))
+        
+        pieChartDataSet.colors = colors
+        pieChart.data = chartData
+        
+        lineChartDataSet.colors = colors
+        lineChart.data = lineChartData
+        
+        barDataSet.colors = ChartColorTemplates.joyful()
+        barDataSet.drawValuesEnabled = true
+        barChart.data = barData
+        barChart.notifyDataSetChanged()
+    }
     
     
-}
+    //get the current budget
+    func getSelectedBudget(month:Int, year:Int){
+        
+        let context = persistentContainer.viewContext
+
+        
+        do {
+            let budgets:[BudgetCD]  = try context.fetch(BudgetCD.fetchRequest())
+            for b in budgets {
+                let m: Int = Int(b.month)
+                let y: Int = Int(b.year)
+                if (m == month) && (y == year){
+                    selected_budget.append(b)
+                    break
+                }
+            }
+        }
+        catch {
+            print("Fetching Selected Budget Failed")
+        }
+    }
+    
+    }
+
+  
+
+
 
 
     

@@ -10,6 +10,8 @@ import UIKit
 class DigramTableViewCell: UITableViewCell {
 
     static let identefire = "DigramTableViewCell"
+    
+    
     private let collectionView:UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -41,6 +43,7 @@ class DigramTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
         
         collectionView.frame = collectionView.bounds
     }

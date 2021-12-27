@@ -19,14 +19,16 @@
 		6D0C517B276161930020E539 /* ModelApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C517A276161930020E539 /* ModelApi.swift */; };
 		6D0C517D276161D90020E539 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C517C276161D90020E539 /* Model.swift */; };
 		6D0C518027621A720020E539 /* EnterDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C517F27621A720020E539 /* EnterDataViewController.swift */; };
-		6D0C518827662B490020E539 /* ModelDataUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C518727662B480020E539 /* ModelDataUser.swift */; };
-		6D0C518D276781710020E539 /* CapetilDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C518B276781700020E539 /* CapetilDataModel.xcdatamodeld */; };
 		6D0C51A02768C0AE0020E539 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C519F2768C0AD0020E539 /* HomeViewController.swift */; };
 		6D0C51A22768C1480020E539 /* DigramTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C51A12768C1470020E539 /* DigramTableViewCell.swift */; };
 		6D0C51A42768CEF80020E539 /* DigramDataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C51A32768CEF80020E539 /* DigramDataCollectionViewCell.swift */; };
 		6D0C51A62769D02A0020E539 /* Incom+SpendingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C51A52769D0290020E539 /* Incom+SpendingsTableViewCell.swift */; };
-		6D0C51AE2769D4640020E539 /* CDCapetil+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C51AD2769D4630020E539 /* CDCapetil+CoreDataClass.swift */; };
-		6D0C51B22769D4A00020E539 /* CDCapetil+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C51B12769D4A00020E539 /* CDCapetil+CoreData.swift */; };
+		6D9F37D72771E44A00EDFB96 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6D9F37D52771E44A00EDFB96 /* CoreDataModel.xcdatamodeld */; };
+		6DD71C2A277885DB00C5B7D3 /* ModelDataUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD71C29277885DA00C5B7D3 /* ModelDataUser.swift */; };
+		6DD71C3327789F1400C5B7D3 /* CDEntry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD71C2F27789F1300C5B7D3 /* CDEntry+CoreDataProperties.swift */; };
+		6DD71C3527789F1400C5B7D3 /* CDEntry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD71C3127789F1400C5B7D3 /* CDEntry+CoreDataClass.swift */; };
+		6DD71C392778A2C000C5B7D3 /* BudgetCD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD71C372778A2C000C5B7D3 /* BudgetCD+CoreDataClass.swift */; };
+		6DD71C3A2778A2C000C5B7D3 /* BudgetCD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD71C382778A2C000C5B7D3 /* BudgetCD+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,14 +46,16 @@
 		6D0C517A276161930020E539 /* ModelApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelApi.swift; sourceTree = "<group>"; };
 		6D0C517C276161D90020E539 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		6D0C517F27621A720020E539 /* EnterDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterDataViewController.swift; sourceTree = "<group>"; };
-		6D0C518727662B480020E539 /* ModelDataUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDataUser.swift; sourceTree = "<group>"; };
-		6D0C518C276781700020E539 /* CapetilDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CapetilDataModel.xcdatamodel; sourceTree = "<group>"; };
 		6D0C519F2768C0AD0020E539 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6D0C51A12768C1470020E539 /* DigramTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigramTableViewCell.swift; sourceTree = "<group>"; };
 		6D0C51A32768CEF80020E539 /* DigramDataCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigramDataCollectionViewCell.swift; sourceTree = "<group>"; };
 		6D0C51A52769D0290020E539 /* Incom+SpendingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Incom+SpendingsTableViewCell.swift"; sourceTree = "<group>"; };
-		6D0C51AD2769D4630020E539 /* CDCapetil+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CDCapetil+CoreDataClass.swift"; path = "../../../../../.Trash/CDCapetil+CoreDataClass.swift"; sourceTree = "<group>"; };
-		6D0C51B12769D4A00020E539 /* CDCapetil+CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CDCapetil+CoreData.swift"; path = "../../../../../.Trash/CDCapetil+CoreData.swift"; sourceTree = "<group>"; };
+		6D9F37D62771E44A00EDFB96 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		6DD71C29277885DA00C5B7D3 /* ModelDataUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelDataUser.swift; sourceTree = "<group>"; };
+		6DD71C2F27789F1300C5B7D3 /* CDEntry+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDEntry+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6DD71C3127789F1400C5B7D3 /* CDEntry+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDEntry+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6DD71C372778A2C000C5B7D3 /* BudgetCD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BudgetCD+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6DD71C382778A2C000C5B7D3 /* BudgetCD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BudgetCD+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C99067058E69096FD9D9EA9E /* Pods-Spending-Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spending-Tracker.release.xcconfig"; path = "Target Support Files/Pods-Spending-Tracker/Pods-Spending-Tracker.release.xcconfig"; sourceTree = "<group>"; };
 		F664A40AF60A8E7B9CD94B94 /* Pods-Spending-Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spending-Tracker.debug.xcconfig"; path = "Target Support Files/Pods-Spending-Tracker/Pods-Spending-Tracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,6 +75,8 @@
 		6D0C5154275FF4AA0020E539 = {
 			isa = PBXGroup;
 			children = (
+				6DD71C372778A2C000C5B7D3 /* BudgetCD+CoreDataClass.swift */,
+				6DD71C382778A2C000C5B7D3 /* BudgetCD+CoreDataProperties.swift */,
 				6D0C515F275FF4AA0020E539 /* Spending-Tracker */,
 				6D0C515E275FF4AA0020E539 /* Products */,
 				C8FD8547A81E3EA3C2C7CD01 /* Pods */,
@@ -89,8 +95,10 @@
 		6D0C515F275FF4AA0020E539 /* Spending-Tracker */ = {
 			isa = PBXGroup;
 			children = (
-				6D0C51A82769D20D0020E539 /* SginIn+SginUp+Model */,
+				6DD71C3127789F1400C5B7D3 /* CDEntry+CoreDataClass.swift */,
+				6DD71C2F27789F1300C5B7D3 /* CDEntry+CoreDataProperties.swift */,
 				6D0C518627662B280020E539 /* EnterDataviewController+ModelDataUser */,
+				6D0C51A82769D20D0020E539 /* SginIn+SginUp+Model */,
 				6D0C51A72769D1CE0020E539 /* HomeViewController */,
 				6D0C5160275FF4AA0020E539 /* AppDelegate.swift */,
 				6D0C5162275FF4AA0020E539 /* SceneDelegate.swift */,
@@ -99,9 +107,7 @@
 				6D0C516B275FF4AD0020E539 /* LaunchScreen.storyboard */,
 				6D0C516E275FF4AD0020E539 /* Info.plist */,
 				6D0C51742760A3340020E539 /* GoogleService-Info.plist */,
-				6D0C51AD2769D4630020E539 /* CDCapetil+CoreDataClass.swift */,
-				6D0C51B12769D4A00020E539 /* CDCapetil+CoreData.swift */,
-				6D0C518B276781700020E539 /* CapetilDataModel.xcdatamodeld */,
+				6D9F37D52771E44A00EDFB96 /* CoreDataModel.xcdatamodeld */,
 			);
 			path = "Spending-Tracker";
 			sourceTree = "<group>";
@@ -119,7 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				6D0C517F27621A720020E539 /* EnterDataViewController.swift */,
-				6D0C518727662B480020E539 /* ModelDataUser.swift */,
+				6DD71C29277885DA00C5B7D3 /* ModelDataUser.swift */,
 			);
 			path = "EnterDataviewController+ModelDataUser";
 			sourceTree = "<group>";
@@ -281,18 +287,20 @@
 				6D0C517B276161930020E539 /* ModelApi.swift in Sources */,
 				6D0C518027621A720020E539 /* EnterDataViewController.swift in Sources */,
 				6D0C51A22768C1480020E539 /* DigramTableViewCell.swift in Sources */,
+				6D9F37D72771E44A00EDFB96 /* CoreDataModel.xcdatamodeld in Sources */,
 				6D0C5165275FF4AA0020E539 /* SiginInViewController.swift in Sources */,
-				6D0C518827662B490020E539 /* ModelDataUser.swift in Sources */,
-				6D0C51B22769D4A00020E539 /* CDCapetil+CoreData.swift in Sources */,
+				6DD71C2A277885DB00C5B7D3 /* ModelDataUser.swift in Sources */,
 				6D0C5161275FF4AA0020E539 /* AppDelegate.swift in Sources */,
 				6D0C51A02768C0AE0020E539 /* HomeViewController.swift in Sources */,
-				6D0C51AE2769D4640020E539 /* CDCapetil+CoreDataClass.swift in Sources */,
 				6D0C51A62769D02A0020E539 /* Incom+SpendingsTableViewCell.swift in Sources */,
-				6D0C518D276781710020E539 /* CapetilDataModel.xcdatamodeld in Sources */,
 				6D0C517D276161D90020E539 /* Model.swift in Sources */,
 				6D0C5179276159860020E539 /* SginUpViewController.swift in Sources */,
+				6DD71C3A2778A2C000C5B7D3 /* BudgetCD+CoreDataProperties.swift in Sources */,
+				6DD71C3327789F1400C5B7D3 /* CDEntry+CoreDataProperties.swift in Sources */,
 				6D0C51A42768CEF80020E539 /* DigramDataCollectionViewCell.swift in Sources */,
+				6DD71C392778A2C000C5B7D3 /* BudgetCD+CoreDataClass.swift in Sources */,
 				6D0C5163275FF4AA0020E539 /* SceneDelegate.swift in Sources */,
+				6DD71C3527789F1400C5B7D3 /* CDEntry+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,13 +524,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		6D0C518B276781700020E539 /* CapetilDataModel.xcdatamodeld */ = {
+		6D9F37D52771E44A00EDFB96 /* CoreDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				6D0C518C276781700020E539 /* CapetilDataModel.xcdatamodel */,
+				6D9F37D62771E44A00EDFB96 /* CoreDataModel.xcdatamodel */,
 			);
-			currentVersion = 6D0C518C276781700020E539 /* CapetilDataModel.xcdatamodel */;
-			path = CapetilDataModel.xcdatamodeld;
+			currentVersion = 6D9F37D62771E44A00EDFB96 /* CoreDataModel.xcdatamodel */;
+			path = CoreDataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -19,16 +19,20 @@ class HomeViewController: UIViewController {
         return tableView
     }()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         view.addSubview(_tableView)
         _tableView.delegate = self
         _tableView.dataSource = self
+        _tableView.reloadData()
         // Do any additional setup after loading the view.
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         _tableView.frame = view.bounds
+        
         
     }
     
