@@ -32,7 +32,9 @@ class EnterDataViewController:  UIViewController, UIPickerViewDataSource, UIPick
 //    let context = PersistentStorage.shared.context
    
     let currency = ["USD", "CAD", "CNY", "EUR", "GBP", "JPY","RS"]
-    let category = ["Food", "Housing", "Transport", "Shopping", "Health", "Travel", "Bills", "Investments", "Income"]
+
+   
+    let category = [NSLocalizedString("Food", comment: ""), NSLocalizedString("Housing", comment: ""), NSLocalizedString("Transport", comment: ""), NSLocalizedString("Shopping", comment: ""), NSLocalizedString("Health", comment: ""), NSLocalizedString("Travel", comment: ""), NSLocalizedString("Bills", comment: ""), NSLocalizedString("Investments", comment: ""), NSLocalizedString("Income", comment: "")]
     var selectedCur = "USD"
     var selectedCat = "Food"
     var imageFilePath = ""
@@ -45,10 +47,9 @@ class EnterDataViewController:  UIViewController, UIPickerViewDataSource, UIPick
       
         var pickerView = UIPickerView()
         pickerView.translatesAutoresizingMaskIntoConstraints = false
-        pickerView = UIPickerView(frame: CGRect(x: 100, y: 400, width: 200, height: 80))
-        
-        
-        
+        pickerView = UIPickerView(frame: CGRect(x: 220, y: 350, width: 150, height: 80))
+        pickerView.backgroundColor = .systemPurple.withAlphaComponent(0.9)
+        pickerView.layer.cornerRadius = 16
         return pickerView
     }()
     
@@ -56,37 +57,38 @@ class EnterDataViewController:  UIViewController, UIPickerViewDataSource, UIPick
 
         var pickerView = UIPickerView()
         pickerView.translatesAutoresizingMaskIntoConstraints = false
-        pickerView = UIPickerView(frame: CGRect(x: 100, y:250, width: 200, height: 80))
-        
-          
+        pickerView = UIPickerView(frame: CGRect(x: 20, y:350, width: 150, height: 80))
+        pickerView.backgroundColor = .systemPurple.withAlphaComponent(0.9)
+        pickerView.layer.cornerRadius = 16
           return pickerView
     }()
     
     private var currencyLabal : UILabel = {
         var labal = UILabel()
-        labal = UILabel(frame: CGRect(x: 160, y: 500, width: 80, height: 40))
-        labal.text = "currency"
+        labal.translatesAutoresizingMaskIntoConstraints = false
+        labal = UILabel(frame: CGRect(x: 260, y: 440, width: 80, height: 40))
+        labal.text = NSLocalizedString("currency", comment: "")
         labal.font = UIFont.systemFont(ofSize: 14)
         labal.textAlignment = .center
-        labal.backgroundColor = UIColor.lightGray.withAlphaComponent(0.6)
-        labal.layer.cornerRadius = 3
-        
-        
-        
-        
-        
+        labal.layer.backgroundColor = UIColor.systemPurple.cgColor
+        labal.layer.cornerRadius = 16
+        labal.textColor = .white
+      
         return labal
     }()
     
     private var categoryLabal : UILabel = {
         var labal = UILabel()
-        labal.text = "category"
-        labal = UILabel(frame: CGRect(x: 160, y: 350, width: 80, height: 40))
+        
+        labal.translatesAutoresizingMaskIntoConstraints = false
+        labal = UILabel(frame: CGRect(x: 55, y: 440, width: 80, height: 40))
+        labal.text = NSLocalizedString("category", comment: "")
         labal.font = UIFont.systemFont(ofSize: 14)
         labal.textAlignment = .center
-        labal.backgroundColor = UIColor.lightGray.withAlphaComponent(0.6)
-        labal.layer.cornerRadius = 3
-      
+        labal.layer.backgroundColor = UIColor.systemPurple.cgColor
+        labal.layer.cornerRadius = 16
+        labal.textColor = .white
+
         return labal
     }()
     
@@ -95,10 +97,9 @@ class EnterDataViewController:  UIViewController, UIPickerViewDataSource, UIPick
         
         
         var botton = UIButton()
-        botton = UIButton(frame: CGRect(x: 180, y: 700, width: 200, height: 80))
         botton.translatesAutoresizingMaskIntoConstraints = false
-        botton.setTitle("Next", for: [])
-        botton.backgroundColor = UIColor.lightGray.withAlphaComponent(0.6)
+        botton.setTitle(NSLocalizedString("Next", comment: ""), for: [])
+        botton.backgroundColor = UIColor.systemPurple
         botton.layer.cornerRadius = 12
         botton.sizeToFit()
         botton.addTarget(self, action: #selector(buttonNextAction), for: .touchUpInside)
@@ -112,10 +113,10 @@ class EnterDataViewController:  UIViewController, UIPickerViewDataSource, UIPick
     private var numberField : UITextField = {
         var textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField = UITextField(frame: CGRect(x: 100, y: 600, width: 200, height: 40))
+        textField = UITextField(frame: CGRect(x: 100, y: 550, width: 200, height: 40))
         textField.keyboardType = .default
         textField.layer.cornerRadius = 6
-        textField.placeholder = "number..."
+        textField.placeholder = NSLocalizedString("number...", comment: "")
         textField.font = UIFont.systemFont(ofSize: 15)
         textField.borderStyle = UITextField.BorderStyle.roundedRect
         textField.autocorrectionType = UITextAutocorrectionType.no
@@ -129,10 +130,10 @@ class EnterDataViewController:  UIViewController, UIPickerViewDataSource, UIPick
     private var noteField : UITextField = {
         var textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField = UITextField(frame: CGRect(x: 100, y: 150, width: 200, height: 40))
+        textField = UITextField(frame: CGRect(x: 100, y: 600, width: 200, height: 40))
         textField.keyboardType = .default
         textField.layer.cornerRadius = 6
-        textField.placeholder = "note..."
+        textField.placeholder = NSLocalizedString("what did you spend it on ?", comment: "")
         textField.font = UIFont.systemFont(ofSize: 15)
         textField.borderStyle = UITextField.BorderStyle.roundedRect
         textField.autocorrectionType = UITextAutocorrectionType.no
@@ -147,8 +148,7 @@ class EnterDataViewController:  UIViewController, UIPickerViewDataSource, UIPick
     
 override func viewDidLoad() {
     super.viewDidLoad()
-    
-    view.backgroundColor = .link
+    view.backgroundColor = .systemCyan
     view.addSubview(currencyLabal)
     view.addSubview(categoryLabal)
     view.addSubview(pickviewCur)
@@ -161,7 +161,7 @@ override func viewDidLoad() {
     pickviewCur.delegate = self
     pickviewCur.dataSource = self
     
-    
+    constrainsBottons()
     
 
     
@@ -171,11 +171,19 @@ override func viewDidLoad() {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         numberField.resignFirstResponder()
          noteField.resignFirstResponder()
-    
-    
+        
+    }
+    func constrainsBottons(){
+        
+        
+        bottonNext.centerXAnchor.constraint(equalTo:self.view.centerXAnchor).isActive = true
+        bottonNext.bottomAnchor.constraint(equalTo:self.view.safeAreaLayoutGuide.bottomAnchor, constant: -100).isActive = true
+        bottonNext.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
+        bottonNext.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
+        bottonNext.addTarget(self, action: #selector(buttonNextAction), for: .touchUpInside)
     }
     
-    //return the number of components based on the pickerView
+        //return the number of components based on the pickerView
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         if pickerView == pickviewCur{
             return 1
@@ -213,28 +221,30 @@ override func viewDidLoad() {
         if pickerView == pickviewCur{
             currencyLabal.text = currency[row]
             selectedCur = currency[row]
+            
         }
         else if pickerView == pickviewCat{
             categoryLabal.text = category[row]
             selectedCat = category[row]
         }
-    
    
     }
           
-    
+   
      
      @objc func buttonNextAction(sender: UIButton!) {
          
          print("Button tapped")
          
          performSegue(withIdentifier: "ToHome", sender: nil)
-         
+//
          let context = persistentContainer.viewContext
          let entry = CDEntry(context: context) // Link Entry & Context
          
          if Double(numberField.text!) != nil{
              entry.amount = numberField.text!
+             
+             print("stage one")
          }
          else{
              entry.amount = "0.00"
@@ -244,7 +254,8 @@ override func viewDidLoad() {
          entry.category = selectedCat.lowercased()
          entry.currency = selectedCur
          entry.note = noteField.text!
-         
+         print("stage two")
+
          let now = NSDate()
          let dateFormatter = DateFormatter()
 
@@ -257,21 +268,27 @@ override func viewDidLoad() {
          let current_year = Int(dateFormatter.string(from:now as Date))
              
          
-//         getBudgetData()
+         getBudgetData()
          var new_month = true
          var reach_budget = false
          var current_budget = 0.0
+         
+         print("stage 3")
 
          for b in budgets {
+             
+             print("stage 4")
+
              let m: Int = Int(b.month)
              let y: Int = Int(b.year)
-             
-             if (m == current_month!) && (y == current_year!){
+
+             if (m == current_month ?? 0) && (y == current_year ?? 0){
+                 print("stage 5")
                  new_month = false
                  if let a = entry.amount {
                      var num = Double(a)!
-                    
-                     
+               
+
                      if entry.currency == "RS" {
                          num = 1 * num
                      }
@@ -290,13 +307,17 @@ override func viewDidLoad() {
                      else if entry.currency == "GBP" {
                          num = 1.4 * num
                      }
-                     else {}
-             
+                     else {                     print("stage 6")
+}
+                     print("stage 6.5")
+
                      // update category sum
                      let category = entry.category!
-                     
                      // update sum
                      if category != "income" {
+                         
+                         print("stage 6.9")
+
                          b.sum += num
                      }
                      
@@ -333,15 +354,17 @@ override func viewDidLoad() {
              }
          }
          
-         if new_month {
         
+         if new_month {
+             print("stage 7")
+
              let context = persistentContainer.viewContext
              let b = BudgetCD(context: context)
              
              b.budget = 1000
              b.sum = 0.0
-             b.month = Int16(current_month!)
-             b.year = Int16(current_year!)
+             b.month = Int16(current_month ?? 0)
+             b.year = Int16(current_year ?? 0)
              b.food = 0.0
              b.housing = 0.0
              b.transport = 0.0
@@ -355,7 +378,8 @@ override func viewDidLoad() {
              // convert amount to USD
              if let a = entry.amount {
                  var num = Double(a)!
-                 
+                 print("stage 8")
+
                  if entry.currency == "RS" {
                      num = 1 * num
                  }
@@ -374,9 +398,11 @@ override func viewDidLoad() {
                  else if entry.currency == "GBP" {
                      num = 1.4 * num
                  }
-                 else {}
+                 else {         print("stage 10")
+}
 
-                 
+                 print("stage 9")
+
                  let category = entry.category!
                  
                  // update sum
@@ -408,18 +434,30 @@ override func viewDidLoad() {
                  }
 //                  check if the budget of the current month is reached
                  if b.sum >= b.budget {
+                     print("stage 11")
+
                      reach_budget = false
                      current_budget = b.budget
                  }
              }
          }
          
+         do{
+             print("save")
 
+             try context.save()
+             
+         }catch{
+             print("not save")
+         }
          
 //          display a pop up alert box if budget is reached
          if reach_budget {
+             
              createAlert(title: "You've reached your monthly budget: \(String(format: "%.2f", current_budget)) USD", message: "Change your budget?")
          }
+         print("stage 12")
+
          
      }
      func closePopup(_ sender: Any) {
@@ -460,6 +498,7 @@ override func viewDidLoad() {
          }))
 
      }
+    
     
     
 }

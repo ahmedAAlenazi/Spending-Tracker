@@ -1,5 +1,5 @@
 //
-//  CDBudget+CoreDataProperties.swift
+//  BudgetCD+CoreDataProperties.swift
 //  Spending-Tracker
 //
 //  Created by Ahmed Alenazi on 22/05/1443 AH.
@@ -10,10 +10,10 @@ import Foundation
 import CoreData
 
 
-extension CDBudget {
+extension BudgetCD {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<CDBudget> {
-        return NSFetchRequest<CDBudget>(entityName: "CDBudget")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<BudgetCD> {
+        return NSFetchRequest<BudgetCD>(entityName: "BudgetCD")
     }
 
     @NSManaged public var bills: Double
@@ -32,6 +32,8 @@ extension CDBudget {
 
 }
 
-extension CDBudget : Identifiable {
-
+extension BudgetCD : Identifiable {
+    
+    
+    
 }

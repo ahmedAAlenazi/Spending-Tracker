@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "papers.co-sj92-blue-purple-light-gradation-blur-34-iphone6-plus-wallpaper.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

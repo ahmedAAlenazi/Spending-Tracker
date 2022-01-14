@@ -1,0 +1,77 @@
+/* 
+  Localizable.strings
+  Spending-Tracker
+
+  Created by Ahmed Alenazi on 10/06/1443 AH.
+  
+*/
+
+//SiginInViewController
+
+"email..." = "الإيميل...";
+"password..." = "كلمة المرور...";
+"SignIn" = "تسجيل الدخول";
+"You dont't have an account?" = "ليس لديك حساب ؟";
+
+//SginUpViewController
+
+"phon number..." = "رقم الهاتف ...";
+"Sign up" = "التسجيل";
+
+//EnterDataViewController
+
+"currency" = "العمله";
+"category" = "الفئة";
+"Next" = "التالي";
+"number..." = "الرقم";
+"what did you spend it on ?" = "مالذي انفقتها عليه";
+"Food" = "الطعام";
+"Housing" = "السكن";
+"Transport" = "المواصلات";
+"Health" = "الصحة";
+"Travel" = "السفر";
+"Bills" = "الفواتير";
+"Investments" = "الاستثمارات";
+"Income" = "دخل";
+
+//DigramTableViewCell
+
+"Upper Limit" = "الحد الأعلى";
+"Lower Limit" = "الحد الأدنى";
+
+//pieTableViewCell
+
+"Shopping" = "التسوق";
+
+//OptionViewController
+
+"anniuty" = "دخل سنوي";
+"averege" = "معدل";
+"double" = "المضاعف";
+"Simple Interest" = "الفائدة البسيطه";
+"Compound interest" = "الفائدة المركبة";
+"cash flow" = "التدفق المالي";
+"budget" = "ميزانية التوفير";
+
+// AnnuityViewController
+"Payment" = "الدفع";
+"Interest (%)" = "فائدة (٪)";
+"Number of Payments" = "عدد الدفعات";
+"Calculate" = "احسب";
+"Present" = "الحالي";
+"Future" = "المستقبل";
+
+//LeverageViewController
+"Liabilities" = "المسؤوليات";
+"Debts" = "الديون";
+"Income" = "دخل";
+"Result" = "الناتج";
+//SimpleInterestVC
+"Principal" = "الاساسي";
+"Periods" = "فترات";
+
+//CompoundViewController
+"Compoundings" = "المضاعفات";
+
+//CashFlowViewController
+"Expenses" = "النفقات";

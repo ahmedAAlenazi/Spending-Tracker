@@ -22,13 +22,30 @@
 		6D0C51A02768C0AE0020E539 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C519F2768C0AD0020E539 /* HomeViewController.swift */; };
 		6D0C51A22768C1480020E539 /* DigramTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C51A12768C1470020E539 /* DigramTableViewCell.swift */; };
 		6D0C51A42768CEF80020E539 /* DigramDataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C51A32768CEF80020E539 /* DigramDataCollectionViewCell.swift */; };
-		6D0C51A62769D02A0020E539 /* Incom+SpendingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C51A52769D0290020E539 /* Incom+SpendingsTableViewCell.swift */; };
+		6D1D5681278ABD5500451833 /* BudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D5680278ABD5500451833 /* BudgetViewController.swift */; };
+		6D1D5683278ABDC300451833 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D5682278ABDC300451833 /* Functions.swift */; };
+		6D1D5685278ABE3400451833 /* ExpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D5684278ABE3400451833 /* ExpensesViewController.swift */; };
+		6D1D5687278ABEBC00451833 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D5686278ABEBC00451833 /* SummaryViewController.swift */; };
+		6D1D5689278ABFC700451833 /* AnniutyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D5688278ABFC700451833 /* AnniutyViewController.swift */; };
+		6D1D568B278AC01800451833 /* LaveregeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D568A278AC01800451833 /* LaveregeViewController.swift */; };
+		6D1D568D278AC19D00451833 /* DoubleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D568C278AC19D00451833 /* DoubleViewController.swift */; };
+		6D1D568F278AC26200451833 /* SimpleIntrestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D568E278AC26200451833 /* SimpleIntrestViewController.swift */; };
+		6D1D5691278AC2BC00451833 /* CompoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D5690278AC2BC00451833 /* CompoundViewController.swift */; };
+		6D1D5693278AC2F600451833 /* CashFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D5692278AC2F600451833 /* CashFlowViewController.swift */; };
+		6D1D5699278C28CF00451833 /* OptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D5698278C28CE00451833 /* OptionViewController.swift */; };
+		6D1D569B278C6C3100451833 /* BarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D569A278C6C3100451833 /* BarTableViewCell.swift */; };
+		6D1D569D278D612300451833 /* pieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D569C278D612200451833 /* pieTableViewCell.swift */; };
+		6D1D56A02790067A00451833 /* button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D569F2790067900451833 /* button.swift */; };
+		6D1D56A527900D0B00451833 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D1D56A727900D0B00451833 /* Localizable.strings */; };
 		6D9F37D72771E44A00EDFB96 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6D9F37D52771E44A00EDFB96 /* CoreDataModel.xcdatamodeld */; };
+		6DA5264127857FF3006CA1A0 /* searchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA5264027857FF3006CA1A0 /* searchTableViewController.swift */; };
+		6DA526462786CBF4006CA1A0 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA526452786CBF4006CA1A0 /* TestViewController.swift */; };
 		6DD71C2A277885DB00C5B7D3 /* ModelDataUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD71C29277885DA00C5B7D3 /* ModelDataUser.swift */; };
 		6DD71C3327789F1400C5B7D3 /* CDEntry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD71C2F27789F1300C5B7D3 /* CDEntry+CoreDataProperties.swift */; };
 		6DD71C3527789F1400C5B7D3 /* CDEntry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD71C3127789F1400C5B7D3 /* CDEntry+CoreDataClass.swift */; };
-		6DD71C392778A2C000C5B7D3 /* BudgetCD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD71C372778A2C000C5B7D3 /* BudgetCD+CoreDataClass.swift */; };
-		6DD71C3A2778A2C000C5B7D3 /* BudgetCD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD71C382778A2C000C5B7D3 /* BudgetCD+CoreDataProperties.swift */; };
+		6DD71C44277AE6D600C5B7D3 /* BudgetCD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD71C42277AE6D600C5B7D3 /* BudgetCD+CoreDataProperties.swift */; };
+		6DD71C45277AE6D600C5B7D3 /* BudgetCD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD71C43277AE6D600C5B7D3 /* BudgetCD+CoreDataClass.swift */; };
+		6DD71C47277AE80C00C5B7D3 /* digramsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD71C46277AE80C00C5B7D3 /* digramsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,13 +66,32 @@
 		6D0C519F2768C0AD0020E539 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6D0C51A12768C1470020E539 /* DigramTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigramTableViewCell.swift; sourceTree = "<group>"; };
 		6D0C51A32768CEF80020E539 /* DigramDataCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigramDataCollectionViewCell.swift; sourceTree = "<group>"; };
-		6D0C51A52769D0290020E539 /* Incom+SpendingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Incom+SpendingsTableViewCell.swift"; sourceTree = "<group>"; };
+		6D1D5680278ABD5500451833 /* BudgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetViewController.swift; sourceTree = "<group>"; };
+		6D1D5682278ABDC300451833 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		6D1D5684278ABE3400451833 /* ExpensesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesViewController.swift; sourceTree = "<group>"; };
+		6D1D5686278ABEBC00451833 /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
+		6D1D5688278ABFC700451833 /* AnniutyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnniutyViewController.swift; sourceTree = "<group>"; };
+		6D1D568A278AC01800451833 /* LaveregeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaveregeViewController.swift; sourceTree = "<group>"; };
+		6D1D568C278AC19D00451833 /* DoubleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleViewController.swift; sourceTree = "<group>"; };
+		6D1D568E278AC26200451833 /* SimpleIntrestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleIntrestViewController.swift; sourceTree = "<group>"; };
+		6D1D5690278AC2BC00451833 /* CompoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundViewController.swift; sourceTree = "<group>"; };
+		6D1D5692278AC2F600451833 /* CashFlowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowViewController.swift; sourceTree = "<group>"; };
+		6D1D5698278C28CE00451833 /* OptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionViewController.swift; sourceTree = "<group>"; };
+		6D1D569A278C6C3100451833 /* BarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarTableViewCell.swift; sourceTree = "<group>"; };
+		6D1D569C278D612200451833 /* pieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pieTableViewCell.swift; sourceTree = "<group>"; };
+		6D1D569F2790067900451833 /* button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = button.swift; sourceTree = "<group>"; };
+		6D1D56A127900BD200451833 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		6D1D56A227900BD400451833 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		6D1D56A627900D0B00451833 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6D9F37D62771E44A00EDFB96 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		6DA5264027857FF3006CA1A0 /* searchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchTableViewController.swift; sourceTree = "<group>"; };
+		6DA526452786CBF4006CA1A0 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		6DD71C29277885DA00C5B7D3 /* ModelDataUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelDataUser.swift; sourceTree = "<group>"; };
 		6DD71C2F27789F1300C5B7D3 /* CDEntry+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDEntry+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		6DD71C3127789F1400C5B7D3 /* CDEntry+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDEntry+CoreDataClass.swift"; sourceTree = "<group>"; };
-		6DD71C372778A2C000C5B7D3 /* BudgetCD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BudgetCD+CoreDataClass.swift"; sourceTree = "<group>"; };
-		6DD71C382778A2C000C5B7D3 /* BudgetCD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BudgetCD+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6DD71C42277AE6D600C5B7D3 /* BudgetCD+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BudgetCD+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6DD71C43277AE6D600C5B7D3 /* BudgetCD+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BudgetCD+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6DD71C46277AE80C00C5B7D3 /* digramsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = digramsViewController.swift; sourceTree = "<group>"; };
 		C99067058E69096FD9D9EA9E /* Pods-Spending-Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spending-Tracker.release.xcconfig"; path = "Target Support Files/Pods-Spending-Tracker/Pods-Spending-Tracker.release.xcconfig"; sourceTree = "<group>"; };
 		F664A40AF60A8E7B9CD94B94 /* Pods-Spending-Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spending-Tracker.debug.xcconfig"; path = "Target Support Files/Pods-Spending-Tracker/Pods-Spending-Tracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,8 +111,6 @@
 		6D0C5154275FF4AA0020E539 = {
 			isa = PBXGroup;
 			children = (
-				6DD71C372778A2C000C5B7D3 /* BudgetCD+CoreDataClass.swift */,
-				6DD71C382778A2C000C5B7D3 /* BudgetCD+CoreDataProperties.swift */,
 				6D0C515F275FF4AA0020E539 /* Spending-Tracker */,
 				6D0C515E275FF4AA0020E539 /* Products */,
 				C8FD8547A81E3EA3C2C7CD01 /* Pods */,
@@ -95,19 +129,36 @@
 		6D0C515F275FF4AA0020E539 /* Spending-Tracker */ = {
 			isa = PBXGroup;
 			children = (
-				6DD71C3127789F1400C5B7D3 /* CDEntry+CoreDataClass.swift */,
-				6DD71C2F27789F1300C5B7D3 /* CDEntry+CoreDataProperties.swift */,
 				6D0C518627662B280020E539 /* EnterDataviewController+ModelDataUser */,
 				6D0C51A82769D20D0020E539 /* SginIn+SginUp+Model */,
 				6D0C51A72769D1CE0020E539 /* HomeViewController */,
+				6DD71C46277AE80C00C5B7D3 /* digramsViewController.swift */,
+				6D0C51A32768CEF80020E539 /* DigramDataCollectionViewCell.swift */,
+				6DA5264027857FF3006CA1A0 /* searchTableViewController.swift */,
 				6D0C5160275FF4AA0020E539 /* AppDelegate.swift */,
 				6D0C5162275FF4AA0020E539 /* SceneDelegate.swift */,
+				6D1D56A727900D0B00451833 /* Localizable.strings */,
 				6D0C5166275FF4AA0020E539 /* Main.storyboard */,
 				6D0C5169275FF4AD0020E539 /* Assets.xcassets */,
 				6D0C516B275FF4AD0020E539 /* LaunchScreen.storyboard */,
 				6D0C516E275FF4AD0020E539 /* Info.plist */,
 				6D0C51742760A3340020E539 /* GoogleService-Info.plist */,
 				6D9F37D52771E44A00EDFB96 /* CoreDataModel.xcdatamodeld */,
+				6DD71C43277AE6D600C5B7D3 /* BudgetCD+CoreDataClass.swift */,
+				6DD71C42277AE6D600C5B7D3 /* BudgetCD+CoreDataProperties.swift */,
+				6DD71C3127789F1400C5B7D3 /* CDEntry+CoreDataClass.swift */,
+				6DD71C2F27789F1300C5B7D3 /* CDEntry+CoreDataProperties.swift */,
+				6DA526452786CBF4006CA1A0 /* TestViewController.swift */,
+				6D1D5682278ABDC300451833 /* Functions.swift */,
+				6D1D5688278ABFC700451833 /* AnniutyViewController.swift */,
+				6D1D568A278AC01800451833 /* LaveregeViewController.swift */,
+				6D1D568C278AC19D00451833 /* DoubleViewController.swift */,
+				6D1D568E278AC26200451833 /* SimpleIntrestViewController.swift */,
+				6D1D5690278AC2BC00451833 /* CompoundViewController.swift */,
+				6D1D5692278AC2F600451833 /* CashFlowViewController.swift */,
+				6D1D569E278D9DCD00451833 /* optionControllers */,
+				6D1D5694278AF7D100451833 /* budget */,
+				6D1D569F2790067900451833 /* button.swift */,
 			);
 			path = "Spending-Tracker";
 			sourceTree = "<group>";
@@ -133,9 +184,9 @@
 		6D0C51A72769D1CE0020E539 /* HomeViewController */ = {
 			isa = PBXGroup;
 			children = (
-				6D0C51A52769D0290020E539 /* Incom+SpendingsTableViewCell.swift */,
-				6D0C51A32768CEF80020E539 /* DigramDataCollectionViewCell.swift */,
 				6D0C51A12768C1470020E539 /* DigramTableViewCell.swift */,
+				6D1D569A278C6C3100451833 /* BarTableViewCell.swift */,
+				6D1D569C278D612200451833 /* pieTableViewCell.swift */,
 				6D0C519F2768C0AD0020E539 /* HomeViewController.swift */,
 			);
 			path = HomeViewController;
@@ -149,6 +200,24 @@
 				6D0C517E2761622A0020E539 /* ModelUserApi */,
 			);
 			path = "SginIn+SginUp+Model";
+			sourceTree = "<group>";
+		};
+		6D1D5694278AF7D100451833 /* budget */ = {
+			isa = PBXGroup;
+			children = (
+				6D1D5686278ABEBC00451833 /* SummaryViewController.swift */,
+				6D1D5684278ABE3400451833 /* ExpensesViewController.swift */,
+				6D1D5680278ABD5500451833 /* BudgetViewController.swift */,
+			);
+			path = budget;
+			sourceTree = "<group>";
+		};
+		6D1D569E278D9DCD00451833 /* optionControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6D1D5698278C28CE00451833 /* OptionViewController.swift */,
+			);
+			path = optionControllers;
 			sourceTree = "<group>";
 		};
 		C8FD8547A81E3EA3C2C7CD01 /* Pods */ = {
@@ -212,8 +281,11 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = 6D0C5154275FF4AA0020E539;
+			packageReferences = (
+			);
 			productRefGroup = 6D0C515E275FF4AA0020E539 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -228,6 +300,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D1D56A527900D0B00451833 /* Localizable.strings in Resources */,
 				6D0C516D275FF4AD0020E539 /* LaunchScreen.storyboard in Resources */,
 				6D0C51752760A3340020E539 /* GoogleService-Info.plist in Resources */,
 				6D0C516A275FF4AD0020E539 /* Assets.xcassets in Resources */,
@@ -285,22 +358,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D0C517B276161930020E539 /* ModelApi.swift in Sources */,
+				6DA526462786CBF4006CA1A0 /* TestViewController.swift in Sources */,
+				6DD71C45277AE6D600C5B7D3 /* BudgetCD+CoreDataClass.swift in Sources */,
+				6D1D5685278ABE3400451833 /* ExpensesViewController.swift in Sources */,
 				6D0C518027621A720020E539 /* EnterDataViewController.swift in Sources */,
+				6D1D5689278ABFC700451833 /* AnniutyViewController.swift in Sources */,
 				6D0C51A22768C1480020E539 /* DigramTableViewCell.swift in Sources */,
 				6D9F37D72771E44A00EDFB96 /* CoreDataModel.xcdatamodeld in Sources */,
 				6D0C5165275FF4AA0020E539 /* SiginInViewController.swift in Sources */,
+				6D1D5681278ABD5500451833 /* BudgetViewController.swift in Sources */,
 				6DD71C2A277885DB00C5B7D3 /* ModelDataUser.swift in Sources */,
+				6D1D5699278C28CF00451833 /* OptionViewController.swift in Sources */,
 				6D0C5161275FF4AA0020E539 /* AppDelegate.swift in Sources */,
 				6D0C51A02768C0AE0020E539 /* HomeViewController.swift in Sources */,
-				6D0C51A62769D02A0020E539 /* Incom+SpendingsTableViewCell.swift in Sources */,
 				6D0C517D276161D90020E539 /* Model.swift in Sources */,
+				6D1D569B278C6C3100451833 /* BarTableViewCell.swift in Sources */,
 				6D0C5179276159860020E539 /* SginUpViewController.swift in Sources */,
-				6DD71C3A2778A2C000C5B7D3 /* BudgetCD+CoreDataProperties.swift in Sources */,
+				6DA5264127857FF3006CA1A0 /* searchTableViewController.swift in Sources */,
+				6D1D569D278D612300451833 /* pieTableViewCell.swift in Sources */,
+				6DD71C44277AE6D600C5B7D3 /* BudgetCD+CoreDataProperties.swift in Sources */,
+				6D1D56A02790067A00451833 /* button.swift in Sources */,
 				6DD71C3327789F1400C5B7D3 /* CDEntry+CoreDataProperties.swift in Sources */,
 				6D0C51A42768CEF80020E539 /* DigramDataCollectionViewCell.swift in Sources */,
-				6DD71C392778A2C000C5B7D3 /* BudgetCD+CoreDataClass.swift in Sources */,
+				6D1D5683278ABDC300451833 /* Functions.swift in Sources */,
 				6D0C5163275FF4AA0020E539 /* SceneDelegate.swift in Sources */,
+				6D1D5687278ABEBC00451833 /* SummaryViewController.swift in Sources */,
+				6D1D568B278AC01800451833 /* LaveregeViewController.swift in Sources */,
+				6D1D568D278AC19D00451833 /* DoubleViewController.swift in Sources */,
+				6DD71C47277AE80C00C5B7D3 /* digramsViewController.swift in Sources */,
+				6D1D5693278AC2F600451833 /* CashFlowViewController.swift in Sources */,
 				6DD71C3527789F1400C5B7D3 /* CDEntry+CoreDataClass.swift in Sources */,
+				6D1D568F278AC26200451833 /* SimpleIntrestViewController.swift in Sources */,
+				6D1D5691278AC2BC00451833 /* CompoundViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +400,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				6D0C5167275FF4AA0020E539 /* Base */,
+				6D1D56A127900BD200451833 /* ar */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -319,8 +409,17 @@
 			isa = PBXVariantGroup;
 			children = (
 				6D0C516C275FF4AD0020E539 /* Base */,
+				6D1D56A227900BD400451833 /* ar */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		6D1D56A727900D0B00451833 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6D1D56A627900D0B00451833 /* ar */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -330,6 +429,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -391,6 +491,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

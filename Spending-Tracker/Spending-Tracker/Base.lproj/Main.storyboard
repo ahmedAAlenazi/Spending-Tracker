@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eXv-fp-rc9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cUT-jg-DbE">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
@@ -15,16 +15,29 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pacfic-Blue-iphone-wallpaper-idownloadblog-smartechdaily-geometric" translatesAutoresizingMaskIntoConstraints="NO" id="FE2-JQ-dQ5">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FE2-JQ-dQ5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="1fb-z6-f6B"/>
+                            <constraint firstAttribute="bottom" secondItem="FE2-JQ-dQ5" secondAttribute="bottom" id="6V3-JB-ncQ"/>
+                            <constraint firstItem="FE2-JQ-dQ5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Jpa-Mt-PQ0"/>
+                            <constraint firstItem="FE2-JQ-dQ5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="cEC-Ns-XeH"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="pFF-if-xV0"/>
                     <connections>
-                        <segue destination="Pn1-fy-lp8" kind="presentation" identifier="toSginUp" id="3f3-Uy-qW5"/>
+                        <segue destination="cUT-jg-DbE" kind="presentation" identifier="toHome" modalPresentationStyle="fullScreen" id="G8a-zj-z48"/>
+                        <segue destination="Pn1-fy-lp8" kind="show" identifier="toSginUp" id="8g9-9Q-SRr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-568" y="78"/>
+            <point key="canvasLocation" x="2814" y="-931"/>
         </scene>
         <!--Sgin Up View Controller-->
         <scene sceneID="fA7-Hd-r2Q">
@@ -33,16 +46,277 @@
                     <view key="view" contentMode="scaleToFill" id="KDj-e4-cmS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pacfic-Blue-iphone-wallpaper-idownloadblog-smartechdaily-geometric" translatesAutoresizingMaskIntoConstraints="NO" id="hpm-R3-GCp">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="sAP-UW-5U7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hpm-R3-GCp" firstAttribute="trailing" secondItem="sAP-UW-5U7" secondAttribute="trailing" id="3cp-5K-HhM"/>
+                            <constraint firstAttribute="bottom" secondItem="hpm-R3-GCp" secondAttribute="bottom" id="JmY-Y3-NJI"/>
+                            <constraint firstItem="hpm-R3-GCp" firstAttribute="top" secondItem="KDj-e4-cmS" secondAttribute="top" id="eUY-Vl-Nu4"/>
+                            <constraint firstItem="hpm-R3-GCp" firstAttribute="leading" secondItem="sAP-UW-5U7" secondAttribute="leading" id="qVq-Zf-gve"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="qp7-gH-jke"/>
                     <connections>
-                        <segue destination="eXv-fp-rc9" kind="presentation" identifier="toDataPage" id="yIu-DL-8yf"/>
+                        <segue destination="eXv-fp-rc9" kind="show" identifier="toEnterDataViewController" id="7VC-wu-12U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gGs-mv-qZQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1032" y="78"/>
+            <point key="canvasLocation" x="2813" y="-192"/>
+        </scene>
+        <!--Budget View Controller-->
+        <scene sceneID="fKk-Nx-zbx">
+            <objects>
+                <viewController id="0fo-2Z-cJ7" customClass="BudgetViewController" customModule="Spending_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iFG-bL-fda">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pacfic-Blue-iphone-wallpaper-idownloadblog-smartechdaily-geometric" translatesAutoresizingMaskIntoConstraints="NO" id="Phj-sK-Dlv">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hLL-1t-hyl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Phj-sK-Dlv" secondAttribute="bottom" id="188-AP-0qO"/>
+                            <constraint firstItem="Phj-sK-Dlv" firstAttribute="leading" secondItem="hLL-1t-hyl" secondAttribute="leading" id="grL-M2-34z"/>
+                            <constraint firstItem="Phj-sK-Dlv" firstAttribute="trailing" secondItem="hLL-1t-hyl" secondAttribute="trailing" id="qKB-eh-wPn"/>
+                            <constraint firstItem="Phj-sK-Dlv" firstAttribute="top" secondItem="iFG-bL-fda" secondAttribute="top" id="yLP-aT-kav"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="S8i-vH-J1e"/>
+                    <connections>
+                        <segue destination="QzX-Om-lCl" kind="show" identifier="toEpenses" id="nNx-rd-YwQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ubV-mI-Prn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8309" y="1280"/>
+        </scene>
+        <!--Annuity View Controller-->
+        <scene sceneID="8qf-yz-lML">
+            <objects>
+                <viewController id="SWn-DX-mha" customClass="AnnuityViewController" customModule="Spending_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OyT-Mu-qZt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pacfic-Blue-iphone-wallpaper-idownloadblog-smartechdaily-geometric" translatesAutoresizingMaskIntoConstraints="NO" id="bHB-NU-PON">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="L0w-00-2P4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bHB-NU-PON" firstAttribute="trailing" secondItem="L0w-00-2P4" secondAttribute="trailing" id="GTx-ZK-zuw"/>
+                            <constraint firstAttribute="bottom" secondItem="bHB-NU-PON" secondAttribute="bottom" id="PGP-nw-OrN"/>
+                            <constraint firstItem="bHB-NU-PON" firstAttribute="top" secondItem="OyT-Mu-qZt" secondAttribute="top" id="fTJ-DO-eDX"/>
+                            <constraint firstItem="bHB-NU-PON" firstAttribute="leading" secondItem="L0w-00-2P4" secondAttribute="leading" id="gFv-97-dNZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="AL3-8V-m3H"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="soc-fu-TGg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5428" y="1281"/>
+        </scene>
+        <!--Compound View Controller-->
+        <scene sceneID="E2Q-P4-T09">
+            <objects>
+                <viewController id="Iiv-qO-0qd" customClass="CompoundViewController" customModule="Spending_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SCX-dm-M47">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pacfic-Blue-iphone-wallpaper-idownloadblog-smartechdaily-geometric" translatesAutoresizingMaskIntoConstraints="NO" id="GaY-uo-mQc">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pXb-mo-BnH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GaY-uo-mQc" firstAttribute="leading" secondItem="pXb-mo-BnH" secondAttribute="leading" id="2x8-fE-owj"/>
+                            <constraint firstItem="GaY-uo-mQc" firstAttribute="trailing" secondItem="pXb-mo-BnH" secondAttribute="trailing" id="KAP-Rf-7WX"/>
+                            <constraint firstAttribute="bottom" secondItem="GaY-uo-mQc" secondAttribute="bottom" id="MGs-TY-HZ1"/>
+                            <constraint firstItem="GaY-uo-mQc" firstAttribute="top" secondItem="SCX-dm-M47" secondAttribute="top" id="PHB-Kw-UqL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="upG-pA-wwn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wec-pp-gWH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4475" y="1272"/>
+        </scene>
+        <!--Cash Flow View Controller-->
+        <scene sceneID="XEa-5r-hi2">
+            <objects>
+                <viewController id="5MF-Vi-4m3" customClass="CashFlowViewController" customModule="Spending_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cg6-eI-OVV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pacfic-Blue-iphone-wallpaper-idownloadblog-smartechdaily-geometric" translatesAutoresizingMaskIntoConstraints="NO" id="Dpz-mb-P8q">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Hgt-RT-00b"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Dpz-mb-P8q" secondAttribute="bottom" id="QHb-vu-ByB"/>
+                            <constraint firstItem="Dpz-mb-P8q" firstAttribute="trailing" secondItem="Hgt-RT-00b" secondAttribute="trailing" id="YBL-Wh-bst"/>
+                            <constraint firstItem="Dpz-mb-P8q" firstAttribute="top" secondItem="Cg6-eI-OVV" secondAttribute="top" id="vMc-qR-N6Y"/>
+                            <constraint firstItem="Dpz-mb-P8q" firstAttribute="leading" secondItem="Hgt-RT-00b" secondAttribute="leading" id="ySV-2T-IgZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="4JV-0k-3ng"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jgU-Ib-rzK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3538" y="1272"/>
+        </scene>
+        <!--Leverage View Controller-->
+        <scene sceneID="P8Z-Bz-IlO">
+            <objects>
+                <viewController id="7KV-Tv-XKM" customClass="LeverageViewController" customModule="Spending_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JAa-eL-GMj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pacfic-Blue-iphone-wallpaper-idownloadblog-smartechdaily-geometric" translatesAutoresizingMaskIntoConstraints="NO" id="pYX-db-DQD">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bkg-yY-ZM4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="pYX-db-DQD" secondAttribute="bottom" id="8RA-ub-BtY"/>
+                            <constraint firstItem="pYX-db-DQD" firstAttribute="leading" secondItem="bkg-yY-ZM4" secondAttribute="leading" id="DYu-ih-H7J"/>
+                            <constraint firstItem="pYX-db-DQD" firstAttribute="trailing" secondItem="bkg-yY-ZM4" secondAttribute="trailing" id="bHa-TP-kGT"/>
+                            <constraint firstItem="pYX-db-DQD" firstAttribute="top" secondItem="JAa-eL-GMj" secondAttribute="top" id="q9Q-7e-9zt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="5rD-To-EIK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RJi-bs-Azw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7342" y="1280"/>
+        </scene>
+        <!--Double View Controller-->
+        <scene sceneID="x90-Ea-Ejz">
+            <objects>
+                <viewController id="Bqd-sG-UJ9" customClass="DoubleViewController" customModule="Spending_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QTl-mR-z14">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pacfic-Blue-iphone-wallpaper-idownloadblog-smartechdaily-geometric" translatesAutoresizingMaskIntoConstraints="NO" id="i0n-ja-eaE">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vNJ-KC-0Zj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="i0n-ja-eaE" firstAttribute="trailing" secondItem="vNJ-KC-0Zj" secondAttribute="trailing" id="3Yg-Xe-eCQ"/>
+                            <constraint firstAttribute="bottom" secondItem="i0n-ja-eaE" secondAttribute="bottom" id="gsZ-LA-J54"/>
+                            <constraint firstItem="i0n-ja-eaE" firstAttribute="top" secondItem="QTl-mR-z14" secondAttribute="top" id="sbc-ce-qz2"/>
+                            <constraint firstItem="i0n-ja-eaE" firstAttribute="leading" secondItem="vNJ-KC-0Zj" secondAttribute="leading" id="wnf-Lg-eFc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="FHP-gO-KhG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z7P-Bh-qfQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6370" y="1272"/>
+        </scene>
+        <!--Simple InterestVC-->
+        <scene sceneID="VWd-vX-Pbp">
+            <objects>
+                <viewController id="O9U-cH-eQn" customClass="SimpleInterestVC" customModule="Spending_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wcf-Xc-48I">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pacfic-Blue-iphone-wallpaper-idownloadblog-smartechdaily-geometric" translatesAutoresizingMaskIntoConstraints="NO" id="AeH-7A-o7T">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="27O-79-2b4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="AeH-7A-o7T" firstAttribute="trailing" secondItem="27O-79-2b4" secondAttribute="trailing" id="BEA-gN-fge"/>
+                            <constraint firstItem="AeH-7A-o7T" firstAttribute="leading" secondItem="27O-79-2b4" secondAttribute="leading" id="GDP-4Y-HEG"/>
+                            <constraint firstItem="AeH-7A-o7T" firstAttribute="top" secondItem="Wcf-Xc-48I" secondAttribute="top" id="Lry-D8-j3h"/>
+                            <constraint firstAttribute="bottom" secondItem="AeH-7A-o7T" secondAttribute="bottom" id="tUT-dg-DhZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Y0m-cw-2PL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iXS-aM-jfv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2581" y="1280"/>
+        </scene>
+        <!--Expenses-->
+        <scene sceneID="vAb-Ir-EGN">
+            <objects>
+                <viewController id="QzX-Om-lCl" customClass="Expenses" customModule="Spending_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Yz-du-ug9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pacfic-Blue-iphone-wallpaper-idownloadblog-smartechdaily-geometric" translatesAutoresizingMaskIntoConstraints="NO" id="3aZ-uc-DHX">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PPY-sh-olE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3aZ-uc-DHX" firstAttribute="leading" secondItem="PPY-sh-olE" secondAttribute="leading" id="6D3-7R-2fo"/>
+                            <constraint firstItem="3aZ-uc-DHX" firstAttribute="trailing" secondItem="PPY-sh-olE" secondAttribute="trailing" id="EqU-ny-tEv"/>
+                            <constraint firstAttribute="bottom" secondItem="3aZ-uc-DHX" secondAttribute="bottom" id="NYa-zL-Vfz"/>
+                            <constraint firstItem="3aZ-uc-DHX" firstAttribute="top" secondItem="4Yz-du-ug9" secondAttribute="top" id="UIv-qC-BuN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="9A5-mI-Cyi"/>
+                    <connections>
+                        <segue destination="pgC-7p-KCa" kind="show" identifier="toSummary" id="6Jt-2R-Z5V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nr5-8Q-o9n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8309" y="2036"/>
+        </scene>
+        <!--Summary-->
+        <scene sceneID="8qg-EU-ofA">
+            <objects>
+                <viewController id="pgC-7p-KCa" customClass="Summary" customModule="Spending_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gli-v0-5rX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pacfic-Blue-iphone-wallpaper-idownloadblog-smartechdaily-geometric" translatesAutoresizingMaskIntoConstraints="NO" id="2aO-8e-9ux">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PRe-r8-cAw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2aO-8e-9ux" firstAttribute="leading" secondItem="PRe-r8-cAw" secondAttribute="leading" id="44K-zh-BUC"/>
+                            <constraint firstItem="2aO-8e-9ux" firstAttribute="top" secondItem="gli-v0-5rX" secondAttribute="top" id="J0B-bQ-CyP"/>
+                            <constraint firstItem="2aO-8e-9ux" firstAttribute="trailing" secondItem="PRe-r8-cAw" secondAttribute="trailing" id="iR4-K2-s4Z"/>
+                            <constraint firstAttribute="bottom" secondItem="2aO-8e-9ux" secondAttribute="bottom" id="zYt-fV-CFF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="PUA-ht-cBo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="orM-6x-OTu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8309" y="2784"/>
         </scene>
         <!--Enter Data View Controller-->
         <scene sceneID="fLN-wF-E65">
@@ -51,35 +325,193 @@
                     <view key="view" contentMode="scaleToFill" id="AYd-Ql-2rJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pacfic-Blue-iphone-wallpaper-idownloadblog-smartechdaily-geometric" translatesAutoresizingMaskIntoConstraints="NO" id="N7u-WP-jlT">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Nxb-Au-n0a"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="N7u-WP-jlT" secondAttribute="bottom" id="4mg-bz-17u"/>
+                            <constraint firstItem="N7u-WP-jlT" firstAttribute="top" secondItem="AYd-Ql-2rJ" secondAttribute="top" id="HzL-Um-9nA"/>
+                            <constraint firstItem="N7u-WP-jlT" firstAttribute="leading" secondItem="Nxb-Au-n0a" secondAttribute="leading" id="KuL-8a-7WU"/>
+                            <constraint firstItem="N7u-WP-jlT" firstAttribute="trailing" secondItem="Nxb-Au-n0a" secondAttribute="trailing" id="pcT-At-Q4x"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fWy-IG-ngR"/>
                     <connections>
-                        <segue destination="YlW-6V-cdo" kind="presentation" identifier="ToHome" id="zai-gQ-mmc"/>
+                        <segue destination="cUT-jg-DbE" kind="presentation" identifier="ToHome" id="kz8-DG-fqL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ww2-Md-taP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2333" y="78"/>
+            <point key="canvasLocation" x="3600" y="-193"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="0nY-VL-ZrS">
+            <objects>
+                <tabBarController modalPresentationStyle="fullScreen" id="cUT-jg-DbE" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="E7R-Oa-AyL"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dS5-Hd-qKH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="YlW-6V-cdo" kind="relationship" relationship="viewControllers" id="QJH-4Z-zNb"/>
+                        <segue destination="Tzz-4P-e7h" kind="relationship" relationship="viewControllers" id="9p8-QO-j8L"/>
+                        <segue destination="HH1-pF-EDl" kind="relationship" relationship="viewControllers" id="7yU-V5-Zkv"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xry-mf-tCM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4428" y="-931"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="3b5-z8-eaW">
+            <objects>
+                <tableViewController id="Tzz-4P-e7h" customClass="SearchTableViewController" customModule="Spending_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Gma-ry-ypi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="tjH-R7-60T">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tjH-R7-60T" id="6kN-4q-Wzr">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Tzz-4P-e7h" id="ccF-Id-rwp"/>
+                            <outlet property="delegate" destination="Tzz-4P-e7h" id="8GC-XL-xIX"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" image="magnifyingglass" catalog="system" id="gPU-KM-hHp"/>
+                    <navigationItem key="navigationItem" id="XSX-jJ-Pnq"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fGg-Ba-kma" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5428" y="-931"/>
+        </scene>
+        <!--Item-->
         <scene sceneID="h8j-lM-hhs">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="YlW-6V-cdo" customClass="HomeViewController" customModule="Spending_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q6X-lR-6Mi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pacfic-Blue-iphone-wallpaper-idownloadblog-smartechdaily-geometric" translatesAutoresizingMaskIntoConstraints="NO" id="O1d-Qj-RHs">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="huI-wC-agi"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="O1d-Qj-RHs" secondAttribute="bottom" id="2Le-mg-kZE"/>
+                            <constraint firstItem="O1d-Qj-RHs" firstAttribute="top" secondItem="q6X-lR-6Mi" secondAttribute="top" id="NbM-GE-hhJ"/>
+                            <constraint firstItem="O1d-Qj-RHs" firstAttribute="trailing" secondItem="huI-wC-agi" secondAttribute="trailing" id="ZuL-JO-qUb"/>
+                            <constraint firstItem="O1d-Qj-RHs" firstAttribute="leading" secondItem="huI-wC-agi" secondAttribute="leading" id="ylN-Fg-HjB"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" image="icons8-positive-60" id="Urt-29-fjk"/>
+                    <navigationItem key="navigationItem" id="9G2-2A-wkl"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ehZ-QV-MkY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3707" y="95"/>
+            <point key="canvasLocation" x="5428" y="-1663"/>
+        </scene>
+        <!--Option View Controller-->
+        <scene sceneID="g8E-4B-2Ec">
+            <objects>
+                <viewController id="xTB-Du-6aE" customClass="OptionViewController" customModule="Spending_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="W4Y-e7-I0k">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pacfic-Blue-iphone-wallpaper-idownloadblog-smartechdaily-geometric" translatesAutoresizingMaskIntoConstraints="NO" id="0m5-PU-j9a">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="E2B-z0-k81"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0m5-PU-j9a" firstAttribute="trailing" secondItem="E2B-z0-k81" secondAttribute="trailing" id="3uh-sH-FzZ"/>
+                            <constraint firstItem="0m5-PU-j9a" firstAttribute="top" secondItem="W4Y-e7-I0k" secondAttribute="top" id="4ee-v6-kxO"/>
+                            <constraint firstItem="0m5-PU-j9a" firstAttribute="leading" secondItem="E2B-z0-k81" secondAttribute="leading" id="CCO-ee-xKa"/>
+                            <constraint firstItem="0m5-PU-j9a" firstAttribute="leading" secondItem="E2B-z0-k81" secondAttribute="leading" id="E0T-LJ-QCz"/>
+                            <constraint firstItem="0m5-PU-j9a" firstAttribute="trailing" secondItem="E2B-z0-k81" secondAttribute="trailing" id="fwT-FC-E2A"/>
+                            <constraint firstItem="0m5-PU-j9a" firstAttribute="top" secondItem="W4Y-e7-I0k" secondAttribute="top" id="gXt-SE-pfV"/>
+                            <constraint firstAttribute="bottom" secondItem="0m5-PU-j9a" secondAttribute="bottom" id="peb-xm-oye"/>
+                            <constraint firstAttribute="bottom" secondItem="0m5-PU-j9a" secondAttribute="bottom" id="xCx-6P-VxX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="bvO-7H-gcz"/>
+                    <connections>
+                        <segue destination="0fo-2Z-cJ7" kind="show" identifier="toBudget" id="3VT-D2-ZzZ"/>
+                        <segue destination="Bqd-sG-UJ9" kind="show" identifier="toDouble" id="eBZ-xS-yw3"/>
+                        <segue destination="7KV-Tv-XKM" kind="show" identifier="toLaverege" id="zLt-AC-7Og"/>
+                        <segue destination="SWn-DX-mha" kind="show" identifier="toAnniuty" id="jP3-0N-vKh"/>
+                        <segue destination="Iiv-qO-0qd" kind="show" identifier="toCompound" id="Jk0-QU-Q3S"/>
+                        <segue destination="5MF-Vi-4m3" kind="show" identifier="toCashFlow" id="48t-h3-T59"/>
+                        <segue destination="O9U-cH-eQn" kind="show" identifier="toSimple" id="bU2-mT-B03"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Avx-Yc-kBL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5428" y="504"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="J89-Nc-D6h">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HH1-pF-EDl" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="square.and.arrow.up.fill" catalog="system" id="pAV-e1-wws"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CmL-65-x7u">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xTB-Du-6aE" kind="relationship" relationship="rootViewController" id="mY3-bd-8wV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NXC-Jt-mmq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5428" y="-192"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZIO-fY-BNd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zfZ-xm-pcd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vGx-g1-Q2v">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="VGA-bS-RpD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H4R-5j-9rE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1839" y="-931"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="kz8-DG-fqL"/>
+    </inferredMetricsTieBreakers>
     <resources>
+        <image name="Pacfic-Blue-iphone-wallpaper-idownloadblog-smartechdaily-geometric" width="996" height="2048"/>
+        <image name="icons8-positive-60" width="60" height="60"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="square.and.arrow.up.fill" catalog="system" width="115" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
