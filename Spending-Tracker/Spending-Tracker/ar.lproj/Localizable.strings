@@ -75,3 +75,50 @@
 
 //CashFlowViewController
 "Expenses" = "النفقات";
+//explane from wiki
+"What it is: Simple interest is interest earned from principal. ** Note that this calculation gives you the principal + interest. To calculate just the interest, take the calculation from the previous screen and subtract the principal from that number.
+
+How to use it: This calculation can be done quickly to provide an idea of how much interest will accrue over time. Just remember: This equation ignores the effects of compounding. 
+Best for: A rough estimate on what you'll earn in a savings account, or pay on a loan or a credit card.
+" = "التعريف: الفائدة البسيطة هي الفائدة المكتسبة من رأس المال. ** لاحظ أن هذا الحساب يمنحك رأس المال + الفائدة. لحساب الفائدة فقط ، خذ العملية الحسابية من الشاشة السابقة واطرح رأس المال من هذا الرقم.
+
+كيفية استخدامه: يمكن إجراء هذا الحساب بسرعة لتقديم فكرة عن مقدار الفائدة التي ستتراكم بمرور الوقت. فقط تذكر: هذه المعادلة تتجاهل آثار التركيب.
+الأفضل لـ: تقدير تقريبي لما ستكسبه في حساب التوفير ، أو الدفع على قرض أو بطاقة ائتمان.";
+"What it is: The compound interest is the interest earned on the principal, and any interest accrued in the past. *Note that this calculation gives you the principal + interest. To calculate just the interest, take the calculation from the previous screen and subtract the principal from that number.
+
+How to use it: Use this formula instead of the simple interest equation to get a more precise number for how much interest will accrue.
+
+Best for: Determining how much actual interest you will earn over time on an investment or pay on a debt.
+" = "التعريف: الفائدة المركبة هي الفائدة المكتسبة على رأس المال وأي فائدة متراكمة في الماضي. * لاحظ أن هذا الحساب يمنحك رأس المال + الفائدة. لحساب الفائدة فقط ، خذ العملية الحسابية من الشاشة السابقة واطرح رأس المال من هذا الرقم.
+
+كيفية استخدامه: استخدم هذه الصيغة بدلاً من معادلة الفائدة البسيطة للحصول على رقم أكثر دقة لمقدار الفائدة التي ستتراكم.
+
+الأفضل لـ: تحديد مقدار الفائدة الفعلية التي ستكسبها بمرور الوقت على استثمار أو سداد دين.";
+"What it is: Cash flow shows how much you earn in relation to how much you spend.
+
+How to use it: See whether or not you're living within your means. If the number is negative, you're spending too much; if it's positive, put the leftover money in savings.
+
+Best for: Figuring out where to tighten your budget.
+" = "ما هو: يوضح التدفق النقدي مقدار ما تكسبه فيما يتعلق بالمبلغ الذي تنفقه.
+
+كيفية استخدامه: اعرف ما إذا كنت تعيش في حدود إمكانياتك أم لا. إذا كان الرقم سالبًا ، فأنت تنفق كثيرًا ؛ إذا كان الأمر إيجابيًا ، فضع الأموال المتبقية في المدخرات.
+
+الأفضل لـ: معرفة مكان تشديد ميزانيتك.";
+"What it is: This tells you how many years it will take to double your money" = "ما هو: يخبرك هذا بعدد السنوات التي ستستغرقها لمضاعفة أموالك";
+"What it is: The leverage ratio compares debt to income. Total debts and liabilities are debts like student loans, mortgages, auto loans
+
+How to use it: Aim for the lowest leverage ratio you can. Anything less than one is excellent, since you could pay off every debt with your income in one period.
+
+Best for: Measuring your liquidity and determining whether you can afford to take out a loan. A common rule of thumb says that your leverage ratio (including mortgage, car loans, etc.) should be no more than 33 percent of your income.
+Leverage ratio = (total liabilities + total debts)/total income
+liabilities/debts: student loans, mortgages, etc.
+" = "التعريف: نسبة الرافعة المالية تقارن الدين بالدخل. إجمالي الديون والخصوم هي ديون مثل قروض الطلاب والرهون العقارية وقروض السيارات
+
+كيفية استخدامه: استهدف أقل نسبة رافعة ممكنة. أي شيء أقل من واحد يعد ممتازًا ، حيث يمكنك سداد كل دين من دخلك في فترة واحدة.
+
+الأفضل لـ: قياس السيولة الخاصة بك وتحديد ما إذا كنت تستطيع الحصول على قرض. تقول القاعدة العامة أن نسبة الرافعة المالية (بما في ذلك الرهن العقاري وقروض السيارات وما إلى ذلك) يجب ألا تزيد عن 33 في المائة من دخلك.
+نسبة الرافعة المالية = (إجمالي المطلوبات + إجمالي الديون) / إجمالي الدخل
+الخصوم / الديون: قروض الطلاب ، والرهون العقارية ، وما إلى ذلك.";
+"An annuity is a series of payments made at equal intervals. Examples of annuities are regular deposits to a savings account, monthly home mortgage payments, monthly insurance payments and pension payments. Annuities can be classified by the frequency of payment dates. The payments (deposits) may be made weekly, monthly, quarterly, yearly, or at any other regular interval of time. Annuities may be calculated by mathematical functions known as annuity functions.
+An annuity which provides for payments for the remainder of a person's lifetime is a life annuity." = "الأقساط هي سلسلة من المدفوعات التي يتم سدادها على فترات متساوية. ومن أمثلة المعاشات الإيداعات المنتظمة في حساب التوفير ، ومدفوعات الرهن العقاري الشهرية ، ومدفوعات التأمين الشهرية ، ومدفوعات المعاشات التقاعدية. يمكن تصنيف المعاشات حسب تكرار مواعيد الدفع. قد تتم المدفوعات (الودائع) أسبوعيًا أو شهريًا أو ربع سنويًا أو سنويًا أو في أي فترة زمنية منتظمة أخرى. يمكن حساب الأقساط من خلال وظائف رياضية تعرف باسم وظائف الأقساط.
+القسط السنوي الذي ينص على مدفوعات للفترة المتبقية من حياة الشخص هو القسط السنوي مدى الحياة.";

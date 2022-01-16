@@ -19,7 +19,7 @@ class Expenses: UIViewController, UITextFieldDelegate
         var botton = UIButton()
         botton.translatesAutoresizingMaskIntoConstraints = false
         botton.setTitle("Next", for: [])
-        botton.backgroundColor = UIColor.systemPurple
+        botton.backgroundColor = .black.withAlphaComponent(0.5)
         botton.layer.cornerRadius = 12
         botton.sizeToFit()
         botton.addTarget(self, action: #selector(nextPage), for: .touchUpInside)

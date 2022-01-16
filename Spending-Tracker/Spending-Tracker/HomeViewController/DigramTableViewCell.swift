@@ -51,7 +51,7 @@ class DigramTableViewCell: UITableViewCell, ChartViewDelegate {
 
         var lineChart = LineChartView ()
         lineChart = LineChartView(frame: CGRect(x: 0, y: 200, width: 370, height: 400))
-        
+        lineChart.backgroundColor = .systemBackground
         
         
         
@@ -152,12 +152,12 @@ class DigramTableViewCell: UITableViewCell, ChartViewDelegate {
             // get budget data
             getSelectedBudget(month:selected_month_int ?? 0, year:selected_year ?? 0)
     //
-    //        if selected_year != nil {
-    ////
-    ////            chartTitle.text = " \(selected_month) \(selected_year!)\nMonthly budget: \(selected_budget[0])"
-    ////
-    ////            currentBudget.text = "Balance: \(String(format: "%.2f",selected_budget[0].income - selected_budget[0].sum)) USD"
-    //        }
+            if selected_year != nil {
+    
+                chartTitle.text = " \(selected_month) \(selected_year!)\nMonthly budget: \(selected_budget[0])"
+    
+                currentBudget.text = "Balance: \(String(format: "%.2f",selected_budget[0].income - selected_budget[0].sum)) USD"
+            }
             // center the legend
             chartView.legend.xOffset += 20
             chartView.legend.yOffset += 15

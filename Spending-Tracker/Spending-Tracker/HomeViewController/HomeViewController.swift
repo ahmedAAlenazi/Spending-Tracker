@@ -18,7 +18,7 @@ class HomeViewController: UIViewController {
         tableView.register(BarTableViewCell.self, forCellReuseIdentifier: BarTableViewCell.identefire)
         tableView.register(pieTableViewCell.self, forCellReuseIdentifier: pieTableViewCell.identefire)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-
+        tableView.backgroundColor = .systemBackground
         
         return tableView
     }()
@@ -45,7 +45,7 @@ class HomeViewController: UIViewController {
         _tableView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
         _tableView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor).isActive = true
         
-        _tableView.reloadData()
+
     }
     
 
@@ -72,6 +72,7 @@ extension HomeViewController: UITableViewDataSource , UITableViewDelegate {
             let cell = tableView.dequeueReusableCell(withIdentifier: DigramTableViewCell.identefire, for: indexPath) as! DigramTableViewCell
                 
             cell.isUserInteractionEnabled = false
+            cell.backgroundColor = .systemBackground
             return cell
 
         }else if (indexPath.section == 1){
@@ -80,6 +81,7 @@ extension HomeViewController: UITableViewDataSource , UITableViewDelegate {
             let cell = tableView.dequeueReusableCell(withIdentifier: pieTableViewCell.identefire, for: indexPath) as! pieTableViewCell
                 
             cell.isUserInteractionEnabled = false
+            cell.backgroundColor = .systemBackground
             return cell
             
         }else if (indexPath.section == 2){
@@ -87,6 +89,7 @@ extension HomeViewController: UITableViewDataSource , UITableViewDelegate {
             let cell = tableView.dequeueReusableCell(withIdentifier:BarTableViewCell.identefire, for: indexPath) as! BarTableViewCell
                 
             cell.isUserInteractionEnabled = false
+            cell.backgroundColor = .systemBackground
             return cell
             
             

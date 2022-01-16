@@ -68,9 +68,6 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
     
     
     
-    
-    
-    
  var interestField: UITextField  = {
      var textField = UITextField()
      textField = UITextField(frame: CGRect(x: 300, y: 400, width: 60, height: 40))
@@ -87,10 +84,6 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
          
        return labal
      }()
-    
-    
-    
-    
     
     
     
@@ -122,7 +115,7 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
         var botton = UIButton()
         botton.translatesAutoresizingMaskIntoConstraints = false
         botton.setTitle("calculate", for: [])
-        botton.backgroundColor = UIColor.systemPurple
+        botton.backgroundColor = .black.withAlphaComponent(0.5)
         botton.layer.cornerRadius = 12
         botton.sizeToFit()
         botton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
@@ -139,13 +132,30 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
         var botton = UIButton()
         botton.translatesAutoresizingMaskIntoConstraints = false
         botton.setTitle("Next", for: [])
-        botton.backgroundColor = UIColor.systemPurple
+        botton.backgroundColor = .black.withAlphaComponent(0.5)
         botton.layer.cornerRadius = 12
         botton.sizeToFit()
         botton.addTarget(self, action: #selector(nextPage), for: .touchUpInside)
 
         
         
+        return botton
+        
+    }()
+    
+    
+    private var bottonExplane : UIButton = {
+        
+        
+        let botton = UIButton()
+        botton.translatesAutoresizingMaskIntoConstraints = false
+        botton.setTitle(NSLocalizedString("Explane", comment: ""), for: [])
+        botton.backgroundColor = .black.withAlphaComponent(0.5)
+        botton.layer.cornerRadius = 12
+        botton.sizeToFit()
+        botton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
+        
+       
         return botton
         
     }()
@@ -213,11 +223,15 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
     func constrainsBottons(){
         
         
-        calculateBotton.centerXAnchor.constraint(equalTo:self.view.centerXAnchor).isActive = true
+        calculateBotton.centerXAnchor.constraint(equalTo:self.view.centerXAnchor,constant: 70).isActive = true
         calculateBotton.bottomAnchor.constraint(equalTo:self.view.safeAreaLayoutGuide.bottomAnchor, constant: -150).isActive = true
         calculateBotton.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
         calculateBotton.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
         
+        bottonExplane.centerXAnchor.constraint(equalTo:self.view.centerXAnchor,constant: -70).isActive = true
+        bottonExplane.bottomAnchor.constraint(equalTo:self.view.safeAreaLayoutGuide.bottomAnchor, constant: -150).isActive = true
+        bottonExplane.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
+        bottonExplane.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
         
         
         nextBotton.centerXAnchor.constraint(equalTo:self.view.centerXAnchor).isActive = true

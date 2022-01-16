@@ -12,8 +12,8 @@ class AnnuityViewController: UIViewController, UITextFieldDelegate {
 var payment: UITextField  = {
     var textField = UITextField()
     textField = UITextField(frame: CGRect(x: 300, y: 200, width: 60, height: 40))
-    textField.backgroundColor = .blue
-
+    textField.backgroundColor = .white
+    textField.layer.cornerRadius = 12
      
      
     return textField
@@ -30,9 +30,8 @@ var payment: UITextField  = {
 var interest: UITextField   = {
     var textField = UITextField()
     textField = UITextField(frame: CGRect(x: 300, y: 250, width: 60, height: 40))
-    textField.backgroundColor = .blue
-
-     
+    textField.backgroundColor = .white
+    textField.layer.cornerRadius = 12
      
     return textField
  }()
@@ -50,8 +49,8 @@ var interest: UITextField   = {
 var number: UITextField   = {
     var textField = UITextField()
     textField = UITextField(frame: CGRect(x: 300, y: 300, width: 60, height: 40))
-    textField.backgroundColor = .blue
-     
+    textField.backgroundColor = .white
+    textField.layer.cornerRadius = 12
      
     return textField
  }()
@@ -72,7 +71,23 @@ var number: UITextField   = {
         let botton = UIButton()
         botton.translatesAutoresizingMaskIntoConstraints = false
         botton.setTitle(NSLocalizedString("Calculate", comment: ""), for: [])
-        botton.backgroundColor = UIColor.systemPurple
+        botton.backgroundColor = .black.withAlphaComponent(0.5)
+        botton.layer.cornerRadius = 12
+        botton.sizeToFit()
+        botton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
+        
+       
+        return botton
+        
+    }()
+    
+    private var bottonExplane : UIButton = {
+        
+        
+        let botton = UIButton()
+        botton.translatesAutoresizingMaskIntoConstraints = false
+        botton.setTitle(NSLocalizedString("Explane", comment: ""), for: [])
+        botton.backgroundColor = .black.withAlphaComponent(0.5)
         botton.layer.cornerRadius = 12
         botton.sizeToFit()
         botton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
@@ -89,8 +104,10 @@ var number: UITextField   = {
 var calcOrdinary: UILabel  = {
     var labal = UILabel()
     labal = UILabel(frame: CGRect(x: 300, y: 400, width: 60, height: 40))
-    labal.backgroundColor = .blue
-
+    labal.layer.masksToBounds = true
+    labal.backgroundColor = .white
+    labal.layer.cornerRadius = 12
+    
    return labal
  }()
     var calcOrdinaryLabal: UILabel  = {
@@ -107,8 +124,9 @@ var calcOrdinary: UILabel  = {
 var calcFuture: UILabel  = {
     var labal = UILabel()
     labal = UILabel(frame: CGRect(x: 300, y: 450, width: 60, height: 40))
-    labal.backgroundColor = .blue
-
+    labal.layer.masksToBounds = true
+    labal.backgroundColor = .white
+    labal.layer.cornerRadius = 12
      
    return labal
  }()
@@ -134,7 +152,7 @@ var calcFuture: UILabel  = {
         
         
         view.addSubview(bottonCalculate)
-
+        view.addSubview(bottonExplane)
         view.addSubview(payment)
         view.addSubview(interest)
         view.addSubview(number)
@@ -158,6 +176,12 @@ var calcFuture: UILabel  = {
     }
     @objc func buttonPressed(_ sender: UIButton) {
         print("botton tap")
+        
+        if sender == bottonExplane {
+        performSegue(withIdentifier: "annunityExplane", sender: nil)
+    }
+        
+        
         // Check that all inputs are numbers
         if let PMT = Double(payment.text!), let r = Double(interest.text!), let T = Double(number.text!) {
             // Shows the calculation
@@ -168,9 +192,20 @@ var calcFuture: UILabel  = {
     
     func constrainsBottons(){
         
-        bottonCalculate.centerXAnchor.constraint(equalTo:view.safeAreaLayoutGuide.centerXAnchor).isActive = true
+        bottonCalculate.centerXAnchor.constraint(equalTo:view.safeAreaLayoutGuide.centerXAnchor,constant: 70).isActive = true
         bottonCalculate.bottomAnchor.constraint(equalTo:view.safeAreaLayoutGuide.bottomAnchor, constant: -100).isActive = true
         bottonCalculate.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
         bottonCalculate.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
+        
+        
+        
+        bottonExplane.centerXAnchor.constraint(equalTo:view.safeAreaLayoutGuide.centerXAnchor,constant: -70).isActive = true
+        bottonExplane.bottomAnchor.constraint(equalTo:view.safeAreaLayoutGuide.bottomAnchor, constant: -100).isActive = true
+        bottonExplane.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
+        bottonExplane.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
+        
+        
+        
+        
     }
 }
