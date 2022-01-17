@@ -21,7 +21,7 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
     var takeHomePayLabal: UILabel  = {
         var labal = UILabel()
         labal = UILabel(frame: CGRect(x: 20, y: 100, width: 200, height: 40))
-        labal.text = "Regular Take-Home Pay"
+        labal.text = NSLocalizedString("Regular Take-Home Pay", comment: "")
          
        return labal
      }()
@@ -40,7 +40,7 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
     var dividendsLabal: UILabel  = {
         var labal = UILabel()
         labal = UILabel(frame: CGRect(x: 20, y: 200, width: 200, height: 40))
-        labal.text = "Dividends from Stocks"
+        labal.text = NSLocalizedString("Dividends from Stocks", comment: "")
          
        return labal
      }()
@@ -60,7 +60,7 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
     var pensionsLabal: UILabel  = {
         var labal = UILabel()
         labal = UILabel(frame: CGRect(x: 20, y: 300, width: 200, height: 40))
-        labal.text = "Pensions/Social Security"
+        labal.text = NSLocalizedString("Pensions/Social Security", comment: "")
          
        return labal
      }()
@@ -80,7 +80,7 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
     var interestLabal: UILabel  = {
         var labal = UILabel()
         labal = UILabel(frame: CGRect(x: 20, y: 400, width: 200, height: 40))
-        labal.text = "Interest from Accounts"
+        labal.text = NSLocalizedString("Interest from Accounts", comment: "")
          
        return labal
      }()
@@ -103,7 +103,7 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
         var labal = UILabel()
 
         labal = UILabel(frame: CGRect(x: 20, y: 500, width: 200, height: 40))
-        labal.text = "Calculate Total Income!"
+        labal.text = NSLocalizedString("Calculate Total Income!", comment: "")
          
 
          
@@ -114,7 +114,7 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
         
         var botton = UIButton()
         botton.translatesAutoresizingMaskIntoConstraints = false
-        botton.setTitle("calculate", for: [])
+        botton.setTitle(NSLocalizedString("Calculate", comment: ""), for: [])
         botton.backgroundColor = .black.withAlphaComponent(0.5)
         botton.layer.cornerRadius = 12
         botton.sizeToFit()
@@ -131,7 +131,7 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
         
         var botton = UIButton()
         botton.translatesAutoresizingMaskIntoConstraints = false
-        botton.setTitle("Next", for: [])
+        botton.setTitle(NSLocalizedString("Next", comment: ""), for: [])
         botton.backgroundColor = .black.withAlphaComponent(0.5)
         botton.layer.cornerRadius = 12
         botton.sizeToFit()
@@ -181,6 +181,7 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
         view.addSubview(calculationLabal)
         
         view.addSubview(calculateBotton)
+        view.addSubview(bottonExplane)
         view.addSubview(nextBotton)
 
         constrainsBottons()
@@ -203,6 +204,10 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
     // When “calculate total income!” button is pressed, the total income is displayed after summing up each input in each text field
     @objc func buttonPressed(_ sender: UIButton)
     {
+        if sender == bottonExplane {
+            
+        performSegue(withIdentifier: "BudgetExplane", sender: nil)
+    }
         if let w = Double(takeHomePayField.text!), let x = Double(pensionsField.text!), let y = Double(interestField.text!), let z = Double(dividendsField.text!) {
         let totalInc = round(totalIncome(takeHomePay: w, pensionsSocialSecurity: x, interest: y, dividends: z) * 100) / 100
         calculation.text = String(format: "$%.02f", totalInc)
@@ -223,13 +228,13 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
     func constrainsBottons(){
         
         
-        calculateBotton.centerXAnchor.constraint(equalTo:self.view.centerXAnchor,constant: 70).isActive = true
-        calculateBotton.bottomAnchor.constraint(equalTo:self.view.safeAreaLayoutGuide.bottomAnchor, constant: -150).isActive = true
+        calculateBotton.centerXAnchor.constraint(equalTo:self.view.centerXAnchor,constant: 80).isActive = true
+        calculateBotton.bottomAnchor.constraint(equalTo:self.view.safeAreaLayoutGuide.bottomAnchor, constant: -100).isActive = true
         calculateBotton.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
         calculateBotton.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
         
-        bottonExplane.centerXAnchor.constraint(equalTo:self.view.centerXAnchor,constant: -70).isActive = true
-        bottonExplane.bottomAnchor.constraint(equalTo:self.view.safeAreaLayoutGuide.bottomAnchor, constant: -150).isActive = true
+        bottonExplane.centerXAnchor.constraint(equalTo:self.view.centerXAnchor,constant: -80).isActive = true
+        bottonExplane.bottomAnchor.constraint(equalTo:self.view.safeAreaLayoutGuide.bottomAnchor, constant: -100).isActive = true
         bottonExplane.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
         bottonExplane.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
         

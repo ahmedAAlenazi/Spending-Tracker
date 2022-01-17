@@ -127,9 +127,10 @@ class DigramTableViewCell: UITableViewCell, ChartViewDelegate {
             leftAxis.drawLimitLinesBehindDataEnabled = true
 
             chartView.rightAxis.enabled = false
+        
             chartView.legend.form = .line
+        
             chartView.animate(xAxisDuration: 2.5)
-
         
             contentView.addSubview(chartTitle)
             contentView.addSubview(currentBudget)

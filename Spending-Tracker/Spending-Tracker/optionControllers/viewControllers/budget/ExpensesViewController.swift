@@ -18,7 +18,7 @@ class Expenses: UIViewController, UITextFieldDelegate
         
         var botton = UIButton()
         botton.translatesAutoresizingMaskIntoConstraints = false
-        botton.setTitle("Next", for: [])
+        botton.setTitle(NSLocalizedString("Next", comment: ""), for: [])
         botton.backgroundColor = .black.withAlphaComponent(0.5)
         botton.layer.cornerRadius = 12
         botton.sizeToFit()
@@ -33,14 +33,14 @@ class Expenses: UIViewController, UITextFieldDelegate
     var Fixed: UILabel  = {
         var labal = UILabel()
         labal = UILabel(frame: CGRect(x: 20, y: 50, width: 200, height: 40))
-        labal.text = "Fixed Expenses"
+        labal.text = NSLocalizedString("Fixed Expenses", comment: "")
         labal.font = .preferredFont(forTextStyle: .title1, compatibleWith: nil)
        return labal
      }()
     var Flexible: UILabel  = {
         var labal = UILabel()
         labal = UILabel(frame: CGRect(x: 20, y: 300, width: 250, height: 40))
-        labal.text = "Flexible Expenses"
+        labal.text = NSLocalizedString("Flexible Expenses", comment: "")
         labal.font = .preferredFont(forTextStyle: .title1, compatibleWith: nil)
 
        return labal
@@ -59,7 +59,7 @@ var textField1: UITextField = {
     var textFieldLabal1: UILabel  = {
         var labal = UILabel()
         labal = UILabel(frame: CGRect(x: 20, y: 100, width: 200, height: 40))
-        labal.text = "Telephone/TV/Internet"
+        labal.text = NSLocalizedString("Telephone/TV/Internet", comment: "")
          
        return labal
      }()
@@ -79,7 +79,7 @@ var textField2: UITextField   = {
     var textFieldLabal2: UILabel  = {
         var labal = UILabel()
         labal = UILabel(frame: CGRect(x: 20, y: 150, width: 250, height: 40))
-        labal.text = "Utilities (Water, Light, etc.)"
+        labal.text = NSLocalizedString("Utilities (Water, Light, etc.)", comment: "")
          
        return labal
      }()
@@ -97,7 +97,7 @@ var textField3: UITextField   = {
     var textFieldLabal3: UILabel  = {
         var labal = UILabel()
         labal = UILabel(frame: CGRect(x: 20, y: 200, width: 200, height: 40))
-        labal.text = "Insurance"
+        labal.text = NSLocalizedString("Insurance", comment: "")
          
        return labal
      }()
@@ -115,7 +115,7 @@ var textField4: UITextField   = {
     var textFieldLabal4: UILabel  = {
         var labal = UILabel()
         labal = UILabel(frame: CGRect(x: 20, y: 250, width: 200, height: 40))
-        labal.text = "Rent/Mortgage"
+        labal.text = NSLocalizedString("Rent/Mortgage", comment: "")
          
        return labal
      }()
@@ -133,7 +133,7 @@ var textField5: UITextField   = {
     var textFieldLabal5: UILabel  = {
         var labal = UILabel()
         labal = UILabel(frame: CGRect(x: 20, y: 350, width: 200, height: 40))
-        labal.text = "Food/Groceries"
+        labal.text = NSLocalizedString("Food/Groceries", comment: "")
          
        return labal
      }()
@@ -151,7 +151,7 @@ var textField6: UITextField   = {
     var textFieldLabal6: UILabel  = {
         var labal = UILabel()
         labal = UILabel(frame: CGRect(x: 20, y: 400, width: 200, height: 40))
-        labal.text = "Education Expenses"
+        labal.text = NSLocalizedString("Education Expenses", comment: "")
          
        return labal
      }()
@@ -170,7 +170,7 @@ var textField7: UITextField   = {
     var textFieldLabal7: UILabel  = {
         var labal = UILabel()
         labal = UILabel(frame: CGRect(x: 20, y: 450, width: 200, height: 40))
-        labal.text = "Clothing"
+        labal.text = NSLocalizedString("Clothing", comment: "")
          
        return labal
      }()
@@ -189,7 +189,7 @@ var textField8: UITextField   = {
     var textFieldLabal8: UILabel  = {
         var labal = UILabel()
         labal = UILabel(frame: CGRect(x: 20, y: 500, width: 200, height: 40))
-        labal.text = "Recreation/Entertainment"
+        labal.text = NSLocalizedString("Recreation/Entertainment", comment: "")
          
        return labal
      }()
@@ -208,7 +208,7 @@ var fundsAvailable: UILabel  = {
     var fund: UILabel  = {
         var labal = UILabel()
         labal = UILabel(frame: CGRect(x: 20, y: 550, width: 200, height: 40))
-        labal.text = "Funds Available"
+        labal.text = NSLocalizedString("Funds Available", comment: "")
          
        return labal
      }()
@@ -226,7 +226,7 @@ var costs: UILabel  = {
     var cost: UILabel  = {
         var labal = UILabel()
         labal = UILabel(frame: CGRect(x: 250, y: 550, width: 200, height: 40))
-        labal.text = "Total Expenses"
+        labal.text = NSLocalizedString("Total Expenses", comment: "")
        return labal
      }()
     

@@ -64,7 +64,7 @@ var periods: UITextField  = {
     var periodsLabal: UILabel = {
         var labal = UILabel()
         labal = UILabel(frame: CGRect(x: 20, y: 300, width: 200, height: 40))
-        labal.text = "Periods"
+        labal.text = NSLocalizedString("Periods", comment: "")
 
          
        return labal
@@ -75,7 +75,7 @@ var periods: UITextField  = {
     
 var calculation: UILabel = {
     var labal = UILabel()
-    labal = UILabel(frame: CGRect(x: 300, y: 400, width: 200, height: 40))
+    labal = UILabel(frame: CGRect(x: 300, y: 400, width: 60, height: 40))
 
     labal.layer.masksToBounds = true
     labal.backgroundColor = .white
@@ -86,7 +86,7 @@ var calculation: UILabel = {
     var calculationLabal: UILabel = {
         var labal = UILabel()
         labal = UILabel(frame: CGRect(x: 20, y: 400, width: 200, height: 40))
-        labal.text = "Result"
+        labal.text = NSLocalizedString("Result", comment: "")
 
          
        return labal
@@ -97,7 +97,7 @@ var calculation: UILabel = {
         
         let botton = UIButton()
         botton.translatesAutoresizingMaskIntoConstraints = false
-        botton.setTitle("Calculate", for: [])
+        botton.setTitle(NSLocalizedString("Calculate", comment: ""), for: [])
         botton.backgroundColor = .black.withAlphaComponent(0.5)
         botton.layer.cornerRadius = 12
         botton.sizeToFit()

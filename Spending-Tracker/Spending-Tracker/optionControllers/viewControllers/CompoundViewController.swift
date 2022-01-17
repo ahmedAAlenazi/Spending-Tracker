@@ -106,7 +106,7 @@ var calculation: UILabel = {
     var calculationLabal: UILabel = {
         var labal = UILabel()
         labal = UILabel(frame: CGRect(x: 20, y: 450, width: 200, height: 40))
-        labal.text = "Result"
+        labal.text = NSLocalizedString("Result", comment: "")
 
          
        return labal
@@ -116,7 +116,7 @@ var calculation: UILabel = {
         
         let botton = UIButton()
         botton.translatesAutoresizingMaskIntoConstraints = false
-        botton.setTitle("Calculate", for: [])
+        botton.setTitle(NSLocalizedString("Calculate", comment: ""), for: [])
         botton.backgroundColor = .black.withAlphaComponent(0.5)
         botton.layer.cornerRadius = 12
         botton.sizeToFit()
@@ -172,7 +172,7 @@ var calculation: UILabel = {
     @objc func buttonPressed(_ sender: UIButton) {
         
         if sender == bottonExplane {
-        performSegue(withIdentifier: "SimpleExplane", sender: nil)
+        performSegue(withIdentifier: "CompoundExplane", sender: nil)
         //Check that all inputs are numbers
         if let p = Double(principal.text!), let r = Double(interest.text!), let N = Double(compoundings.text!), let T = Double(periods.text!) {
             //Shows calculation

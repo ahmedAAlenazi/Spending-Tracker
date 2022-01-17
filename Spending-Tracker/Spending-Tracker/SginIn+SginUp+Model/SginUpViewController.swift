@@ -125,7 +125,7 @@ class SginUpViewController: UIViewController {
     
     func SignUp(email: String,password:String,phone:String) {
 
-            Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+          Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
 
                 
                 if let error = error {

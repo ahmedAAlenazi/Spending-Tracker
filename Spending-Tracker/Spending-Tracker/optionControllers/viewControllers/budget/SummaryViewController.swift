@@ -19,7 +19,7 @@ var income: UILabel = {
     var incomeLabal: UILabel = {
         var labal = UILabel()
         labal = UILabel(frame: CGRect(x: 20, y: 200, width: 250, height: 40))
-        labal.text = "total income"
+        labal.text = NSLocalizedString("total income", comment: "")
          
        return labal
      }()
@@ -34,7 +34,7 @@ var expenses: UILabel = {
     var expensesLabal: UILabel = {
         var labal = UILabel()
         labal = UILabel(frame: CGRect(x: 20, y: 250, width: 250, height: 40))
-        labal.text = "total expenses"
+        labal.text = NSLocalizedString("total expenses", comment: "")
          
        return labal
      }()
@@ -51,7 +51,7 @@ var expenses: UILabel = {
     var savingsLabal: UILabel = {
         var labal = UILabel()
         labal = UILabel(frame: CGRect(x: 20, y: 300, width: 250, height: 40))
-        labal.text = " total savings"
+        labal.text = NSLocalizedString("total savings", comment: "")
          
        return labal
      }()

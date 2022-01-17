@@ -31,7 +31,7 @@ class OptionViewController: UIViewController {
         
         
         let botton = UIButton()
-        botton.set(image: UIImage(named: ""), title: NSLocalizedString("Averege", comment: ""), titlePosition: .top, additionalSpacing: 0, state: .normal)
+        botton.set(image: UIImage(named: ""), title: NSLocalizedString("The leverage ratio ", comment: ""), titlePosition: .top, additionalSpacing: 0, state: .normal)
         botton.translatesAutoresizingMaskIntoConstraints = false
         botton.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         botton.layer.cornerRadius = 12
@@ -75,11 +75,27 @@ class OptionViewController: UIViewController {
         
     }()
     
+    private var reEnter : UIButton = {
+        
+        
+        let botton = UIButton()
+        botton.set(image: UIImage(named: ""), title: NSLocalizedString("Enter Data", comment: ""), titlePosition: .top, additionalSpacing: 0, state: .normal)
+        botton.translatesAutoresizingMaskIntoConstraints = false
+        botton.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        botton.layer.cornerRadius = 12
+        botton.sizeToFit()
+        botton.addTarget(self, action: #selector(nextPage), for: .touchUpInside)
+
+       
+        return botton
+        
+    }()
+    
     private var compound : UIButton = {
         
         
         let botton = UIButton()
-        botton.set(image: UIImage(named: ""), title: NSLocalizedString("Compound Interest", comment: ""), titlePosition: .top, additionalSpacing: 0, state: .normal)
+        botton.set(image: UIImage(named: ""), title: NSLocalizedString("Compound Int", comment: ""), titlePosition: .top, additionalSpacing: 0, state: .normal)
         botton.translatesAutoresizingMaskIntoConstraints = false
         botton.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         botton.layer.cornerRadius = 12
@@ -95,7 +111,7 @@ class OptionViewController: UIViewController {
         
         
         let botton = UIButton()
-        botton.set(image: UIImage(named: "cashFlow"), title:NSLocalizedString( "Cash Flow", comment: ""), titlePosition: .top, additionalSpacing: 0, state: .normal)
+        botton.set(image: UIImage(named: "cashFlow"), title:NSLocalizedString("Cash Flow", comment: ""), titlePosition: .top, additionalSpacing: 0, state: .normal)
         botton.translatesAutoresizingMaskIntoConstraints = false
         botton.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         botton.layer.cornerRadius = 12
@@ -133,6 +149,7 @@ class OptionViewController: UIViewController {
         view.addSubview(laverege)
         view.addSubview(double)
         view.addSubview(simple)
+        view.addSubview(reEnter)
         
         view.addSubview(compound)
         view.addSubview(cashFlow)
@@ -145,44 +162,52 @@ class OptionViewController: UIViewController {
         anniuty.centerXAnchor.constraint(equalTo:view.safeAreaLayoutGuide.centerXAnchor,constant: -100).isActive = true
         anniuty.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor, constant: 50).isActive = true
         anniuty.widthAnchor.constraint(equalToConstant: 150).isActive = true
-        anniuty.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        anniuty.heightAnchor.constraint(equalToConstant: 60).isActive = true
         
         laverege.centerXAnchor.constraint(equalTo:view.safeAreaLayoutGuide.centerXAnchor,constant: -100).isActive = true
-        laverege.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor, constant: 220).isActive = true
+        laverege.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor, constant: 150).isActive = true
         laverege.widthAnchor.constraint(equalToConstant: 150).isActive = true
-        laverege.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        laverege.heightAnchor.constraint(equalToConstant: 60).isActive = true
 
         
         double.centerXAnchor.constraint(equalTo:view.safeAreaLayoutGuide.centerXAnchor,constant: -100).isActive = true
-        double.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor, constant: 390).isActive = true
+        double.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor, constant: 250).isActive = true
         double.widthAnchor.constraint(equalToConstant: 150).isActive = true
-        double.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        double.heightAnchor.constraint(equalToConstant: 60).isActive = true
 
 
         simple.centerXAnchor.constraint(equalTo:view.safeAreaLayoutGuide.centerXAnchor,constant: -100).isActive = true
-        simple.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor, constant: 560).isActive = true
+        simple.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor, constant: 350).isActive = true
         simple.widthAnchor.constraint(equalToConstant: 150).isActive = true
-        simple.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        simple.heightAnchor.constraint(equalToConstant: 60).isActive = true
 
 
+        
+        
+        
         compound.centerXAnchor.constraint(equalTo:view.safeAreaLayoutGuide.centerXAnchor,constant: 100).isActive = true
         compound.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor, constant: 50).isActive = true
         compound.widthAnchor.constraint(equalToConstant: 150).isActive = true
-        compound.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        compound.heightAnchor.constraint(equalToConstant: 60).isActive = true
 
 
 
         cashFlow.centerXAnchor.constraint(equalTo:view.safeAreaLayoutGuide.centerXAnchor,constant: 100).isActive = true
-        cashFlow.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor, constant: 220).isActive = true
+        cashFlow.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor, constant: 150).isActive = true
         cashFlow.widthAnchor.constraint(equalToConstant: 150).isActive = true
-        cashFlow.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        cashFlow.heightAnchor.constraint(equalToConstant: 60).isActive = true
 
 
 
         budget.centerXAnchor.constraint(equalTo:view.safeAreaLayoutGuide.centerXAnchor,constant: 100).isActive = true
-        budget.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor, constant: 390).isActive = true
+        budget.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor, constant: 250).isActive = true
         budget.widthAnchor.constraint(equalToConstant: 150).isActive = true
-        budget.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        budget.heightAnchor.constraint(equalToConstant: 60).isActive = true
+
+        reEnter.centerXAnchor.constraint(equalTo:view.safeAreaLayoutGuide.centerXAnchor,constant: 100).isActive = true
+        reEnter.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor, constant: 350).isActive = true
+        reEnter.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        reEnter.heightAnchor.constraint(equalToConstant: 60).isActive = true
 
 
     }
@@ -211,6 +236,8 @@ class OptionViewController: UIViewController {
     if sender == budget{
     performSegue(withIdentifier: "toBudget", sender: nil)
 }
+        if sender == reEnter{
+        performSegue(withIdentifier: "toenterData", sender: nil)
 }
 }
-
+}

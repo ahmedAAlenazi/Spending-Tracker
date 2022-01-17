@@ -143,9 +143,9 @@ class SiginInViewController: UIViewController {
                 self.showAlert(withTitel: "please check your password and email", messege: "re-enter email and password", isLogin: false)
                 print(error.localizedDescription)
             }
-            if let error = error {
-                self.showAlert(withTitel: "please check your password and email", messege: "re-enter email and password", isLogin: false)
-                print(error.localizedDescription)
+            if authResult?.user.email != nil {
+                //perform segue
+                self.performSegue(withIdentifier: "toHome", sender: nil)
             }
             print("email:\(String(describing: authResult?.user.email))")
             print("uid:\(String(describing: authResult?.user.uid))")

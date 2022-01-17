@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xTB-Du-6aE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eXv-fp-rc9">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
@@ -93,7 +93,7 @@
                     <navigationItem key="navigationItem" id="S8i-vH-J1e"/>
                     <connections>
                         <segue destination="QzX-Om-lCl" kind="show" identifier="toEpenses" id="nNx-rd-YwQ"/>
-                        <segue destination="fu3-Sn-PGW" kind="show" id="KEJ-g2-64z"/>
+                        <segue destination="fu3-Sn-PGW" kind="show" identifier="BudgetExplane" id="KEJ-g2-64z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ubV-mI-Prn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -153,7 +153,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="upG-pA-wwn"/>
                     <connections>
-                        <segue destination="Gw0-mW-D7t" kind="show" id="Und-fs-cZD"/>
+                        <segue destination="Gw0-mW-D7t" kind="show" identifier="CompoundExplane" id="Und-fs-cZD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wec-pp-gWH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -183,7 +183,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="4JV-0k-3ng"/>
                     <connections>
-                        <segue destination="xLp-O3-ydz" kind="show" id="6iA-9t-usO"/>
+                        <segue destination="xLp-O3-ydz" kind="show" identifier="CashFlowExplane" id="6iA-9t-usO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jgU-Ib-rzK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -213,7 +213,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="5rD-To-EIK"/>
                     <connections>
-                        <segue destination="GKX-6A-Msr" kind="show" id="XVL-06-58n"/>
+                        <segue destination="GKX-6A-Msr" kind="show" identifier="LeverageExplane" id="XVL-06-58n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RJi-bs-Azw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -243,7 +243,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="FHP-gO-KhG"/>
                     <connections>
-                        <segue destination="5f6-qv-0ra" kind="show" id="hqv-1h-77g"/>
+                        <segue destination="5f6-qv-0ra" kind="show" identifier="DoubleExplane" id="hqv-1h-77g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z7P-Bh-qfQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -273,7 +273,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Y0m-cw-2PL"/>
                     <connections>
-                        <segue destination="rVV-pl-qbn" kind="show" id="uo8-7M-VlO"/>
+                        <segue destination="rVV-pl-qbn" kind="show" identifier="SimpleExplane" id="uo8-7M-VlO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iXS-aM-jfv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -387,7 +387,7 @@
             </objects>
             <point key="canvasLocation" x="4428" y="-931"/>
         </scene>
-        <!--Item-->
+        <!--Search Table View Controller-->
         <scene sceneID="3b5-z8-eaW">
             <objects>
                 <tableViewController id="Tzz-4P-e7h" customClass="SearchTableViewController" customModule="Spending_Tracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -410,7 +410,7 @@
                             <outlet property="delegate" destination="Tzz-4P-e7h" id="8GC-XL-xIX"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" image="magnifyingglass" catalog="system" id="gPU-KM-hHp"/>
+                    <tabBarItem key="tabBarItem" title="" image="magnifyingglass" catalog="system" id="gPU-KM-hHp"/>
                     <navigationItem key="navigationItem" id="XSX-jJ-Pnq"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fGg-Ba-kma" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -428,12 +428,11 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pacfic-Blue-iphone-wallpaper-idownloadblog-smartechdaily-geometric" translatesAutoresizingMaskIntoConstraints="NO" id="CQU-Kd-dfu">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Vkk-go-vNV">
-                                <rect key="frame" x="20" y="172" width="374" height="397"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Vkk-go-vNV">
+                                <rect key="frame" x="20" y="106" width="374" height="397"/>
                                 <mutableString key="text">An annuity is a series of payments made at equal intervals. Examples of annuities are regular deposits to a savings account, monthly home mortgage payments, monthly insurance payments and pension payments. Annuities can be classified by the frequency of payment dates. The payments (deposits) may be made weekly, monthly, quarterly, yearly, or at any other regular interval of time. Annuities may be calculated by mathematical functions known as annuity functions.An annuity which provides for payments for the remainder of a person's lifetime is a life annuity.</mutableString>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -443,9 +442,9 @@
                             <constraint firstItem="CQU-Kd-dfu" firstAttribute="leading" secondItem="Cy0-F0-gyY" secondAttribute="leading" id="D26-99-LGL"/>
                             <constraint firstAttribute="bottom" secondItem="CQU-Kd-dfu" secondAttribute="bottom" id="Pur-yE-Shy"/>
                             <constraint firstItem="Vkk-go-vNV" firstAttribute="leading" secondItem="Cy0-F0-gyY" secondAttribute="leading" constant="20" id="XNt-6E-Yzz"/>
-                            <constraint firstItem="Vkk-go-vNV" firstAttribute="top" secondItem="Cy0-F0-gyY" secondAttribute="top" constant="84" id="fWt-Gb-ScN"/>
+                            <constraint firstItem="Vkk-go-vNV" firstAttribute="top" secondItem="Cy0-F0-gyY" secondAttribute="top" constant="18" id="fWt-Gb-ScN"/>
                             <constraint firstItem="CQU-Kd-dfu" firstAttribute="trailing" secondItem="Cy0-F0-gyY" secondAttribute="trailing" id="gGs-Wk-v00"/>
-                            <constraint firstItem="Cy0-F0-gyY" firstAttribute="bottom" secondItem="Vkk-go-vNV" secondAttribute="bottom" constant="244" id="huw-gP-FoZ"/>
+                            <constraint firstItem="Cy0-F0-gyY" firstAttribute="bottom" secondItem="Vkk-go-vNV" secondAttribute="bottom" constant="310" id="huw-gP-FoZ"/>
                             <constraint firstItem="Cy0-F0-gyY" firstAttribute="trailing" secondItem="Vkk-go-vNV" secondAttribute="trailing" constant="20" id="oLU-Qe-5Gn"/>
                             <constraint firstItem="CQU-Kd-dfu" firstAttribute="top" secondItem="m4T-4b-c9H" secondAttribute="top" id="yFJ-XH-4kx"/>
                         </constraints>
@@ -456,7 +455,7 @@
             </objects>
             <point key="canvasLocation" x="5428" y="1988"/>
         </scene>
-        <!--Item-->
+        <!--Home View Controller-->
         <scene sceneID="h8j-lM-hhs">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="YlW-6V-cdo" customClass="HomeViewController" customModule="Spending_Tracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -477,7 +476,7 @@
                             <constraint firstItem="O1d-Qj-RHs" firstAttribute="leading" secondItem="huI-wC-agi" secondAttribute="leading" id="ylN-Fg-HjB"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="chart.bar.doc.horizontal" catalog="system" id="Urt-29-fjk"/>
+                    <tabBarItem key="tabBarItem" title="" image="chart.bar.doc.horizontal" catalog="system" id="Urt-29-fjk"/>
                     <navigationItem key="navigationItem" id="9G2-2A-wkl"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ehZ-QV-MkY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -518,17 +517,18 @@
                         <segue destination="Iiv-qO-0qd" kind="show" identifier="toCompound" id="Jk0-QU-Q3S"/>
                         <segue destination="5MF-Vi-4m3" kind="show" identifier="toCashFlow" id="48t-h3-T59"/>
                         <segue destination="O9U-cH-eQn" kind="show" identifier="toSimple" id="bU2-mT-B03"/>
+                        <segue destination="eXv-fp-rc9" kind="show" identifier="toenterData" id="LtU-yN-3e1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Avx-Yc-kBL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5428" y="504"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="J89-Nc-D6h">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HH1-pF-EDl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="list.bullet.rectangle.portrait" catalog="system" id="pAV-e1-wws"/>
+                    <tabBarItem key="tabBarItem" title="" image="list.bullet.rectangle.portrait" catalog="system" id="pAV-e1-wws"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CmL-65-x7u">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -572,12 +572,11 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pacfic-Blue-iphone-wallpaper-idownloadblog-smartechdaily-geometric" translatesAutoresizingMaskIntoConstraints="NO" id="kI8-D2-DeY">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oad-dq-hv8">
-                                <rect key="frame" x="20" y="172" width="374" height="397"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oad-dq-hv8">
+                                <rect key="frame" x="20" y="107" width="374" height="397"/>
                                 <mutableString key="text">What it is: The leverage ratio compares debt to income. Total debts and liabilities are debts like student loans, mortgages, auto loansHow to use it: Aim for the lowest leverage ratio you can. Anything less than one is excellent, since you could pay off every debt with your income in one period.Best for: Measuring your liquidity and determining whether you can afford to take out a loan. A common rule of thumb says that your leverage ratio (including mortgage, car loans, etc.) should be no more than 33 percent of your income.Leverage ratio = (total liabilities + total debts)/total income liabilities/debts: student loans, mortgages, etc.</mutableString>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -589,9 +588,9 @@
                             <constraint firstItem="kI8-D2-DeY" firstAttribute="trailing" secondItem="osf-y6-LlY" secondAttribute="trailing" id="cgB-Wv-ddb"/>
                             <constraint firstItem="oad-dq-hv8" firstAttribute="leading" secondItem="osf-y6-LlY" secondAttribute="leading" constant="20" id="gVb-Xk-AgN"/>
                             <constraint firstAttribute="bottom" secondItem="kI8-D2-DeY" secondAttribute="bottom" id="taZ-UI-rLC"/>
-                            <constraint firstItem="oad-dq-hv8" firstAttribute="top" secondItem="osf-y6-LlY" secondAttribute="top" constant="84" id="v76-x2-pZq"/>
+                            <constraint firstItem="oad-dq-hv8" firstAttribute="top" secondItem="osf-y6-LlY" secondAttribute="top" constant="19" id="v76-x2-pZq"/>
                             <constraint firstItem="osf-y6-LlY" firstAttribute="trailing" secondItem="oad-dq-hv8" secondAttribute="trailing" constant="20" id="yBv-Ej-XfM"/>
-                            <constraint firstItem="osf-y6-LlY" firstAttribute="bottom" secondItem="oad-dq-hv8" secondAttribute="bottom" constant="244" id="zeT-W0-V8v"/>
+                            <constraint firstItem="osf-y6-LlY" firstAttribute="bottom" secondItem="oad-dq-hv8" secondAttribute="bottom" constant="309" id="zeT-W0-V8v"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Rcd-pP-Pnd"/>
@@ -611,11 +610,10 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pacfic-Blue-iphone-wallpaper-idownloadblog-smartechdaily-geometric" translatesAutoresizingMaskIntoConstraints="NO" id="rav-Cn-JpD">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="What it is: This tells you how many years it will take to double your money" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Lx0-XZ-qgP">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="What it is: This tells you how many years it will take to double your money" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Lx0-XZ-qgP">
                                 <rect key="frame" x="20" y="172" width="374" height="397"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -649,22 +647,21 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pacfic-Blue-iphone-wallpaper-idownloadblog-smartechdaily-geometric" translatesAutoresizingMaskIntoConstraints="NO" id="EjI-FN-0Xc">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EQk-se-guS">
-                                <rect key="frame" x="20" y="172" width="374" height="397"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EQk-se-guS">
+                                <rect key="frame" x="20" y="102" width="374" height="397"/>
                                 <mutableString key="text">What it is: Simple interest is interest earned from principal.Note that this calculation gives you the principal + interest. To calculate just the interest, take the calculation from the previous screen and subtract the principal from that number.How to use it: This calculation can be done quickly to provide an idea of how much interest will accrue over time. Just remember: This equation ignores the effects of compounding.Best for: A rough estimate on what you'll earn in a savings account, or pay on a loan or a credit card.</mutableString>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2mO-zs-nFA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="2mO-zs-nFA" firstAttribute="bottom" secondItem="EQk-se-guS" secondAttribute="bottom" constant="244" id="AV4-Bg-aPB"/>
+                            <constraint firstItem="2mO-zs-nFA" firstAttribute="bottom" secondItem="EQk-se-guS" secondAttribute="bottom" constant="314" id="AV4-Bg-aPB"/>
                             <constraint firstAttribute="bottom" secondItem="EjI-FN-0Xc" secondAttribute="bottom" id="EOo-zi-XeF"/>
                             <constraint firstItem="2mO-zs-nFA" firstAttribute="trailing" secondItem="EQk-se-guS" secondAttribute="trailing" constant="20" id="Twh-lk-oLd"/>
-                            <constraint firstItem="EQk-se-guS" firstAttribute="top" secondItem="2mO-zs-nFA" secondAttribute="top" constant="84" id="ULK-vE-Tzu"/>
+                            <constraint firstItem="EQk-se-guS" firstAttribute="top" secondItem="2mO-zs-nFA" secondAttribute="top" constant="14" id="ULK-vE-Tzu"/>
                             <constraint firstItem="EQk-se-guS" firstAttribute="leading" secondItem="2mO-zs-nFA" secondAttribute="leading" constant="20" id="h12-oK-GzS"/>
                             <constraint firstItem="EjI-FN-0Xc" firstAttribute="top" secondItem="QEM-gB-HLf" secondAttribute="top" id="jCF-Zh-qf5"/>
                             <constraint firstItem="EjI-FN-0Xc" firstAttribute="leading" secondItem="2mO-zs-nFA" secondAttribute="leading" id="kMc-8C-bd7"/>
@@ -688,26 +685,25 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pacfic-Blue-iphone-wallpaper-idownloadblog-smartechdaily-geometric" translatesAutoresizingMaskIntoConstraints="NO" id="J1I-6N-UbR">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vT3-AG-TUN">
-                                <rect key="frame" x="20" y="172" width="374" height="397"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vT3-AG-TUN">
+                                <rect key="frame" x="20" y="104" width="374" height="397"/>
                                 <mutableString key="text">What it is: The compound interest is the interest earned on the principal, and any interest accrued in the past. *Note that this calculation gives you the principal + interest. To calculate just the interest, take the calculation from the previous screen and subtract the principal from that number.How to use it: Use this formula instead of the simple interest equation to get a more precise number for how much interest will accrue.Best for: Determining how much actual interest you will earn over time on an investment or pay on a debt.</mutableString>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CGt-YZ-vgT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vT3-AG-TUN" firstAttribute="top" secondItem="CGt-YZ-vgT" secondAttribute="top" constant="84" id="MoL-NH-M3f"/>
+                            <constraint firstItem="vT3-AG-TUN" firstAttribute="top" secondItem="CGt-YZ-vgT" secondAttribute="top" constant="16" id="MoL-NH-M3f"/>
                             <constraint firstItem="J1I-6N-UbR" firstAttribute="trailing" secondItem="CGt-YZ-vgT" secondAttribute="trailing" id="TSa-rS-j7g"/>
                             <constraint firstItem="J1I-6N-UbR" firstAttribute="leading" secondItem="CGt-YZ-vgT" secondAttribute="leading" id="UV9-Us-quj"/>
                             <constraint firstItem="vT3-AG-TUN" firstAttribute="leading" secondItem="CGt-YZ-vgT" secondAttribute="leading" constant="20" id="a1A-mk-hed"/>
                             <constraint firstItem="J1I-6N-UbR" firstAttribute="top" secondItem="Q2k-6Q-1c2" secondAttribute="top" id="aWk-yA-ZZk"/>
                             <constraint firstAttribute="bottom" secondItem="J1I-6N-UbR" secondAttribute="bottom" id="e9R-7y-qxL"/>
                             <constraint firstItem="CGt-YZ-vgT" firstAttribute="trailing" secondItem="vT3-AG-TUN" secondAttribute="trailing" constant="20" id="hOb-Fw-zqS"/>
-                            <constraint firstItem="CGt-YZ-vgT" firstAttribute="bottom" secondItem="vT3-AG-TUN" secondAttribute="bottom" constant="244" id="mbE-5v-ES4"/>
+                            <constraint firstItem="CGt-YZ-vgT" firstAttribute="bottom" secondItem="vT3-AG-TUN" secondAttribute="bottom" constant="312" id="mbE-5v-ES4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7hz-hB-XlW"/>
@@ -727,11 +723,10 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pacfic-Blue-iphone-wallpaper-idownloadblog-smartechdaily-geometric" translatesAutoresizingMaskIntoConstraints="NO" id="eAB-gV-QIo">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="What it is: Cash flow shows how much you earn in relation to how much you spend." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JIx-N5-kRU">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="What it is: Cash flow shows how much you earn in relation to how much you spend." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JIx-N5-kRU">
                                 <rect key="frame" x="20" y="172" width="374" height="397"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -765,14 +760,13 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pacfic-Blue-iphone-wallpaper-idownloadblog-smartechdaily-geometric" translatesAutoresizingMaskIntoConstraints="NO" id="AaE-y9-vuh">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4iD-SY-YGL">
-                                <rect key="frame" x="20" y="172" width="374" height="397"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <mutableString key="text">A budget is a financial plan for a defined period, often one year. It may also include planned sales volumes and revenues, resource quantities, costsand expenses, assets, liabilities and cash flows. Companies, governments, families, and other organizations use it to express strategic plans of activities or events in measurable terms.[1]
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4iD-SY-YGL">
+                                <rect key="frame" x="20" y="104" width="374" height="397"/>
+                                <mutableString key="text">A budget is a financial plan for a defined period, often one year. It may also include planned sales volumes and revenues, resource quantities, costsand expenses, assets, liabilities and cash flows. Companies, governments, families, and other organizations use it to express strategic plans of activities or events in measurable terms.
 A budget is the sum of finances allocated for a particular purpose and the summary of intended expenditures along with proposals for how to meet them. It may include a budget surplus, providing money for use at a future time, or a deficit in which expenses exceed income.
 </mutableString>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -780,8 +774,8 @@ A budget is the sum of finances allocated for a particular purpose and the summa
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="jLK-H9-Jpx" firstAttribute="trailing" secondItem="4iD-SY-YGL" secondAttribute="trailing" constant="20" id="3Og-A9-3mm"/>
-                            <constraint firstItem="4iD-SY-YGL" firstAttribute="top" secondItem="jLK-H9-Jpx" secondAttribute="top" constant="84" id="CBW-pb-Zp8"/>
-                            <constraint firstItem="jLK-H9-Jpx" firstAttribute="bottom" secondItem="4iD-SY-YGL" secondAttribute="bottom" constant="244" id="R8Y-S4-wv8"/>
+                            <constraint firstItem="4iD-SY-YGL" firstAttribute="top" secondItem="jLK-H9-Jpx" secondAttribute="top" constant="16" id="CBW-pb-Zp8"/>
+                            <constraint firstItem="jLK-H9-Jpx" firstAttribute="bottom" secondItem="4iD-SY-YGL" secondAttribute="bottom" constant="312" id="R8Y-S4-wv8"/>
                             <constraint firstItem="AaE-y9-vuh" firstAttribute="top" secondItem="7za-oA-2YA" secondAttribute="top" id="SLp-zc-9ud"/>
                             <constraint firstItem="4iD-SY-YGL" firstAttribute="leading" secondItem="jLK-H9-Jpx" secondAttribute="leading" constant="20" id="Tqi-6z-SDk"/>
                             <constraint firstItem="AaE-y9-vuh" firstAttribute="leading" secondItem="jLK-H9-Jpx" secondAttribute="leading" id="WvM-tw-KIE"/>
@@ -798,15 +792,13 @@ A budget is the sum of finances allocated for a particular purpose and the summa
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="kz8-DG-fqL"/>
+        <segue reference="LtU-yN-3e1"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Pacfic-Blue-iphone-wallpaper-idownloadblog-smartechdaily-geometric" width="996" height="2048"/>
         <image name="chart.bar.doc.horizontal" catalog="system" width="115" height="128"/>
         <image name="list.bullet.rectangle.portrait" catalog="system" width="115" height="128"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

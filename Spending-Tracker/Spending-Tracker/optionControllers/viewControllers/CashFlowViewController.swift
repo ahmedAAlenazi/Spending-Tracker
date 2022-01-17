@@ -55,7 +55,7 @@ var expenses: UITextField = {
     
     var calculation: UILabel = {
        var labal = UILabel()
-        labal = UILabel(frame: CGRect(x: 300, y: 400, width: 200, height: 40))
+        labal = UILabel(frame: CGRect(x: 300, y: 400, width: 60, height: 40))
 
         labal.layer.masksToBounds = true
         labal.backgroundColor = .white
@@ -120,13 +120,16 @@ var expenses: UITextField = {
         income.delegate = self
         expenses.delegate = self
         constrainsBottons()
+        
+        
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+    
     }
-
     @objc func buttonPressed(_ sender: UIButton) {
         
         if sender == bottonExplane {
-        performSegue(withIdentifier: "SimpleExplane", sender: nil)
+        performSegue(withIdentifier: "CashFlowExplane", sender: nil)
+        }
         //Check that all inputs are numbers
         if let i = Double(income.text!), let e = Double(expenses.text!) {
             //Shows calculation

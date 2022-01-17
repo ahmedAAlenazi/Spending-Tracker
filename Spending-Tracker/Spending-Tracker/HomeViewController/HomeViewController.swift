@@ -24,13 +24,14 @@ class HomeViewController: UIViewController {
     }()
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        _tableView.reloadData()
+        
         view.addSubview(_tableView)
         _tableView.delegate = self
         _tableView.dataSource = self
-       
+        _tableView.reloadData()
       
         view.backgroundColor = .systemCyan
         // Do any additional setup after loading the view.
@@ -71,7 +72,7 @@ extension HomeViewController: UITableViewDataSource , UITableViewDelegate {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: DigramTableViewCell.identefire, for: indexPath) as! DigramTableViewCell
                 
-            cell.isUserInteractionEnabled = false
+//            cell.isUserInteractionEnabled = false
             cell.backgroundColor = .systemBackground
             return cell
 
@@ -80,7 +81,7 @@ extension HomeViewController: UITableViewDataSource , UITableViewDelegate {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: pieTableViewCell.identefire, for: indexPath) as! pieTableViewCell
                 
-            cell.isUserInteractionEnabled = false
+//            cell.isUserInteractionEnabled = false
             cell.backgroundColor = .systemBackground
             return cell
             
@@ -88,7 +89,7 @@ extension HomeViewController: UITableViewDataSource , UITableViewDelegate {
             print("indexPath2")
             let cell = tableView.dequeueReusableCell(withIdentifier:BarTableViewCell.identefire, for: indexPath) as! BarTableViewCell
                 
-            cell.isUserInteractionEnabled = false
+//            cell.isUserInteractionEnabled = false
             cell.backgroundColor = .systemBackground
             return cell
             
