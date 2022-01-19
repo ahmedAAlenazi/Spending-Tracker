@@ -22,7 +22,7 @@ class CashFlowViewController: UIViewController, UITextFieldDelegate {
     }()
     var incomeLabal: UILabel = {
         var labal = UILabel()
-        labal = UILabel(frame: CGRect(x: 20, y: 200, width: 200, height: 40))
+        labal = UILabel(frame: CGRect(x: 20, y: 200, width: 150, height: 40))
         labal.text = NSLocalizedString("Income", comment: "")
 
         
@@ -44,7 +44,7 @@ var expenses: UITextField = {
     
     var expensesLabal: UILabel = {
         var labal = UILabel()
-        labal = UILabel(frame: CGRect(x: 20, y: 250, width: 200, height: 40))
+        labal = UILabel(frame: CGRect(x: 20, y: 250, width: 150, height: 40))
         labal.text = NSLocalizedString("Expenses", comment: "")
 
         
@@ -66,7 +66,7 @@ var expenses: UITextField = {
     }()
     var calculationLabal: UILabel  = {
         var labal = UILabel()
-        labal = UILabel(frame: CGRect(x: 20, y: 400, width: 200, height: 40))
+        labal = UILabel(frame: CGRect(x: 20, y: 400, width: 100, height: 40))
         labal.text = NSLocalizedString("Result", comment: "")
 
          

@@ -2,7 +2,7 @@
 //  BudgetCD+CoreDataClass.swift
 //  Spending-Tracker
 //
-//  Created by Ahmed Alenazi on 22/05/1443 AH.
+//  Created by Ahmed Alenazi on 15/06/1443 AH.
 //
 //
 
@@ -11,7 +11,5 @@ import CoreData
 
 @objc(BudgetCD)
 public class BudgetCD: NSManagedObject {
-    
-   
 
 }

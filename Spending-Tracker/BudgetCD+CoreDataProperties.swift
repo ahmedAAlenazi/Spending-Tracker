@@ -2,7 +2,7 @@
 //  BudgetCD+CoreDataProperties.swift
 //  Spending-Tracker
 //
-//  Created by Ahmed Alenazi on 22/05/1443 AH.
+//  Created by Ahmed Alenazi on 15/06/1443 AH.
 //
 //
 
@@ -29,11 +29,14 @@ extension BudgetCD {
     @NSManaged public var transport: Double
     @NSManaged public var travel: Double
     @NSManaged public var year: Int16
+    @NSManaged public var amount: String?
+    @NSManaged public var category: String?
+    @NSManaged public var date: Date?
+    @NSManaged public var note: String?
+    @NSManaged public var currency: String?
 
 }
 
 extension BudgetCD : Identifiable {
-    
-    
-    
+
 }

@@ -153,7 +153,7 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
         botton.backgroundColor = .black.withAlphaComponent(0.5)
         botton.layer.cornerRadius = 12
         botton.sizeToFit()
-        botton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
+        botton.addTarget(self, action: #selector(nextPage), for: .touchUpInside)
         
        
         return botton
@@ -204,10 +204,9 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
     // When “calculate total income!” button is pressed, the total income is displayed after summing up each input in each text field
     @objc func buttonPressed(_ sender: UIButton)
     {
-        if sender == bottonExplane {
-            
-        performSegue(withIdentifier: "BudgetExplane", sender: nil)
-    }
+        
+        
+       
         if let w = Double(takeHomePayField.text!), let x = Double(pensionsField.text!), let y = Double(interestField.text!), let z = Double(dividendsField.text!) {
         let totalInc = round(totalIncome(takeHomePay: w, pensionsSocialSecurity: x, interest: y, dividends: z) * 100) / 100
         calculation.text = String(format: "$%.02f", totalInc)
@@ -221,7 +220,15 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
     
     @objc func nextPage(sender: UIButton!)  {
        
+        
         print("Button tapped")
+        
+        
+        if sender == bottonExplane {
+            
+        performSegue(withIdentifier: "BudgetExplane", sender: nil)
+    }
+        
         performSegue(withIdentifier: "toEpenses", sender: nil)
     }
     

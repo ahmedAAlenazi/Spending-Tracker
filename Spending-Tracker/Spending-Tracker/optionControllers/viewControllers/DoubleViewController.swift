@@ -22,7 +22,7 @@ class DoubleViewController: UIViewController, UITextFieldDelegate {
     
     var interestLabal: UILabel  = {
         var labal = UILabel()
-            labal = UILabel(frame: CGRect(x: 20, y: 200, width: 200, height: 40))
+            labal = UILabel(frame: CGRect(x: 20, y: 200, width: 150, height: 40))
         labal.text = NSLocalizedString("Interest (%)", comment: "")
        return labal
      }()
@@ -42,7 +42,7 @@ var calculation: UILabel  = {
     
 var calculationLabal: UILabel  = {
     var labal = UILabel()
-        labal = UILabel(frame: CGRect(x: 20, y: 400, width: 200, height: 40))
+        labal = UILabel(frame: CGRect(x: 20, y: 400, width: 100, height: 40))
     labal.text = NSLocalizedString("Result", comment: "")
    return labal
  }()

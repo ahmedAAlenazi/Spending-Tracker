@@ -47,9 +47,12 @@ class EnterDataViewController:  UIViewController, UIPickerViewDataSource, UIPick
       
         var pickerView = UIPickerView()
         pickerView.translatesAutoresizingMaskIntoConstraints = false
-        pickerView = UIPickerView(frame: CGRect(x: 220, y: 350, width: 150, height: 80))
-        pickerView.backgroundColor = .systemPurple.withAlphaComponent(0.9)
+        pickerView = UIPickerView(frame: CGRect(x: 220, y: 200, width: 150, height: 80))
+        pickerView.backgroundColor = .black.withAlphaComponent(0.5)
+        pickerView.tintColor = .white
         pickerView.layer.cornerRadius = 16
+        pickerView.setValue(UIColor.white, forKey: "textColor")
+        
         return pickerView
     }()
     
@@ -57,22 +60,26 @@ class EnterDataViewController:  UIViewController, UIPickerViewDataSource, UIPick
 
         var pickerView = UIPickerView()
         pickerView.translatesAutoresizingMaskIntoConstraints = false
-        pickerView = UIPickerView(frame: CGRect(x: 20, y:350, width: 150, height: 80))
-        pickerView.backgroundColor = .systemPurple.withAlphaComponent(0.9)
+        pickerView = UIPickerView(frame: CGRect(x: 20, y:200, width: 150, height: 80))
+        pickerView.backgroundColor = .black.withAlphaComponent(0.5)
+        pickerView.tintColor = .white
         pickerView.layer.cornerRadius = 16
+        pickerView.setValue(UIColor.white, forKey: "textColor")
           return pickerView
     }()
     
     private var currencyLabal : UILabel = {
         var labal = UILabel()
         labal.translatesAutoresizingMaskIntoConstraints = false
-        labal = UILabel(frame: CGRect(x: 260, y: 440, width: 80, height: 40))
+        labal = UILabel(frame: CGRect(x: 260, y: 290, width: 80, height: 40))
         labal.text = NSLocalizedString("currency", comment: "")
         labal.font = UIFont.systemFont(ofSize: 14)
         labal.textAlignment = .center
-        labal.layer.backgroundColor = UIColor.systemPurple.cgColor
-        labal.layer.cornerRadius = 16
+        labal.layer.masksToBounds = true
+        labal.backgroundColor = .black.withAlphaComponent(0.5)
         labal.textColor = .white
+        labal.layer.cornerRadius = 12
+      
       
         return labal
     }()
@@ -81,12 +88,13 @@ class EnterDataViewController:  UIViewController, UIPickerViewDataSource, UIPick
         var labal = UILabel()
         
         labal.translatesAutoresizingMaskIntoConstraints = false
-        labal = UILabel(frame: CGRect(x: 55, y: 440, width: 80, height: 40))
+        labal = UILabel(frame: CGRect(x: 55, y: 290, width: 80, height: 40))
         labal.text = NSLocalizedString("category", comment: "")
         labal.font = UIFont.systemFont(ofSize: 14)
         labal.textAlignment = .center
-        labal.layer.backgroundColor = UIColor.systemPurple.cgColor
-        labal.layer.cornerRadius = 16
+        labal.layer.masksToBounds = true
+        labal.backgroundColor = .black.withAlphaComponent(0.5)
+        labal.layer.cornerRadius = 12
         labal.textColor = .white
 
         return labal
@@ -99,7 +107,7 @@ class EnterDataViewController:  UIViewController, UIPickerViewDataSource, UIPick
         var botton = UIButton()
         botton.translatesAutoresizingMaskIntoConstraints = false
         botton.setTitle(NSLocalizedString("Next", comment: ""), for: [])
-        botton.backgroundColor = UIColor.systemPurple
+        botton.backgroundColor = .black.withAlphaComponent(0.5)
         botton.layer.cornerRadius = 12
         botton.sizeToFit()
         botton.addTarget(self, action: #selector(buttonNextAction), for: .touchUpInside)
@@ -113,7 +121,7 @@ class EnterDataViewController:  UIViewController, UIPickerViewDataSource, UIPick
     private var numberField : UITextField = {
         var textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField = UITextField(frame: CGRect(x: 100, y: 550, width: 200, height: 40))
+        textField = UITextField(frame: CGRect(x: 100, y: 400, width: 200, height: 40))
         textField.keyboardType = .default
         textField.layer.cornerRadius = 6
         textField.placeholder = NSLocalizedString("number...", comment: "")
@@ -130,7 +138,7 @@ class EnterDataViewController:  UIViewController, UIPickerViewDataSource, UIPick
     private var noteField : UITextField = {
         var textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField = UITextField(frame: CGRect(x: 100, y: 600, width: 200, height: 40))
+        textField = UITextField(frame: CGRect(x: 100, y: 450, width: 200, height: 40))
         textField.keyboardType = .default
         textField.layer.cornerRadius = 6
         textField.placeholder = NSLocalizedString("what did you spend it on ?", comment: "")
@@ -148,6 +156,8 @@ class EnterDataViewController:  UIViewController, UIPickerViewDataSource, UIPick
     
 override func viewDidLoad() {
     super.viewDidLoad()
+    
+    
     view.backgroundColor = .systemCyan
     view.addSubview(currencyLabal)
     view.addSubview(categoryLabal)
@@ -163,16 +173,19 @@ override func viewDidLoad() {
     
     constrainsBottons()
     
+    getBudgetData()
 
     
      }
     
     // touch on the screen will hide the keyboard
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
         numberField.resignFirstResponder()
          noteField.resignFirstResponder()
         
     }
+    
     func constrainsBottons(){
         
         
@@ -180,7 +193,8 @@ override func viewDidLoad() {
         bottonNext.bottomAnchor.constraint(equalTo:self.view.safeAreaLayoutGuide.bottomAnchor, constant: -100).isActive = true
         bottonNext.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
         bottonNext.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
-        //bottonNext.addTarget(self, action: #selector(buttonNextAction), for: .touchUpInside)
+        
+        
     }
     
         //return the number of components based on the pickerView
@@ -204,6 +218,7 @@ override func viewDidLoad() {
         }
         return ""
     }
+    
     
     //return the length of the pickerView
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -235,7 +250,7 @@ override func viewDidLoad() {
      @objc func buttonNextAction(sender: UIButton!) {
          
          let context = persistentContainer.viewContext
-         let entry = CDEntry(context: context) // Link Entry & Context
+         let entry = BudgetCD(context: context)
          
          setData(entry: entry,context:context)
          
@@ -243,7 +258,177 @@ override func viewDidLoad() {
          
      }
     
-    func setData(entry: CDEntry,context: NSManagedObjectContext) {
+    fileprivate func dataHandling(_ current_month: Int?, _ current_year: Int?, _ new_month: inout Bool, _ entry: BudgetCD, _ reach_budget: inout Bool, _ current_budget: inout Double) {
+        for b in budgets {
+            
+            print("stage 4")
+            
+            let m: Int = Int(b.month)
+            let y: Int = Int(b.year)
+            
+            if (m == current_month ?? 0) && (y == current_year ?? 0){
+                print("stage 5")
+                new_month = false
+                if let a = entry.amount {
+                    var num = Double(a)!
+                    
+                    
+                    if entry.currency == "RAS" {
+                        num = 3.75 * num
+                    }
+                    if entry.currency == "CAD" {
+                        num = 0.78 * num
+                    }
+                    else if entry.currency == "CNY" {
+                        num = 0.16 * num
+                    }
+                    else if entry.currency == "JPY" {
+                        num = 0.0093 * num
+                    }
+                    else if entry.currency == "EUR" {
+                        num = 1.23 * num
+                    }
+                    else if entry.currency == "GBP" {
+                        num = 1.4 * num
+                    }
+                    else {                     print("stage 6")
+                    }
+                    print("stage 6.5")
+                    
+                    // update category sum
+                    let category = entry.category!
+                    // update sum
+                    if category != "income" {
+                        
+                        print("stage 6.9")
+                        
+                        b.sum += num
+                    }
+                    
+                    switch category {
+                    case "food":
+                        b.food += num
+                    case "housing":
+                        b.housing += num
+                    case "transport":
+                        b.transport += num
+                    case "travel":
+                        b.travel += num
+                    case "bills":
+                        b.bills += num
+                    case "investments":
+                        b.investments += num
+                    case "shopping":
+                        b.shopping += num
+                    case "health":
+                        b.health += num
+                    case "income":
+                        b.income += num
+                    default:
+                        print("invalid category")
+                    }
+                    //                      check if the budget of the current month is reached
+                    if b.sum >= b.budget {
+                        reach_budget = true
+                        current_budget = b.budget
+                    }
+                    
+                    break
+                }
+            }
+        }
+        
+        
+        if new_month {
+            print("stage 7")
+            
+            let context = persistentContainer.viewContext
+            let b = BudgetCD(context: context)
+            
+            b.budget = 1000
+            b.sum = 0.0
+            b.month = Int16(current_month ?? 0)
+            b.year = Int16(current_year ?? 0)
+            b.food = 0.0
+            b.housing = 0.0
+            b.transport = 0.0
+            b.travel = 0.0
+            b.bills = 0.0
+            b.investments = 0.0
+            b.shopping = 0.0
+            b.health = 0.0
+            b.income = 0.0
+            
+            // convert amount to USD
+            if let a = entry.amount {
+                var num = Double(a)!
+                print("stage 8")
+                
+                if entry.currency == "RS" {
+                    num = 3.75 * num
+                }
+                if entry.currency == "CAD" {
+                    num = 0.78 * num
+                }
+                else if entry.currency == "CNY" {
+                    num = 0.16 * num
+                }
+                else if entry.currency == "JPY" {
+                    num = 0.0093 * num
+                }
+                else if entry.currency == "EUR" {
+                    num = 1.23 * num
+                }
+                else if entry.currency == "GBP" {
+                    num = 1.4 * num
+                }
+                else {         print("stage 10")
+                }
+                
+                print("stage 9")
+                
+                let category = entry.category!
+                
+                // update sum
+                if category != "income" {
+                    b.sum += num
+                }
+                
+                switch category {
+                case "food":
+                    b.food += num
+                case "housing":
+                    b.housing += num
+                case "transport":
+                    b.transport += num
+                case "travel":
+                    b.travel += num
+                case "bills":
+                    b.bills += num
+                case "investments":
+                    b.investments += num
+                case "shopping":
+                    b.shopping += num
+                case "health":
+                    b.health += num
+                case "income":
+                    b.income += num
+                default:
+                    print("invalid category")
+                }
+                //                  check if the budget of the current month is reached
+                if b.sum >= b.budget {
+                    print("stage 11")
+                    
+                    reach_budget = false
+                    current_budget = b.budget
+                }
+            }
+        }
+    }
+    
+    func setData(entry: BudgetCD,context: NSManagedObjectContext) {
+        
         
         if Double(numberField.text!) != nil{
             entry.amount = numberField.text!
@@ -276,172 +461,10 @@ override func viewDidLoad() {
         
         print("stage 3")
 
-        for b in budgets {
-            
-            print("stage 4")
-
-            let m: Int = Int(b.month)
-            let y: Int = Int(b.year)
-
-            if (m == current_month ?? 0) && (y == current_year ?? 0){
-                print("stage 5")
-                new_month = false
-                if let a = entry.amount {
-                    var num = Double(a)!
-              
-
-                    if entry.currency == "RS" {
-                        num = 1 * num
-                    }
-                    if entry.currency == "CAD" {
-                        num = 0.78 * num
-                    }
-                    else if entry.currency == "CNY" {
-                        num = 0.16 * num
-                    }
-                    else if entry.currency == "JPY" {
-                        num = 0.0093 * num
-                    }
-                    else if entry.currency == "EUR" {
-                        num = 1.23 * num
-                    }
-                    else if entry.currency == "GBP" {
-                        num = 1.4 * num
-                    }
-                    else {                     print("stage 6")
-}
-                    print("stage 6.5")
-
-                    // update category sum
-                    let category = entry.category!
-                    // update sum
-                    if category != "income" {
-                        
-                        print("stage 6.9")
-
-                        b.sum += num
-                    }
-                    
-                    switch category {
-                        case "food":
-                            b.food += num
-                        case "housing":
-                            b.housing += num
-                        case "transport":
-                            b.transport += num
-                        case "travel":
-                            b.travel += num
-                        case "bills":
-                            b.bills += num
-                        case "investments":
-                            b.investments += num
-                        case "shopping":
-                            b.shopping += num
-                        case "health":
-                            b.health += num
-                        case "income":
-                            b.income += num
-                        default:
-                            print("invalid category")
-                    }
-//                      check if the budget of the current month is reached
-                    if b.sum >= b.budget {
-                        reach_budget = true
-                        current_budget = b.budget
-                    }
-                    
-                    break
-                }
-            }
-        }
+        dataHandling(current_month, current_year, &new_month, entry, &reach_budget, &current_budget)
         
        
-        if new_month {
-            print("stage 7")
-
-            let context = persistentContainer.viewContext
-            let b = BudgetCD(context: context)
-            
-            b.budget = 1000
-            b.sum = 0.0
-            b.month = Int16(current_month ?? 0)
-            b.year = Int16(current_year ?? 0)
-            b.food = 0.0
-            b.housing = 0.0
-            b.transport = 0.0
-            b.travel = 0.0
-            b.bills = 0.0
-            b.investments = 0.0
-            b.shopping = 0.0
-            b.health = 0.0
-            b.income = 0.0
-            
-            // convert amount to USD
-            if let a = entry.amount {
-                var num = Double(a)!
-                print("stage 8")
-
-                if entry.currency == "RS" {
-                    num = 1 * num
-                }
-                if entry.currency == "CAD" {
-                    num = 0.78 * num
-                }
-                else if entry.currency == "CNY" {
-                    num = 0.16 * num
-                }
-                else if entry.currency == "JPY" {
-                    num = 0.0093 * num
-                }
-                else if entry.currency == "EUR" {
-                    num = 1.23 * num
-                }
-                else if entry.currency == "GBP" {
-                    num = 1.4 * num
-                }
-                else {         print("stage 10")
-}
-
-                print("stage 9")
-
-                let category = entry.category!
-                
-                // update sum
-                if category != "income" {
-                    b.sum += num
-                }
-                
-                switch category {
-                    case "food":
-                        b.food += num
-                    case "housing":
-                        b.housing += num
-                    case "transport":
-                        b.transport += num
-                    case "travel":
-                        b.travel += num
-                    case "bills":
-                        b.bills += num
-                    case "investments":
-                        b.investments += num
-                    case "shopping":
-                        b.shopping += num
-                    case "health":
-                        b.health += num
-                    case "income":
-                        b.income += num
-                    default:
-                        print("invalid category")
-                }
-//                  check if the budget of the current month is reached
-                if b.sum >= b.budget {
-                    print("stage 11")
-
-                    reach_budget = false
-                    current_budget = b.budget
-                }
-            }
-        }
+        print("enter data\(budgets)")
         
         do {
             print("save")
@@ -451,7 +474,7 @@ override func viewDidLoad() {
         }catch{
             print("not save")
         }
-        getBudgetData()
+       
 //        display a pop up alert box if budget is reached
         if reach_budget {
             

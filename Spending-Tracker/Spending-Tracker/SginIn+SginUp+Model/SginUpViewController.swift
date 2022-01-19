@@ -129,11 +129,13 @@ class SginUpViewController: UIViewController {
 
                 
                 if let error = error {
+                    
                     self.showAlert(withTitel: "please write your email, password and phone number ", messege: "re-enter email, password and phone number", isLogin: false)
                     print(error.localizedDescription)
                 }
                 
                 if authResult?.user.email != nil {
+                    
                     //perform segue
                     self.performSegue(withIdentifier: "toEnterDataViewController", sender: nil)
 

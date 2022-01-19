@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eXv-fp-rc9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zfZ-xm-pcd">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
@@ -372,13 +372,14 @@
             <objects>
                 <tabBarController modalPresentationStyle="fullScreen" id="cUT-jg-DbE" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="E7R-Oa-AyL"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dS5-Hd-qKH">
+                    <tabBar key="tabBar" alpha="0.69999999999999996" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dS5-Hd-qKH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemGray3Color"/>
+                        <tabBarAppearance key="standardAppearance"/>
                     </tabBar>
                     <connections>
-                        <segue destination="YlW-6V-cdo" kind="relationship" relationship="viewControllers" id="QJH-4Z-zNb"/>
+                        <segue destination="96m-k1-bkh" kind="relationship" relationship="viewControllers" id="7vp-iC-S4v"/>
                         <segue destination="Tzz-4P-e7h" kind="relationship" relationship="viewControllers" id="9p8-QO-j8L"/>
                         <segue destination="HH1-pF-EDl" kind="relationship" relationship="viewControllers" id="7yU-V5-Zkv"/>
                     </connections>
@@ -394,7 +395,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Gma-ry-ypi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray2Color"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="tjH-R7-60T">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
@@ -430,7 +431,7 @@
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Vkk-go-vNV">
                                 <rect key="frame" x="20" y="106" width="374" height="397"/>
-                                <mutableString key="text">An annuity is a series of payments made at equal intervals. Examples of annuities are regular deposits to a savings account, monthly home mortgage payments, monthly insurance payments and pension payments. Annuities can be classified by the frequency of payment dates. The payments (deposits) may be made weekly, monthly, quarterly, yearly, or at any other regular interval of time. Annuities may be calculated by mathematical functions known as annuity functions.An annuity which provides for payments for the remainder of a person's lifetime is a life annuity.</mutableString>
+                                <string key="text">An annuity is a series of payments made at equal intervals. Examples of annuities are regular deposits to a savings account, monthly home mortgage payments, monthly insurance payments and pension payments. Annuities can be classified by the frequency of payment dates. The payments (deposits) may be made weekly, monthly, quarterly, yearly, or at any other regular interval of time. Annuities may be calculated by mathematical functions known as annuity functions.An annuity which provides for payments for the remainder of a person's lifetime is a life annuity.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -455,33 +456,27 @@
             </objects>
             <point key="canvasLocation" x="5428" y="1988"/>
         </scene>
-        <!--Home View Controller-->
-        <scene sceneID="h8j-lM-hhs">
+        <!--Digram View Controller-->
+        <scene sceneID="r9b-84-f1d">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="YlW-6V-cdo" customClass="HomeViewController" customModule="Spending_Tracker" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="q6X-lR-6Mi">
+                <viewController id="96m-k1-bkh" customClass="DigramViewController" customModule="Spending_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O6J-kN-YNa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pacfic-Blue-iphone-wallpaper-idownloadblog-smartechdaily-geometric" translatesAutoresizingMaskIntoConstraints="NO" id="O1d-Qj-RHs">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Pacfic-Blue-iphone-wallpaper-idownloadblog-smartechdaily-geometric" translatesAutoresizingMaskIntoConstraints="NO" id="JL9-tW-r0w">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="huI-wC-agi"/>
+                        <viewLayoutGuide key="safeArea" id="HhE-xQ-zfs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="O1d-Qj-RHs" secondAttribute="bottom" id="2Le-mg-kZE"/>
-                            <constraint firstItem="O1d-Qj-RHs" firstAttribute="top" secondItem="q6X-lR-6Mi" secondAttribute="top" id="NbM-GE-hhJ"/>
-                            <constraint firstItem="O1d-Qj-RHs" firstAttribute="trailing" secondItem="huI-wC-agi" secondAttribute="trailing" id="ZuL-JO-qUb"/>
-                            <constraint firstItem="O1d-Qj-RHs" firstAttribute="leading" secondItem="huI-wC-agi" secondAttribute="leading" id="ylN-Fg-HjB"/>
-                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="chart.bar.doc.horizontal" catalog="system" id="Urt-29-fjk"/>
-                    <navigationItem key="navigationItem" id="9G2-2A-wkl"/>
+                    <tabBarItem key="tabBarItem" title="" image="chart.pie" catalog="system" id="yVL-5o-oK9"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ehZ-QV-MkY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IhJ-C5-3Ft" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5428" y="-1663"/>
+            <point key="canvasLocation" x="5477" y="-1618"/>
         </scene>
         <!--Option View Controller-->
         <scene sceneID="g8E-4B-2Ec">
@@ -574,7 +569,7 @@
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oad-dq-hv8">
                                 <rect key="frame" x="20" y="107" width="374" height="397"/>
-                                <mutableString key="text">What it is: The leverage ratio compares debt to income. Total debts and liabilities are debts like student loans, mortgages, auto loansHow to use it: Aim for the lowest leverage ratio you can. Anything less than one is excellent, since you could pay off every debt with your income in one period.Best for: Measuring your liquidity and determining whether you can afford to take out a loan. A common rule of thumb says that your leverage ratio (including mortgage, car loans, etc.) should be no more than 33 percent of your income.Leverage ratio = (total liabilities + total debts)/total income liabilities/debts: student loans, mortgages, etc.</mutableString>
+                                <string key="text">What it is: The leverage ratio compares debt to income. Total debts and liabilities are debts like student loans, mortgages, auto loansHow to use it: Aim for the lowest leverage ratio you can. Anything less than one is excellent, since you could pay off every debt with your income in one period.Best for: Measuring your liquidity and determining whether you can afford to take out a loan. A common rule of thumb says that your leverage ratio (including mortgage, car loans, etc.) should be no more than 33 percent of your income.Leverage ratio = (total liabilities + total debts)/total income liabilities/debts: student loans, mortgages, etc.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -649,7 +644,7 @@
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EQk-se-guS">
                                 <rect key="frame" x="20" y="102" width="374" height="397"/>
-                                <mutableString key="text">What it is: Simple interest is interest earned from principal.Note that this calculation gives you the principal + interest. To calculate just the interest, take the calculation from the previous screen and subtract the principal from that number.How to use it: This calculation can be done quickly to provide an idea of how much interest will accrue over time. Just remember: This equation ignores the effects of compounding.Best for: A rough estimate on what you'll earn in a savings account, or pay on a loan or a credit card.</mutableString>
+                                <string key="text">What it is: Simple interest is interest earned from principal.Note that this calculation gives you the principal + interest. To calculate just the interest, take the calculation from the previous screen and subtract the principal from that number.How to use it: This calculation can be done quickly to provide an idea of how much interest will accrue over time. Just remember: This equation ignores the effects of compounding.Best for: A rough estimate on what you'll earn in a savings account, or pay on a loan or a credit card.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -687,7 +682,7 @@
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vT3-AG-TUN">
                                 <rect key="frame" x="20" y="104" width="374" height="397"/>
-                                <mutableString key="text">What it is: The compound interest is the interest earned on the principal, and any interest accrued in the past. *Note that this calculation gives you the principal + interest. To calculate just the interest, take the calculation from the previous screen and subtract the principal from that number.How to use it: Use this formula instead of the simple interest equation to get a more precise number for how much interest will accrue.Best for: Determining how much actual interest you will earn over time on an investment or pay on a debt.</mutableString>
+                                <string key="text">What it is: The compound interest is the interest earned on the principal, and any interest accrued in the past. *Note that this calculation gives you the principal + interest. To calculate just the interest, take the calculation from the previous screen and subtract the principal from that number.How to use it: Use this formula instead of the simple interest equation to get a more precise number for how much interest will accrue.Best for: Determining how much actual interest you will earn over time on an investment or pay on a debt.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -762,9 +757,9 @@
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4iD-SY-YGL">
                                 <rect key="frame" x="20" y="104" width="374" height="397"/>
-                                <mutableString key="text">A budget is a financial plan for a defined period, often one year. It may also include planned sales volumes and revenues, resource quantities, costsand expenses, assets, liabilities and cash flows. Companies, governments, families, and other organizations use it to express strategic plans of activities or events in measurable terms.
+                                <string key="text">A budget is a financial plan for a defined period, often one year. It may also include planned sales volumes and revenues, resource quantities, costsand expenses, assets, liabilities and cash flows. Companies, governments, families, and other organizations use it to express strategic plans of activities or events in measurable terms.
 A budget is the sum of finances allocated for a particular purpose and the summary of intended expenditures along with proposals for how to meet them. It may include a budget surplus, providing money for use at a future time, or a deficit in which expenses exceed income.
-</mutableString>
+</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -791,16 +786,22 @@ A budget is the sum of finances allocated for a particular purpose and the summa
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="kz8-DG-fqL"/>
+        <segue reference="G8a-zj-z48"/>
         <segue reference="LtU-yN-3e1"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Pacfic-Blue-iphone-wallpaper-idownloadblog-smartechdaily-geometric" width="996" height="2048"/>
-        <image name="chart.bar.doc.horizontal" catalog="system" width="115" height="128"/>
+        <image name="chart.pie" catalog="system" width="128" height="121"/>
         <image name="list.bullet.rectangle.portrait" catalog="system" width="115" height="128"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

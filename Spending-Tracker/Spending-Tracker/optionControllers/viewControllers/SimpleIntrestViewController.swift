@@ -21,7 +21,7 @@ var principal: UITextField  = {
  }()
     var principalLabal: UILabel = {
         var labal = UILabel()
-        labal = UILabel(frame: CGRect(x: 20, y: 200, width: 200, height: 40))
+        labal = UILabel(frame: CGRect(x: 20, y: 200, width: 150, height: 40))
         labal.text = NSLocalizedString("Principal", comment: "")
 
          
@@ -41,7 +41,7 @@ var interest: UITextField  = {
  }()
     var interestLabal: UILabel = {
         var labal = UILabel()
-        labal = UILabel(frame: CGRect(x: 20, y: 250, width: 200, height: 40))
+        labal = UILabel(frame: CGRect(x: 20, y: 250, width: 150, height: 40))
         labal.text = NSLocalizedString("Interest (%)", comment: "")
 
          
@@ -63,7 +63,7 @@ var periods: UITextField  = {
  }()
     var periodsLabal: UILabel = {
         var labal = UILabel()
-        labal = UILabel(frame: CGRect(x: 20, y: 300, width: 200, height: 40))
+        labal = UILabel(frame: CGRect(x: 20, y: 300, width: 100, height: 40))
         labal.text = NSLocalizedString("Periods", comment: "")
 
          
@@ -85,7 +85,7 @@ var calculation: UILabel = {
  }()
     var calculationLabal: UILabel = {
         var labal = UILabel()
-        labal = UILabel(frame: CGRect(x: 20, y: 400, width: 200, height: 40))
+        labal = UILabel(frame: CGRect(x: 20, y: 400, width: 100, height: 40))
         labal.text = NSLocalizedString("Result", comment: "")
 
          
