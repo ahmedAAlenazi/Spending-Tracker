@@ -12,7 +12,7 @@
   
   3- As a user i can creat more than one account. 
   
-  4- As a user i can creat more than one catagory.
+  4- As a user i can choose more than one catagory.
   
   5- As a user i can creat more than one financial income.
   
@@ -20,9 +20,12 @@
   
   7- As a user i can change languege.
   
-  8- As a user i can change aperence to dark mode.
+  8- As a user i can change apperence to dark mode.
   
-  9- As a user i can display my account information and edit my profile.
+  9- As a user i can calculate my expensess
+  
+ 
+ 
   
   
   
