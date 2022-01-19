@@ -22,7 +22,19 @@
   
   8- As a user i can change apperence to dark mode.
   
-  9- As a user i can calculate my expensess
+  9- As a user i can calculate Annunity
+  
+  10- As a user i can calculate Compound intrest
+  
+  11- As a user i can calculate  simple intrest
+  
+  12- As a user i can calculate  budget
+  
+  13- As a user i can calculate levrege ratio
+  
+  14- As a user i can calculate cash flow
+  
+  15- As a user i can see my data on charts
   
  
  
